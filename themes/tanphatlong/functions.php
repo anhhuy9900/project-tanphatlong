@@ -62,6 +62,7 @@ add_action('wp_head', '_func_seo_meta_tags', 1);
 
 //require files function
 require_once("functions/common.func.php");
+require_once("functions/home.func.php");
 require_once("functions/aq_resizer.php");
 
 
@@ -76,6 +77,33 @@ define( 'THEME_URL', get_stylesheet_directory() );
 //fix redirect link when click pagination in wordpress
 remove_action('template_redirect', 'redirect_canonical');
 
+
+function project_scripts(){
+
+    wp_enqueue_style( 'bootstrap.min', get_template_directory_uri() . '/css/bootstrap.min.css', array());
+    wp_enqueue_style( 'jquery.bxslider', get_template_directory_uri() . '/css/jquery.bxslider.css', array());
+    wp_enqueue_style( 'owl.carousel', get_template_directory_uri() . '/css/owl.carousel.css', array());
+    wp_enqueue_style( 'owl.theme', get_template_directory_uri() . '/css/owl.theme.css', array());
+    wp_enqueue_style( 'ont-awesome', get_template_directory_uri() . '/css/ont-awesome.css', array());
+    wp_enqueue_style( 'settings', get_template_directory_uri() . '/css/settings.css', array());
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', array());
+
+
+    wp_enqueue_script( 'jquery.min', get_template_directory_uri() . '/js/jquery.min.js', array( 'jquery' ), '20131205');
+    wp_enqueue_script( 'jquery.migrate', get_template_directory_uri() . '/js/jquery.migrate.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'jquery.bxslider.min', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'owl.carousel.min', get_template_directory_uri() . '/js/owl.carousel.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'jquery.imagesloaded.min', get_template_directory_uri() . '/js/jquery.imagesloaded.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'retina-1.1.0.min', get_template_directory_uri() . '/js/retina-1.1.0.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'jquery.themepunch.tools.min', get_template_directory_uri() . '/js/jquery.themepunch.tools.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'jquery.themepunch.revolution.min', get_template_directory_uri() . '/js/jquery.themepunch.revolution.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'gmap3', get_template_directory_uri() . '/js/gmap3.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '20131205', true);
+
+}
+add_action( 'wp_enqueue_scripts', 'project_scripts' );
 
 //add rule rewrite url
 add_action('init', 'custom_rewrite_rule', 10, 0);
@@ -271,12 +299,35 @@ if(!function_exists('_func_get_all_posts')){
     }
 }
 
+if(!function_exists('_func_get_posts_type')){
+    function _func_get_posts_type($args = array())
+    {
+        $query_params = array(
+            'post_status' => 'publish',
+            'orderby' => "post_date",
+            'order' => "DESC"
+        );
+        if(!empty($args)){
+            foreach($args as $key => $value){
+                $query_params[$key] = $value;
+            }
+        }
+        $query = new WP_Query($query_params);
+        return $query->get_posts() ? $query->get_posts() : array();
+    }
+}
+
 if(!function_exists('_func_get_value_custom_field')){
     function _func_get_value_custom_field($key_field = '', $post_id = 0)
     {
         $result = get_post_custom_values($key_field, $post_id);
         if(!empty($result)){
-            return $result[0];
+            if(count($result) > 1){
+                return $result;
+            } else{
+                return $result[0];
+            }
+
         }
         return NULL;
     }
@@ -295,7 +346,7 @@ if(!function_exists('_func_get_menu_collections_footer')) {
     function _func_get_menu_collections_footer()
     {
         global $wpdb;
-        $result = $wpdb->get_results("SELECT * FROM collections WHERE status = 1 ORDER BY `order` ASC");
+        $result = $wpdb->get_results("SELECT * FROM collections WHERE status = 1 ORDER BY order ASC");
         return $result;
     }
 }
