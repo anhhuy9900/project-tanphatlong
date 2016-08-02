@@ -1,15 +1,11 @@
 <?php
-$list_products_services = _func_get_post_type('product-services');
-if(!empty($list_products_services)) :
-    foreach($list_products_services as $product) :
-        $description = types_render_field( "product-services-description", array( "separator" => ", ", "id" => $product->ID ) );
-        $meta_values = types_render_field( "product-services-gallery-images", array( "raw" => "true", "id" => $product->ID ));
 
-        $attachments = _func_get_value_custom_field('wpcf-product-services-gallery-images', $product->ID);
-        $image = aq_resize( $attachments[0], 800, 220 , true, true, true);
-       //pr($attachments);
-    endforeach;
-endif;
+$menu_name = 'primary'; //menu slug
+$locations = get_nav_menu_locations();
+$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+$menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+
+pr($menuitems);
 
 ?>
 
@@ -88,7 +84,7 @@ endif;
                         <div class="services-content">
                             <h2><?=$page->post_title;?></h2>
                             <p>Aenean sed justo tincidunt, vulputate nisi sit amet, rutrum ligula. Pellentesque dictum aliquam ornare. Sed elit lectus.</p>
-                            <a href="<?=$page->post_name;?>">Read More <i class="fa fa-angle-right"></i></a>
+                            <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>" title="<?=$page->post_title;?>">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>

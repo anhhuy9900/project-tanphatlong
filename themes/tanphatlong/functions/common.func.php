@@ -292,3 +292,17 @@ if (!function_exists('_array_delete')) {
         return array_values($array);
     }
 }
+
+if (!function_exists('func_get_list_pages_children')) {
+    function func_get_list_pages_children($parent_ID) {
+        $args = array(
+            'post_parent' => $parent_ID,
+            'post_type'   => 'page',
+            'numberposts' => -1,
+            'post_status' => 'publish'
+        );
+
+        $list_pages = get_children( $args );
+        return $list_pages;
+    }
+}

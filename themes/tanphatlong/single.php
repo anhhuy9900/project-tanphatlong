@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: HUY
- * Date: 7/27/2016
- * Time: 11:47 PM
- */
+<?php get_header(); ?>
+
+    <h2>single</h2>
+
+<?php get_footer(); ?>
