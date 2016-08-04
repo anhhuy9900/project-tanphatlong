@@ -540,7 +540,12 @@ section.services-section .services-box .services-post .services-content a:hover 
   margin-left: -15px;
   margin-right: -15px;
 }
-.portfolio-section .portfolio-box.iso-call .project-post {
+.portfolio-section .portfolio-box .project-post {
+  width: 33.3333%;
+  padding: 15px;
+}
+
+.portfolio-section .project-post {
   width: 33.3333%;
   padding: 15px;
 }
@@ -613,6 +618,10 @@ section.services-section .services-box .services-post .services-content a:hover 
   position: relative;
   text-transform: uppercase;
 }
+.portfolio-section .project-post .project-gallery .hover-box .inner-hover span.btn-ability{
+  width: 45%;
+
+}
 .portfolio-section .project-post .project-gallery .hover-box .inner-hover h2 a {
   display: inline-block;
   text-decoration: none;
@@ -621,6 +630,10 @@ section.services-section .services-box .services-post .services-content a:hover 
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   color: #ffffff;
+}
+.portfolio-section .project-post .project-gallery .hover-box .inner-hover a.btn-click{
+  font-size: 14px;
+  padding-left: 5px;
 }
 .portfolio-section .project-post .project-gallery .hover-box .inner-hover h2 a:hover {
   color: #a0ce4e;
