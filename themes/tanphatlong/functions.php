@@ -61,9 +61,12 @@ add_action('wp_head', '_func_seo_meta_tags', 1);
 
 
 //require files function
+require_once("functions/aq_resizer.php");
 require_once("functions/common.func.php");
 require_once("functions/home.func.php");
-require_once("functions/aq_resizer.php");
+require_once("functions/abilities.func.php");
+require_once("functions/recruitment.func.php");
+
 
 
 /**
@@ -105,40 +108,28 @@ function project_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'project_scripts' );
 
+//fix redirect link when click pagination in wordpress
+remove_action('template_redirect', 'redirect_canonical');
+
+
 //add rule rewrite url
 add_action('init', 'custom_rewrite_rule', 10, 0);
 function custom_rewrite_rule() {
-
-
-    /*$page_collections_landing = get_page_by_path( 'collection' );
-    if($page_collections_landing){
-        add_rewrite_rule('^collection/([^/]*)?', 'index.php?page_id='.$page_collections_landing->ID.'&collections-type=$matches[1]', 'top');
-    }
-
-    add_rewrite_rule( 'news/([^/]*)?', 'index.php?news_detail_slug=$matches[1]', 'top' );*/
 
     flush_rewrite_rules();
 }
 
 function add_my_var($public_query_vars) {
-   // $public_query_vars[] = 'category-product';
+    //$public_query_vars[] = 'category-product';
     return $public_query_vars;
 }
-
 add_filter('query_vars', 'add_my_var');
 
 
 function prefix_url_rewrite_templates() {
 
-    if ( get_query_var( 'news_detail_slug' ) ) {
-        add_filter( 'template_include', function() {
-            return get_template_directory() . '/single-news.php';
-        });
-    }
 }
-
 add_action( 'template_redirect', 'prefix_url_rewrite_templates' );
-
 
 function pnjexport_widgets_init() {
     register_sidebar( array(
@@ -151,58 +142,9 @@ function pnjexport_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
-    register_sidebar( array(
-        'name'          => __( 'Image Upload Widget', 'pnjexport' ),
-        'id'            => 'widget-banner',
-        'description'   => __( 'Add widgets here to appear in your sidebar.', 'pnjexport' ),
-        'before_widget' => false,
-        'after_widget'  => false,
-        'before_title'  => false,
-        'after_title'   => false,
-    ) );
 
-    register_sidebar( array(
-        'name'          => __( 'Banner Of About Home Page', 'pnjexport' ),
-        'id'            => 'widget-banner-of-about-home-page',
-        'description'   => __( 'Add widgets here to appear in your sidebar.', 'pnjexport' ),
-        'before_widget' => false,
-        'after_widget'  => false,
-        'before_title'  => false,
-        'after_title'   => false,
-    ) );
-
-    register_sidebar( array(
-        'name'          => __( 'Banner Collections Page', 'pnjexport' ),
-        'id'            => 'widget-banner-collections-page',
-        'description'   => __( 'Add widgets here to appear in your sidebar.', 'pnjexport' ),
-        'before_widget' => false,
-        'after_widget'  => false,
-        'before_title'  => false,
-        'after_title'   => false,
-    ) );
-
-    register_sidebar( array(
-        'name'          => __( 'List Images Promotion News Right', 'pnjexport' ),
-        'id'            => 'widget-images-promotion-news',
-        'description'   => __( 'Add widgets here to appear in your sidebar.', 'pnjexport' ),
-        'before_widget' => false,
-        'after_widget'  => false,
-        'before_title'  => false,
-        'after_title'   => false,
-    ) );
-
-    register_sidebar( array(
-        'name'          => __( 'Banner Product Page', 'pnjexport' ),
-        'id'            => 'widget-banner-product-page',
-        'description'   => __( 'Add widgets here to appear in your sidebar.', 'pnjexport' ),
-        'before_widget' => false,
-        'after_widget'  => false,
-        'before_title'  => false,
-        'after_title'   => false,
-    ) );
 }
 add_action( 'widgets_init', 'pnjexport_widgets_init' );
-
 
 
 if (!function_exists('_get_widget_data_for')) {

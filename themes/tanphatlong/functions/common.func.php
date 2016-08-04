@@ -150,14 +150,14 @@ if (!function_exists('__pagination')) {
         $querystring = '';
         if ($_GET) {
             foreach ($_GET as $k => $v) {
-                if ($k != 'paged')
+                if ($k != 'page')
                     $querystring = $querystring . "&{$k}={$v}";
             }
             $querystring = substr($querystring, 1);
             $get.='?' . $querystring;
         }
         $sep = (!empty($querystring)) ? '&' : '';
-        $linkUrl = $linkUrl . '?' . $querystring . $sep . 'paged=';
+        $linkUrl = $linkUrl . '?' . $querystring . $sep . 'page=';
 
         if ($currentPage > $limit + 2) {
             /** first */
@@ -167,13 +167,13 @@ if (!function_exists('__pagination')) {
         /*         * **** prev ** */
         if ($currentPage > 1) {
             $prevPage = $currentPage - 1;
-            $prev = "<li class='pagingPrev'><a href='$linkUrl$prevPage' class='prev'> << </a></li>";
+            $prev = "<li><a href='$linkUrl$prevPage' class='prev-pag'> PREV </a></li>";
         }
 
         /*         * *Next** */
         if ($currentPage < $totalPages) {
             $nextPage = $currentPage + 1;
-            $next = "<li class='pagingNext'><a href='$linkUrl$nextPage' class='next'> >> </a></li>";
+            $next = "<li><a href='$linkUrl$nextPage' class='next-pag'> NEXT </a></li>";
         }
 
         /*         * *Last** */
@@ -185,12 +185,12 @@ if (!function_exists('__pagination')) {
         /*         * *Link** */
         for ($i = $form; $i <= $to; $i++) {
             if ($currentPage == $i)
-                $link.= "<li><a href='javascript:;' class='actived'>$i</a></li>";
+                $link.= "<li><a href='javascript:;' class='active'>$i</a></li>";
             else
                 $link.= "<li><a href='$linkUrl$i'>$i</a></li>";
         }
 
-        $pagination = '<div class="paging"><ul>' . $first . $prev . $link . $next . $last . '</ul></div>';
+        $pagination = '<ul class="pagination-list">' . $first . $prev . $link . $next . $last . '</ul>';
 
         return $pagination;
     }
@@ -226,14 +226,14 @@ if (!function_exists('pagination_ajax')) {
         $get = ''; $querystring = '';
         if ($_GET) {
             foreach ($_GET as $k => $v) {
-                if ($k != 'p')
+                if ($k != 'page')
                     $querystring = $querystring . "&{$k}={$v}";
             }
             $querystring = substr($querystring, 1);
             $get.='?' . $querystring;
         }
         $sep = (!empty($querystring)) ? '&' : '';
-        $linkUrl = $linkUrl . '?' . $querystring . $sep . 'p=';
+        $linkUrl = $linkUrl . '?' . $querystring . $sep . 'page=';
         
         /* FIRST */
         if ($currentPage > $limit + 2) {

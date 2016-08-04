@@ -1385,16 +1385,16 @@ section.services-section .services-box .services-post .services-content a:hover 
 .blog-section .blog-box .blog-post .post-content-text > a:hover {
   color: #a0ce4e;
 }
-.blog-section .blog-box ul.pagination-list {
+ul.pagination-list {
   margin: 0;
   padding: 0;
   margin-bottom: 40px;
 }
-.blog-section .blog-box ul.pagination-list li {
+ul.pagination-list li {
   display: inline-block;
   margin-right: 8px;
 }
-.blog-section .blog-box ul.pagination-list li a {
+ul.pagination-list li a {
   display: inline-block;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -1407,8 +1407,8 @@ section.services-section .services-box .services-post .services-content a:hover 
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
-.blog-section .blog-box ul.pagination-list li a:hover,
-.blog-section .blog-box ul.pagination-list li a.active {
+ul.pagination-list li a:hover,
+ul.pagination-list li a.active {
   color: #a0ce4e;
 }
 .blog-section .blog-box .single-post h1 {
