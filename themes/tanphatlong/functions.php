@@ -66,6 +66,8 @@ require_once("functions/common.func.php");
 require_once("functions/home.func.php");
 require_once("functions/abilities.func.php");
 require_once("functions/recruitment.func.php");
+require_once("functions/projects.func.php");
+require_once("functions/news.func.php");
 
 
 

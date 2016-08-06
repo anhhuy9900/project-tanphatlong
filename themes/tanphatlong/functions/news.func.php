@@ -1,13 +1,13 @@
 <?php
 
-if (!function_exists('get_list_records_abilities')) {
-    function get_list_records_abilities(){
+if (!function_exists('get_list_records_news')) {
+    function get_list_records_news(){
         global $wpdb;
         $per_page = 3;
         $paged = max(1,intval(get_query_var('page')));
         $offset = get_query_var('page') ? $per_page * max(0, intval(get_query_var('page')) - 1) : 0;
         $query_params = array(
-            'post_type'		    => 'abilities',
+            'post_type'		    => 'post',
             'post_status'       => 'publish',
             'orderby'           => "post_date",
             'order'             => "DESC",
@@ -19,7 +19,7 @@ if (!function_exists('get_list_records_abilities')) {
 
 
         $query_params = array(
-            'post_type'		=> 'abilities',
+            'post_type'		=> 'post',
             'post_status'   => 'publish'
         );
         $wp_query = new WP_Query( $query_params );
@@ -32,5 +32,15 @@ if (!function_exists('get_list_records_abilities')) {
             'pagination' => $pagination
         );
         return $data;
+    }
+}
+
+if (!function_exists('get_list_menu_news')) {
+    function get_list_menu_news(){
+        $list_menu_news = $categories = get_categories( array(
+            'orderby' => 'post_date',
+            'parent'  => 0
+        ) );
+        return $list_menu_news;
     }
 }

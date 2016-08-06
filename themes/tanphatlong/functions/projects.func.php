@@ -1,13 +1,13 @@
 <?php
 
-if (!function_exists('get_list_records_abilities')) {
-    function get_list_records_abilities(){
+if (!function_exists('get_list_records_projects')) {
+    function get_list_records_projects(){
         global $wpdb;
         $per_page = 3;
         $paged = max(1,intval(get_query_var('page')));
         $offset = get_query_var('page') ? $per_page * max(0, intval(get_query_var('page')) - 1) : 0;
         $query_params = array(
-            'post_type'		    => 'abilities',
+            'post_type'		    => 'manage-projects',
             'post_status'       => 'publish',
             'orderby'           => "post_date",
             'order'             => "DESC",
@@ -19,7 +19,7 @@ if (!function_exists('get_list_records_abilities')) {
 
 
         $query_params = array(
-            'post_type'		=> 'abilities',
+            'post_type'		=> 'manage-projects',
             'post_status'   => 'publish'
         );
         $wp_query = new WP_Query( $query_params );
@@ -32,5 +32,16 @@ if (!function_exists('get_list_records_abilities')) {
             'pagination' => $pagination
         );
         return $data;
+    }
+}
+
+if (!function_exists('get_list_menu_projects')) {
+    function get_list_menu_projects(){
+        $list_menu_projects = get_terms( array(
+            'taxonomy' => 'manage-menu-projects',
+            'hide_empty' => false,
+        ) );
+
+        return $list_menu_projects;
     }
 }
