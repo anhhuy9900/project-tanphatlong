@@ -541,14 +541,10 @@ section.services-section .services-box .services-post .services-content a:hover 
   margin-right: -15px;
 }
 .portfolio-section .portfolio-box .project-post {
-  width: 33.3333%;
+ /* width: 33.3333%;*/
   padding: 15px;
 }
 
-.portfolio-section .project-post {
-  width: 33.3333%;
-  padding: 15px;
-}
 .portfolio-section ul.filter {
   margin: 0;
   padding: 0;

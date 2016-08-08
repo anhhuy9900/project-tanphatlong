@@ -3,7 +3,7 @@ if (!function_exists('get_list_pages_highlight_home')) {
     function get_list_pages_highlight_home(){
         $args = array(
             'post_type'		=> 'page',
-            'posts_per_page' => 4,
+            'posts_per_page' => 12,
             'meta_query'	=> array(
                 array(
                     'key'		=> 'wpcf-show-home-page',

@@ -66,6 +66,8 @@ require_once("functions/common.func.php");
 require_once("functions/home.func.php");
 require_once("functions/abilities.func.php");
 require_once("functions/recruitment.func.php");
+require_once("functions/projects.func.php");
+require_once("functions/news.func.php");
 
 
 
@@ -133,9 +135,19 @@ add_action( 'template_redirect', 'prefix_url_rewrite_templates' );
 
 function pnjexport_widgets_init() {
     register_sidebar( array(
-        'name'          => __( 'Widget Area', 'pnjexport' ),
-        'id'            => 'sidebar-1',
-        'description'   => __( 'Add widgets here to appear in your sidebar.', 'pnjexport' ),
+        'name'          => __( 'Slogan Home', 'tanphatlong' ),
+        'id'            => 'slogan-home',
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'tanphatlong' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'About Home Page', 'tanphatlong' ),
+        'id'            => 'about-home-page',
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'tanphatlong' ),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
         'before_title'  => '<h2 class="widget-title">',
@@ -148,7 +160,7 @@ add_action( 'widgets_init', 'pnjexport_widgets_init' );
 
 
 if (!function_exists('_get_widget_data_for')) {
-    function _get_widget_data_for($sidebar_name) {
+    function _get_widget_data_for($sidebar_name, $language = 'vi') {
         global $wp_registered_sidebars, $wp_registered_widgets;
 
         // Holds the final data to return
@@ -189,7 +201,11 @@ if (!function_exists('_get_widget_data_for')) {
             $widget_data = get_option($option_name);
 
             // Add the widget data on to the end of the output array.
-            $output[] = (object) $widget_data[$key];
+            $widget_object = (object) $widget_data[$key];
+            if($widget_object->pll_lang == $language){
+                $output[] = $widget_object;
+            }
+
         }
 
         return $output;

@@ -1,13 +1,3 @@
-<?php
-
-$menu_name = 'primary'; //menu slug
-$locations = get_nav_menu_locations();
-$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-$menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
-
-pr($menuitems);
-
-?>
 
 <!-- home-section-->
 <section id="home-section" class="slider1">
@@ -57,46 +47,16 @@ pr($menuitems);
 </section>
 <!-- End home section -->
 
+<?php $widget_slogan_home = _get_widget_data_for('Slogan Home', pll_current_language());?>
 <!-- banner-section
     ================================================== -->
 <section class="banner-section">
     <div class="container">
-        <h2>Construct is made with greatest page builder &amp; most sold in codecanyon </h2>
+        <h2><?=(!empty($widget_slogan_home)) ? $widget_slogan_home[0]->text : '';?> </h2>
     </div>
 </section>
 <!-- End banner section -->
 
-<!-- services-section
-    ================================================== -->
-<?php $pages_highlight = get_list_pages_highlight_home();
-        if(!empty($pages_highlight)) :
-?>
-<section class="services-section">
-    <div class="container">
-        <div class="services-box">
-            <div class="row">
-                <?php
-                    foreach($pages_highlight as $page) :
-                ?>
-                <div class="col-md-3">
-                    <div class="services-post">
-                        <!--<img src="upload/others/5.jpg" alt="">-->
-                        <div class="services-content">
-                            <h2><?=$page->post_title;?></h2>
-                            <p>Aenean sed justo tincidunt, vulputate nisi sit amet, rutrum ligula. Pellentesque dictum aliquam ornare. Sed elit lectus.</p>
-                            <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>" title="<?=$page->post_title;?>">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <?php endforeach;?>
-            </div>
-        </div>
-
-    </div>
-</section>
-<?php endif; ?>
-<!-- End services section -->
 
 <!-- portfolio-section
     ================================================== -->
@@ -117,8 +77,7 @@ $projects_highlight = get_list_records_highlight_home(array('post_type'=>'manage
                         <img src="<?=$image;?>" alt="">
                         <div class="hover-box">
                             <div class="inner-hover">
-                                <h2><a href="<?=$project->post_name;?>"><?=$project->post_title;?></a></h2>
-                                <span>interior</span>
+                                <h2><a href="<?php echo esc_url( get_permalink($project->ID) ); ?>"><?=$project->post_title;?></a></h2>
                             </div>
                         </div>
                     </div>
@@ -132,75 +91,51 @@ $projects_highlight = get_list_records_highlight_home(array('post_type'=>'manage
 <?php endif; ?>
 <!-- End portfolio section -->
 
+
+<?php
+$widget_about_home = _get_widget_data_for('About Home Page', pll_current_language());
+$pages_highlight = get_list_pages_highlight_home();
+        if(!empty($pages_highlight)) :
+?>
 <!-- tabs-section
     ================================================== -->
 <section class="tabs-section">
     <div class="container">
         <div class="row">
 
-            <div class="col-md-7">
+            <div class="col-md-12">
                 <div class="about-us-box">
-                    <h1>about us and our priorities</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
+                    <h1><?=(!empty($widget_about_home)) ? $widget_about_home[0]->title : '';?></h1>
+                    <p><?=(!empty($widget_about_home)) ? $widget_about_home[0]->text : '';?></p>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="about-us-post">
-                                <a href="#"><i class="fa fa-building-o"></i></a>
-                                <h2>Construction</h2>
-                                <span>build homes</span>
-                            </div>
-                            <div class="about-us-post">
-                                <a href="#"><i class="fa fa-cogs"></i></a>
-                                <h2>Maintanance</h2>
-                                <span>energy repair</span>
-                            </div>
-                            <div class="about-us-post">
-                                <a href="#"><i class="fa fa-desktop"></i></a>
-                                <h2>Good Planning</h2>
-                                <span>architecture</span>
-                            </div>
+                    <?php
+                    $count = 0;
+                    foreach($pages_highlight as $page) :
+                    ?>
+                    <?php if($count % 3 == 0) :?>
+                    <div class="col-md-4">
+                    <?php endif;
+                        $count++;
+                    ?>
+                        <div class="about-us-post">
+                            <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>"><i class="fa fa-building-o"></i></a>
+                            <h2><?=$page->post_title;?></h2>
                         </div>
-                        <div class="col-md-6">
-                            <div class="about-us-post">
-                                <a href="#"><i class="fa fa-desktop"></i></a>
-                                <h2>Good Planning</h2>
-                                <span>architecture</span>
-                            </div>
-                            <div class="about-us-post">
-                                <a href="#"><i class="fa fa-users"></i></a>
-                                <h2>Awesome Stuff</h2>
-                                <span>1000+ workers</span>
-                            </div>
-                            <div class="about-us-post">
-                                <a href="#"><i class="fa fa-building-o"></i></a>
-                                <h2>Construction</h2>
-                                <span>build homes</span>
-                            </div>
-                        </div>
+                    <?php if($count % 3 == 0 || $count == count($pages_highlight)) :?>
+                    </div>
+                    <?php endif;?>
+
+                    <?php endforeach;?>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-5">
-
-                <div class="about-box">
-                    <img src="upload/others/about.jpg" alt="">
-                    <h2>Who we are</h2>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-                </div>
-
             </div>
 
         </div>
     </div>
 </section>
 <!-- End tabs section -->
+<?php endif; ?>
+
 
 <!-- news-section
     ================================================== -->
@@ -226,9 +161,9 @@ $news_highlight = get_list_records_highlight_home(array('post_type'=>'post'));
                         </div>
                     </div>
                     <div class="news-content">
-                        <h2><a href="<?=$news->post_name;?>" title="<?=$news->post_name;?>"><?=$news->post_title;?></a></h2>
+                        <h2><a href="<?php echo esc_url( get_permalink($news->ID) ); ?>" title="<?=$news->post_name;?>"><?=$news->post_title;?></a></h2>
                         <p><?=$description;?></p>
-                        <a href="<?=$news->post_name;?>" title="<?=$news->post_name;?>">Read More <i class="fa fa-angle-right"></i></a>
+                        <a href="<?php echo esc_url( get_permalink($news->ID) ); ?>" title="<?=$news->post_name;?>">Read More <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
                 <?php endforeach;?>

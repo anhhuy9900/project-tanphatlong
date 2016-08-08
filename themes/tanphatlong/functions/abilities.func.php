@@ -1,4 +1,5 @@
 <?php
+
 if (!function_exists('get_list_records_abilities')) {
     function get_list_records_abilities(){
         global $wpdb;

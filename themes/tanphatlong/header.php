@@ -73,27 +73,34 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" alt=""></a>
+                    <a class="navbar-brand" href="<?=home_url();?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" alt=""></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="active" href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="services.html">Our Services</a>
+                        <li><a class="active" href="<?=home_url();?>">Home</a></li>
+                        <?php
+                        $menu_language = pll_current_language() == 'vi' ? 'site-menu-vi' : 'site-menu-en';
+                        $nav_menu_items = wp_get_nav_menu_items( $menu_language );
+                        $menu_items = func_nav_menu_object_tree( $nav_menu_items );
+                        if(!empty($menu_items)) :
+                            foreach($menu_items as $item_parent) :
+                        ?>
+                        <li><a href="<?=$item_parent->url; ?>"><?=$item_parent->title;?></a>
+                            <?php if(!empty($item_parent->children)) :?>
                             <ul class="drop-down">
-                                <li><a href="buildings.html">Small &amp; Large Buildings</a></li>
-                                <li><a href="garden.html">Elegant Garden</a></li>
-                                <li><a href="projecting.html">Perfect Projectings</a></li>
-                                <li><a href="energy.html">Energy Repair</a></li>
-                                <li><a href="roads.html">Roads &amp; Paths</a></li>
-                                <li><a href="repairing.html">Repairing &amp; Maintenance</a></li>
+                                <?php foreach($item_parent->children as $item_child) :?>
+                                <li><a href="<?=$item_child->url; ?>"><?=$item_child->title;?></a></li>
+                                <?php endforeach;?>
                             </ul>
+                            <?php endif; ?>
                         </li>
-                        <li><a href="blog.html">blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <?php
+                            endforeach;
+                        endif;
+                        ?>
+
                         <li class="search"><a href="#" class="open-search"><i class="fa fa-search"></i></a>
                             <form class="form-search">
                                 <input type="search" placeholder="Search:"/>
