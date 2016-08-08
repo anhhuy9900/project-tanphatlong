@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php get_header(); ?>
 
 <?php
@@ -58,4 +59,10 @@ $cat = get_category( get_query_var( 'cat' ) );
     </div>
 </section>
 
+=======
+<?php get_header(); ?>
+
+<?php //include_once TEMPLATEPATH . '/templates/news.page.php';?>
+
+>>>>>>> 5e8b738e7437d36ce4598d8138e1f61019b3a423
 <?php get_footer(); ?>
