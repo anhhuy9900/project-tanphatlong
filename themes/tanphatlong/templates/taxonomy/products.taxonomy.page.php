@@ -1,18 +1,21 @@
 <?php
 /*
-Template Name: Projects Page
+Template Name: products Page
 */
 
 get_header(); ?>
 
-<?php global $post; ?>
+<?php 
+global $taxonomy,$term;
+$get_category = get_term_by('slug', $term, 'list-menu-product-services');
+?>
 <!-- page-banner-section
             ================================================== -->
 <section class="page-banner-section">
     <div class="container">
-        <h1><?=$post->post_title;?></h1>
+        <h1><?=$get_category->name;?></h1>
         <ul class="page-depth">
-            <li><a href="#"><?=$post->post_title;?></a></li>
+            <li><a href="#"><?=$get_category->name;?></a></li>
         </ul>
     </div>
 </section>
@@ -20,24 +23,24 @@ get_header(); ?>
 
 <!-- services section-->
 <?php
-$data = get_list_records_projects();
-$list_menu = get_list_menu_projects();
+$data = get_list_records_products($term);
+$list_menu = get_list_menu_products();
 ?>
 
 <section class="portfolio-section">
     <div class="container">
         <?php if(!empty($list_menu)) :?>
-            <div class="col-md-3">
-                <div class="services-tabs">
-                    <ul>
-                        <?php foreach($list_menu as $menu) :?>
-                            <li>
-                                <a href="<?=get_term_link($menu->term_id);?>" ><?=$menu->name;?></a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
+        <div class="col-md-3">
+            <div class="services-tabs">
+                <ul>
+                    <?php foreach($list_menu as $menu) :?>
+                    <li<?=$menu->slug == $term ? ' class="active"' : ''?>>
+                        <a href="<?=get_term_link($menu->term_id);?>" ><?=$menu->name;?></a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
+        </div>
         <?php endif;?>
 
         <?php if(!empty($data['results'])) : ?>

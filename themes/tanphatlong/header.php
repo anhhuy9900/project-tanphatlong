@@ -102,8 +102,8 @@
                         ?>
 
                         <li class="search"><a href="#" class="open-search"><i class="fa fa-search"></i></a>
-                            <form class="form-search">
-                                <input type="search" placeholder="Search:"/>
+                            <form action="<?php echo site_url('/'); ?>" method="get" id="searchform" class="form-search">
+                                <input type="search" name="keyword" placeholder="Search:"/>
                                 <button type="submit">
                                     <i class="fa fa-search"></i>
                                 </button>

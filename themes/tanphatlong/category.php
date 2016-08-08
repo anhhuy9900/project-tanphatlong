@@ -1,12 +1,9 @@
-<<<<<<< HEAD
+
 <?php get_header(); ?>
 
 <?php
 $data = get_list_records_news();
 $list_menu = get_list_menu_news();
-
-//get current category
-$cat = get_category( get_query_var( 'cat' ) );
 ?>
 
 <section class="blog-section">
@@ -59,10 +56,5 @@ $cat = get_category( get_query_var( 'cat' ) );
     </div>
 </section>
 
-=======
-<?php get_header(); ?>
-
-<?php //include_once TEMPLATEPATH . '/templates/news.page.php';?>
-
->>>>>>> 5e8b738e7437d36ce4598d8138e1f61019b3a423
 <?php get_footer(); ?>
+
