@@ -1,3 +1,4 @@
+
 <!-- footer
     ================================================== -->
 <footer>
@@ -25,21 +26,28 @@
                 <?php endforeach;
                     endif;
                 ?>
+
+                <?php $gallery_images = func_showGalleryFooter(2);
+                        if(!empty($gallery_images)) :
+                ?>
                 <div class="col-md-3">
                     <div class="widgets">
                         <h2>Flickr widget</h2>
                         <ul class="flickr-list">
-                            <li><a href="#"><img src="upload/flickr/1.jpg" alt=""/></a></li>
-                            <li><a href="#"><img src="upload/flickr/2.jpg" alt=""/></a></li>
-                            <li><a href="#"><img src="upload/flickr/3.jpg" alt=""/></a></li>
-                            <li><a href="#"><img src="upload/flickr/4.jpg" alt=""/></a></li>
-                            <li><a href="#"><img src="upload/flickr/5.jpg" alt=""/></a></li>
-                            <li><a href="#"><img src="upload/flickr/6.jpg" alt=""/></a></li>
-                            <li><a href="#"><img src="upload/flickr/1.jpg" alt=""/></a></li>
-                            <li><a href="#"><img src="upload/flickr/2.jpg" alt=""/></a></li>
+                            <?php foreach($gallery_images as $image) :
+                                $image_url = aq_resize( $image->image_url, 80, 80 , true, true, true);
+                                if(pll_current_language() == 'vi'){
+                                    $url = home_url().'/hinh-anh-cong-ty';
+                                }else{
+                                    $url = home_url().'/gallery-company';
+                                }
+                            ?>
+                            <li><a href="<?=$url;?>"><img src="<?=$image_url;?>" alt=""/></a></li>
+                            <?php endforeach;?>
                         </ul>
                     </div>
                 </div>
+                <?php endif;?>
 
             </div>
         </div>

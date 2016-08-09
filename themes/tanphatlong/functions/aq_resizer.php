@@ -121,28 +121,31 @@ if(!class_exists('Aq_Resize')) {
 
                 // Return the original image only if it exactly fits the needed measures.
                 if ( ! $dims && ( ( ( null === $height && $orig_w == $width ) xor ( null === $width && $orig_h == $height ) ) xor ( $height == $orig_h && $width == $orig_w ) ) ) {
+
                     $img_url = $url;
                     $dst_w = $orig_w;
                     $dst_h = $orig_h;
                 } else {
+
                     // Use this to check if cropped image already exists, so we can return that instead.
                     $suffix = "{$dst_w}x{$dst_h}";
                     $dst_rel_path = str_replace( '.' . $ext, '', $rel_path );
                     $destfilename = "{$upload_dir}{$dst_rel_path}-{$suffix}.{$ext}";
 
                     if ( ! $dims || ( true == $crop && false == $upscale && ( $dst_w < $width || $dst_h < $height ) ) ) {
+
                         // Can't resize, so return false saying that the action to do could not be processed as planned.
                         throw new Aq_Exception('Unable to resize image because image_resize_dimensions() failed');
                     }
                     // Else check if cache exists.
                     elseif ( file_exists( $destfilename ) && getimagesize( $destfilename ) ) {
+
                         $img_url = "{$upload_url}{$dst_rel_path}-{$suffix}.{$ext}";
                     }
                     // Else, we resize the image and return the new resized image url.
                     else {
 
                         $editor = wp_get_image_editor( $img_path );
-
                         if ( is_wp_error( $editor ) || is_wp_error( $editor->resize( $width, $height, $crop ) ) ) {
                             throw new Aq_Exception('Unable to get WP_Image_Editor: ' . 
                                                    $editor->get_error_message() . ' (is GD or ImageMagick installed?)');

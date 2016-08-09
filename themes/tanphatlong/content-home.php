@@ -34,7 +34,7 @@
                          data-splitout="none"
                          data-elementdelay="0.1"
                          data-endelementdelay="0.1"
-                         style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;"><span class="left-top corner-border"></span>
+                         style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;"><?//=$banner->post_title;?>
                     </div>
 
                 </li>
@@ -52,7 +52,7 @@
     ================================================== -->
 <section class="banner-section">
     <div class="container">
-        <h2><?=(!empty($widget_slogan_home)) ? $widget_slogan_home[0]->text : '';?> </h2>
+        <h2><?=(!empty($widget_slogan_home)) ? $widget_slogan_home->text : '';?> </h2>
     </div>
 </section>
 <!-- End banner section -->
@@ -105,12 +105,13 @@ $pages_highlight = get_list_pages_highlight_home();
 
             <div class="col-md-12">
                 <div class="about-us-box">
-                    <h1><?=(!empty($widget_about_home)) ? $widget_about_home[0]->title : '';?></h1>
-                    <p><?=(!empty($widget_about_home)) ? $widget_about_home[0]->text : '';?></p>
+                    <h1><?=(!empty($widget_about_home)) ? $widget_about_home->title : '';?></h1>
+                    <p><?=(!empty($widget_about_home)) ? $widget_about_home->text : '';?></p>
                     <div class="row">
                     <?php
                     $count = 0;
                     foreach($pages_highlight as $page) :
+                        $description = types_render_field( "short-description", array( "raw" => "true", "id" => $page->ID ));
                     ?>
                     <?php if($count % 3 == 0) :?>
                     <div class="col-md-4">
@@ -120,6 +121,7 @@ $pages_highlight = get_list_pages_highlight_home();
                         <div class="about-us-post">
                             <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>"><i class="fa fa-building-o"></i></a>
                             <h2><?=$page->post_title;?></h2>
+                            <span><?=$description;?></span>
                         </div>
                     <?php if($count % 3 == 0 || $count == count($pages_highlight)) :?>
                     </div>

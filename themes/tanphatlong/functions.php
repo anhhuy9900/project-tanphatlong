@@ -156,6 +156,16 @@ function pnjexport_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
+    register_sidebar( array(
+        'name'          => __( 'Logo Site', 'tanphatlong' ),
+        'id'            => 'logo-site',
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'tanphatlong' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
 
 }
 add_action( 'widgets_init', 'pnjexport_widgets_init' );
@@ -216,13 +226,19 @@ if (!function_exists('_get_widget_data_for')) {
 
             // Add the widget data on to the end of the output array.
             $widget_object = (object) $widget_data[$key];
-            if($widget_object->pll_lang == $language){
+
+            if($language){
+                if($widget_object->pll_lang == $language){
+                    $output[] = $widget_object;
+                }
+            } else{
                 $output[] = $widget_object;
             }
 
+
         }
 
-        return $output;
+        return count($output) > 1 ? $output : $output[0];
     }
 }
 
@@ -305,20 +321,3 @@ if(!function_exists('_func_get_value_custom_field')){
     }
 }
 
-if(!function_exists('_func_get_menu_products_footer')) {
-    function _func_get_menu_products_footer()
-    {
-        global $wpdb;
-        $result = $wpdb->get_results("SELECT id,name,slug FROM categories WHERE parent_id = 0 AND status = 1 ORDER BY `order` ASC");
-        return $result;
-    }
-}
-
-if(!function_exists('_func_get_menu_collections_footer')) {
-    function _func_get_menu_collections_footer()
-    {
-        global $wpdb;
-        $result = $wpdb->get_results("SELECT * FROM collections WHERE status = 1 ORDER BY order ASC");
-        return $result;
-    }
-}

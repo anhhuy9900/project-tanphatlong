@@ -8,6 +8,7 @@ if(!function_exists('func_search_results')){
         $keyword = '%' . $key . '%';
 
         $lang = pll_current_language();
+        pr($lang);
         $per_page = 12;
         $paged = max(1,intval(get_query_var('page')));
         $offset = get_query_var('page') ? $per_page * max(0, intval(get_query_var('page')) - 1) : 0;

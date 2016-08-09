@@ -15,7 +15,7 @@ if (!function_exists('get_list_records_news')) {
             'offset'            => $offset,
         );
         $cat = get_category( get_query_var( 'cat' ) );
-        if($cat){
+        if(!empty($cat->term_id)){
             $query_params['tax_query'] = array(
                 array(
                     'taxonomy' => 'category',
@@ -32,8 +32,7 @@ if (!function_exists('get_list_records_news')) {
             'post_type'		=> 'post',
             'post_status'   => 'publish'
         );
-        $cat = get_category( get_query_var( 'cat' ) );
-        if($cat){
+        if(!empty($cat->term_id)){
             $query_params['tax_query'] = array(
                 array(
                     'taxonomy' => 'category',

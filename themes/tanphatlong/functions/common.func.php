@@ -313,7 +313,7 @@ if (!function_exists('func_nav_menu_object_tree')) {
             $value->children = array();
             $nav_menu_items_array[ $key ] = $value;
         }
-
+        $last_level_ids = array();
         $nav_menu_levels = array();
         $index = 0;
         if ( ! empty( $nav_menu_items_array ) ) do {
@@ -359,5 +359,15 @@ if (!function_exists('func_nav_menu_object_tree')) {
 
         $nav_menu_object_tree = $nav_menu_tree_build[ 0 ];
         return $nav_menu_object_tree;
+    }
+}
+
+if (!function_exists('func_showGalleryFooter')) {
+    function func_showGalleryFooter($id)
+    {
+        global $wpdb;
+        $query = $wpdb->prepare("SELECT * FROM " . $wpdb->prefix . "huge_itgallery_images where gallery_id = '%d' order by ordering ASC", $id);
+        $images = $wpdb->get_results($query);
+        return $images;
     }
 }

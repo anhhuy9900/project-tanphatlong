@@ -45,14 +45,14 @@ $list_menu = get_list_menu_projects();
                 <?php $count = 0;
                 foreach($data['results'] as $key => $value) :
                     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
-                    $image = aq_resize( $thumbnail_src[0], 360, 300 , true, true, true);
+                    $image = aq_resize( $thumbnail_src[0], 500, 300 , true, true, true);
                 ?>
                 <?php if($count % 3 == 0) :?>
                 <div class="row">
                 <?php endif;
                     $count++;
                 ?>
-                    <div class="project-post col-md-3">
+                    <div class="project-post col-md-4">
                         <div class="project-gallery">
                             <img src="<?=$image;?>" alt="">
                             <div class="hover-box">

@@ -65,6 +65,7 @@
                 </div>
             </div>
             <div class="container">
+                <?php $widget_logo = _get_widget_data_for('Logo Site', '');?>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -73,7 +74,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?=home_url();?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" alt=""></a>
+                    <a class="navbar-brand" href="<?=home_url();?>"><img src="<?=$widget_logo->imageurl?>" alt=""></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -102,7 +103,7 @@
                         ?>
 
                         <li class="search"><a href="#" class="open-search"><i class="fa fa-search"></i></a>
-                            <form action="<?php echo site_url('/'); ?>" method="get" id="searchform" class="form-search">
+                            <form action="<?php echo site_url('/').pll_current_language(); ?>" method="get" id="searchform" class="form-search">
                                 <input type="search" name="keyword" placeholder="Search:"/>
                                 <button type="submit">
                                     <i class="fa fa-search"></i>
