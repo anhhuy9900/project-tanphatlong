@@ -70,6 +70,7 @@ require_once("functions/projects.func.php");
 require_once("functions/news.func.php");
 require_once("functions/products.func.php");
 require_once("functions/search.func.php");
+require_once("functions/contact.func.php");
 
 
 
@@ -135,6 +136,15 @@ function prefix_url_rewrite_templates() {
 }
 add_action( 'template_redirect', 'prefix_url_rewrite_templates' );
 
+//require files widget function
+require_once("widgets/map.widget.php");
+
+// Register and load the widget
+function wpb_load_widget() {
+    register_widget( 'tpl_map_widget' );
+}
+add_action( 'widgets_init', 'wpb_load_widget' );
+
 function pnjexport_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Slogan Home', 'tanphatlong' ),
@@ -159,6 +169,16 @@ function pnjexport_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Logo Site', 'tanphatlong' ),
         'id'            => 'logo-site',
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'tanphatlong' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Map Contact', 'tanphatlong' ),
+        'id'            => 'map-contact',
         'description'   => __( 'Add widgets here to appear in your sidebar.', 'tanphatlong' ),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',

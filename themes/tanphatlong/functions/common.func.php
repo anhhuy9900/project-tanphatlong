@@ -48,6 +48,12 @@ if ( ! function_exists('_CutText')){
     }
 }
 
+function _security_string($value){
+    $data = htmlspecialchars(strip_tags($value));
+
+    return $data;
+}
+
 
 if ( ! function_exists('_toSlug'))
 {
@@ -304,6 +310,35 @@ if (!function_exists('func_get_list_pages_children')) {
 
         $list_pages = get_children( $args );
         return $list_pages;
+    }
+}
+
+if (!function_exists('func_get_list_menu_pages')) {
+    function func_get_list_menu_pages() {
+
+        $parent_slug = pll_current_language() == 'vi' ? 'gioi-thieu' : 'about-us';
+        $parent_ID = func_get_id_by_slug($parent_slug);
+        $args = array(
+            'post_parent' => $parent_ID,
+            'post_type'   => 'page',
+            'numberposts' => -1,
+            'post_status' => 'publish'
+        );
+
+        $list_pages = get_children( $args );
+        return $list_pages;
+    }
+}
+
+if (!function_exists('func_get_id_by_slug')) {
+    function func_get_id_by_slug($page_slug)
+    {
+        $page = get_page_by_path($page_slug);
+        if ($page) {
+            return $page->ID;
+        } else {
+            return null;
+        }
     }
 }
 

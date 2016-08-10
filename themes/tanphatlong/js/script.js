@@ -183,7 +183,9 @@ $(document).ready(function($) {
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Map
 	/* ---------------------------------------------------------------------- */
-	var contact = {"lat":"27.9198643", "lon":"-82.4601977"}; //Change a map coordinate here!
+	var map_lat = $(".info_map").data('lat');
+	var map_long = $(".info_map").data('long');
+	var contact = {"lat" : map_lat, "lon" : map_long}; //Change a map coordinate here!
 
 	try {
 		var mapContainer = $('#map');
@@ -197,7 +199,7 @@ $(document).ready(function($) {
 			latLng: [contact.lat, contact.lon],
 			map:{
 				center: [contact.lat, contact.lon],
-				zoom: 12
+				zoom: 15
 				},
 			},
 			{action: 'setOptions', args:[{scrollwheel:false}]}
@@ -229,16 +231,15 @@ $(document).ready(function($) {
 		e.preventDefault();
 
 		var $this = $(this);
-		
 		$.ajax({
 			type: "POST",
-			url: 'contact.php',
+			url: ajaxurl,
 			dataType: 'json',
 			cache: false,
 			data: $('#contact-form').serialize(),
 			success: function(data) {
 
-				if(data.info !== 'error'){
+				if(data.status == 1){
 					$this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
 					message.hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
 				} else {

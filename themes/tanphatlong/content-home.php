@@ -114,7 +114,7 @@ $pages_highlight = get_list_pages_highlight_home();
                         $description = types_render_field( "short-description", array( "raw" => "true", "id" => $page->ID ));
                     ?>
                     <?php if($count % 3 == 0) :?>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                     <?php endif;
                         $count++;
                     ?>

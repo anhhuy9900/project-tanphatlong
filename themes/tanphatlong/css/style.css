@@ -1777,12 +1777,14 @@ ul.pagination-list li a.active {
   color: #e74c3c;
   background: rgba(246, 80, 80, 0.4);
   border: 1px solid #e74c3c;
+  height: 50px;
 }
 #contact-form .message.success,
 .comment-form .message.success {
   color: #29b504;
   background: rgba(63, 220, 21, 0.4);
   border: 1px solid #29b504;
+  height: 50px;
 }
 /*-------------------------------------------------*/
 /* =  Footer

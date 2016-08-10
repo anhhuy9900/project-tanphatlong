@@ -8,7 +8,7 @@ get_header(); ?>
 
 <?php
 global $post;
-$list_pages_menu = func_get_list_pages_children($post->post_parent);
+$list_pages_menu = func_get_list_menu_pages($post->post_parent);
 ?>
 <!-- page-banner-section
             ================================================== -->
@@ -16,9 +16,7 @@ $list_pages_menu = func_get_list_pages_children($post->post_parent);
     <div class="container">
         <h1><?=$post->post_title;?></h1>
         <ul class="page-depth">
-            <li><a href="index.html">Construct</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="repairing.html">Repairing &amp; Maintanance</a></li>
+            <li><a href="#"><?=$post->post_title;?></a></li>
         </ul>
     </div>
 </section>

@@ -39,25 +39,6 @@
             <div class="top-line">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8">
-                            <ul class="info-list">
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    Call us:
-                                    <span>1234 - 5678 - 9012</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope-o"></i>
-                                    Email us:
-                                    <span>nunforest@gmail.com</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-clock-o"></i>
-                                    working time:
-                                    <span>08:00 - 17:00</span>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="col-md-4">
                             <?php pll_the_languages( array( 'dropdown' => 1 ) ); ?>
                         </div>
