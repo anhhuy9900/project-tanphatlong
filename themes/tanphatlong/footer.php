@@ -55,6 +55,10 @@
     <div class="last-line">
         <div class="container">
             <p class="copyright">
+            <?php 
+            echo 'cmtl'; 
+            print get_locale();
+            ?>
                 &copy; <?php print __('Copyright 2015. "Construct" by Nunforest. All rights reserved.','tanphatlong');?>
             </p>
         </div>

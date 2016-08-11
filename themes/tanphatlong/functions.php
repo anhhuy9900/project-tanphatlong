@@ -40,6 +40,8 @@ add_action('init', 'func_init');
 // Load language
 add_action( 'after_setup_theme', 'my_theme_setup' );
 function my_theme_setup(){
+    print get_locale();
+    print get_template_directory() . '/languages';
     load_theme_textdomain( 'tanphatlong', get_template_directory() . '/languages' );
 }
 
