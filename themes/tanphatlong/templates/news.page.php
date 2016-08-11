@@ -12,6 +12,9 @@ $data = get_list_records_news();
 $list_menu = get_list_menu_news();
 ?>
 
+<!--Include file breadcumb-->
+<?php include_once TEMPLATEPATH . '/includes/breadcumb.php';?>
+
 <section class="blog-section">
     <div class="container">
         <?php if(!empty($list_menu)) :?>

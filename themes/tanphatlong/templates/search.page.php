@@ -6,7 +6,7 @@ Template Name: Search Page
 get_header(); ?>
 
 <!-- portfolio-section  ================================================== -->
-<?php $data = func_search_results(); ?>
+<?php $data = func_search_results(); pr($data);?>
 
 <section class="portfolio-section">
     <div class="container">
@@ -36,7 +36,7 @@ get_header(); ?>
                     </div>
 
                 <?php if($count % 3 == 0 || $count == count($data['results'])) :?>
-                    </div>
+                </div>
                 <?php endif;?>
 
                 <?php endforeach; ?>
