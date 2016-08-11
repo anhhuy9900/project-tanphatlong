@@ -28,6 +28,22 @@ function func_init() {
 add_action('init', 'func_init');
 
 
+// function func_translate_init($string){
+//     if (function_exists('pll_register_string')) { 
+//       pll_register_string('tpl-translation', $string);
+//       pll_e($string);
+//     }
+      
+// }
+// add_action('plugins_loaded', 'func_translate_init');
+
+// Load language
+add_action( 'after_setup_theme', 'my_theme_setup' );
+function my_theme_setup(){
+    load_theme_textdomain( 'tanphatlong', get_template_directory() . '/languages' );
+}
+
+
 function _func_seo_meta_tags() {
     global $post;
 

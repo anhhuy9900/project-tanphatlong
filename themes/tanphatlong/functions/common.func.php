@@ -156,14 +156,14 @@ if (!function_exists('__pagination')) {
         $querystring = '';
         if ($_GET) {
             foreach ($_GET as $k => $v) {
-                if ($k != 'page')
+                if ($k != 'paged')
                     $querystring = $querystring . "&{$k}={$v}";
             }
             $querystring = substr($querystring, 1);
             $get.='?' . $querystring;
         }
         $sep = (!empty($querystring)) ? '&' : '';
-        $linkUrl = $linkUrl . '?' . $querystring . $sep . 'page=';
+        $linkUrl = $linkUrl . '?' . $querystring . $sep . 'paged=';
 
         if ($currentPage > $limit + 2) {
             /** first */

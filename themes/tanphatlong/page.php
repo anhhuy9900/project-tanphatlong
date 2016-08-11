@@ -49,7 +49,7 @@ $list_pages_menu = func_get_list_menu_pages($post->post_parent);
                                 <h2><?php the_title();?></h2>
                                 <?php the_content(); ?>
                             <?php endwhile; else: ?>
-                                <p>Sorry, no posts matched your criteria.</p>
+                                <p><?=pll_e('Sorry, no posts matched your criteria.');?></p>
                             <?php endif; ?>
                         </div>
 

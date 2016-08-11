@@ -5,8 +5,8 @@ if (!function_exists('get_list_records_abilities')) {
     {
         global $wpdb;
         $per_page = 3;
-        $paged = max(1, intval(get_query_var('page')));
-        $offset = get_query_var('page') ? $per_page * max(0, intval(get_query_var('page')) - 1) : 0;
+        $paged = max(1, intval(get_query_var('paged')));
+        $offset = get_query_var('paged') ? $per_page * max(0, intval(get_query_var('paged')) - 1) : 0;
         $query_params = array(
             'post_type' => 'abilities',
             'post_status' => 'publish',

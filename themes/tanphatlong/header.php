@@ -84,7 +84,7 @@
                         ?>
 
                         <li class="search"><a href="#" class="open-search"><i class="fa fa-search"></i></a>
-                            <form action="<?php echo site_url('/').pll_current_language(); ?>" method="get" id="searchform" class="form-search">
+                            <form action="<?php echo home_url().'/'.(pll_current_language() == 'vi'?'tim-kiem':'search'); ?>" method="get" id="searchform" class="form-search">
                                 <input type="search" name="keyword" placeholder="Search:"/>
                                 <button type="submit">
                                     <i class="fa fa-search"></i>
