@@ -103,7 +103,7 @@ website:    http://www.themepunch.com
   -o-transition: all 0.2s ease-in-out;
   color: #333333;
   font-size: 19px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   margin: 0 0 30px;
   letter-spacing: 2px;
@@ -126,7 +126,7 @@ website:    http://www.themepunch.com
 .navbar-nav > li > a {
   color: #777777 !important;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
@@ -151,7 +151,7 @@ website:    http://www.themepunch.com
 }
 .top-line {
   padding: 15px 0;
-  background: #d51820;
+  background: #333333;
   border-bottom: 1px solid #f3f3f3;
   transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -168,7 +168,8 @@ website:    http://www.themepunch.com
   margin-right: 25px;
   color: #ffffff;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
 }
 .top-line ul.info-list li i {
   color: #a0ce4e;
@@ -235,7 +236,7 @@ ul.drop-down li a {
   display: block;
   color: #333333;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
@@ -266,7 +267,7 @@ ul.drop-down li a:hover {
 .form-search input[type="search"] {
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -313,7 +314,7 @@ ul.drop-down li a:hover {
 p {
   font-size: 12px;
   color: #000;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -331,7 +332,7 @@ p {
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0px;
   border-width: 0px;
   border-style: none;
@@ -349,7 +350,7 @@ p {
   font-size: 36px;
   line-height: 50px;
   font-weight: 900;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: none;
   text-decoration: none;
   text-transform: uppercase;
@@ -412,7 +413,7 @@ p {
 .banner-section h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   color: #ffffff;
@@ -433,7 +434,7 @@ p {
   background: transparent;
   font-size: 13px;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   text-transform: uppercase;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -452,7 +453,7 @@ p {
 .title-section h1 {
   color: #333333;
   font-size: 19px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   margin: 0 0 30px;
   letter-spacing: 2px;
@@ -499,7 +500,7 @@ section.services-section .services-box .services-post .services-content {
 section.services-section .services-box .services-post .services-content h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
 }
@@ -512,7 +513,7 @@ section.services-section .services-box .services-post .services-content a {
   -o-transition: all 0.2s ease-in-out;
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -526,8 +527,15 @@ section.services-section .services-box .services-post .services-content a:hover 
   color: #a0ce4e;
 }
 .portfolio-section {
-  padding: 60px 0;
+  padding: 30px 0;
   background: #fafafa;
+}
+.portfolio-section h3{
+  text-align: left;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  border-bottom: solid 3px #d51820;
 }
 .portfolio-section .portfolio-box.owl-wrapper {
   margin-left: -15px;
@@ -566,7 +574,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 .portfolio-section ul.filter li a i {
   margin-right: 15px;
@@ -605,7 +613,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .portfolio-section .project-post .project-gallery .hover-box .inner-hover h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   color: #ffffff;
@@ -647,7 +655,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   display: inline-block;
   color: #ffffff;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
 }
 .portfolio-section .project-post:hover .project-gallery .hover-box {
@@ -765,7 +773,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .tabs-section .about-us-box .about-us-post h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0 0 15px;
   color: #ffffff;
   margin-left: 80px;
@@ -792,7 +800,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .tabs-section .about-box h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0 0 15px;
   font-weight: 400;
   text-transform: uppercase;
@@ -814,9 +822,18 @@ section.services-section .services-box .services-post .services-content a:hover 
   color: #ffffff;
 }
 .news-section {
-  padding: 60px 0 30px;
+  padding: 30px 0 30px;
   background: #fff;
 }
+
+.news-section h3{
+  text-align: left;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  border-bottom: solid 3px #d51820;
+}
+
 .news-section .news-box.owl-wrapper {
   margin-left: -15px;
   margin-right: -15px;
@@ -861,7 +878,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .news-section .news-post .news-content h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
 }
@@ -886,7 +903,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   -o-transition: all 0.2s ease-in-out;
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -927,7 +944,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .quote-section .quote-box h1 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   position: relative;
@@ -961,7 +978,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   -o-transition: all 0.2s ease-in-out;
   color: #777777;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400 !important;
 }
 .quote-section .quote-box form#contact-form input[type="text"]:focus,
@@ -978,7 +995,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   background: #d51820;
   color: #ffffff;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   transition: all 0.2s ease-in-out;
@@ -994,7 +1011,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   height: 30px;
   padding: 10px 20px;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 .quote-section .quote-box form#contact-form .message.error {
   color: #e74c3c;
@@ -1042,7 +1059,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .testimonial-section .testimonial-box h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   font-size: 20px;
@@ -1053,7 +1070,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .testimonial-section .testimonial-box span {
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -1102,7 +1119,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .page-banner-section h1 {
   color: #333333;
   font-size: 19px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   margin: 0 0 30px;
   text-transform: uppercase;
@@ -1132,7 +1149,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   -o-transition: all 0.2s ease-in-out;
   font-size: 15px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   color: #ffffff;
@@ -1145,7 +1162,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   content: '/';
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -1172,7 +1189,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .about-section h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
 }
@@ -1237,7 +1254,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .team-section .team-box .team-post .team-content h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   margin-bottom: 5px;
@@ -1269,7 +1286,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 }
 .single-page-section .project-content h2 {
   color: #333333;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   text-transform: uppercase;
@@ -1288,7 +1305,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   display: block;
   color: #777777;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   margin-bottom: 2px;
   padding: 15px 25px;
@@ -1380,7 +1397,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .blog-section h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   text-transform: uppercase;
@@ -1400,7 +1417,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 .blog-section .blog-box .blog-post h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   margin-bottom: 0px;
@@ -1422,7 +1439,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   color: #777777;
   font-size: 12px;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   text-transform: uppercase;
   margin: 0 0 25px;
 }
@@ -1435,7 +1452,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   -o-transition: all 0.2s ease-in-out;
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -1467,7 +1484,7 @@ ul.pagination-list li a {
   color: #777777;
   font-size: 14px;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   text-transform: uppercase;
 }
 ul.pagination-list li a:hover,
@@ -1477,7 +1494,7 @@ ul.pagination-list li a.active {
 .blog-section .blog-box .single-post h1 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   text-transform: uppercase;
@@ -1501,7 +1518,7 @@ ul.pagination-list li a.active {
 .blog-section .blog-box .single-post blockquote p span {
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -1529,7 +1546,7 @@ ul.pagination-list li a.active {
   display: inline-block;
   color: #777777;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   margin-bottom: 15px;
 }
 .blog-section .blog-box .comment-section {
@@ -1562,7 +1579,7 @@ ul.pagination-list li a.active {
 .blog-section .blog-box .comment-section ul li .comment-box .comment-content h4 {
   color: #333333;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
@@ -1585,7 +1602,7 @@ ul.pagination-list li a.active {
 .blog-section .blog-box .comment-section ul li .comment-box .comment-content span {
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   line-height: 22px;
   margin: 0 0 10px;
   font-size: 11px;
@@ -1604,7 +1621,7 @@ ul.pagination-list li a.active {
 .sidebar h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   text-transform: uppercase;
@@ -1636,7 +1653,7 @@ ul.pagination-list li a.active {
   color: #333333;
   font-size: 14px;
   font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   padding-bottom: 10px;
 }
 .sidebar ul.category-list li a:hover,
@@ -1668,7 +1685,7 @@ ul.pagination-list li a.active {
   color: #ffffff;
   background: #333333;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -o-border-radius: 3px;
@@ -1705,7 +1722,7 @@ ul.pagination-list li a.active {
   border-radius: 0px;
   color: #333333;
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   margin: 0;
 }
@@ -1729,7 +1746,7 @@ ul.pagination-list li a.active {
 .contact-section h2 {
   color: #333333;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   margin: 0 0 15px;
   font-size: 16px;
@@ -1761,7 +1778,7 @@ ul.pagination-list li a.active {
   display: block;
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -1772,7 +1789,7 @@ ul.pagination-list li a.active {
 .contact-section ul.information-list li a {
   font-size: 12px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   line-height: 22px;
   margin: 0 0 10px;
@@ -1799,7 +1816,7 @@ ul.pagination-list li a.active {
   -o-transition: all 0.2s ease-in-out;
   color: #777777;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 #contact-form input[type="text"]:focus,
 .comment-form input[type="text"]:focus,
@@ -1819,7 +1836,7 @@ ul.pagination-list li a.active {
   background: #d51820;
   color: #ffffff;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   transition: all 0.2s ease-in-out;
@@ -1837,7 +1854,7 @@ ul.pagination-list li a.active {
   height: 30px;
   padding: 10px 20px;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 #contact-form .message.error,
 .comment-form .message.error {
@@ -1884,7 +1901,7 @@ footer .footer-widgets .widgets ul.tag-list li a {
   -o-transition: all 0.2s ease-in-out;
   color: #fff;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
   padding: 6px 12px;
   -webkit-border-radius: 3px;
@@ -1923,7 +1940,7 @@ footer .footer-widgets .widgets.info-widget p {
   margin-bottom: 0px;
 }
 footer .footer-widgets .widgets.info-widget p span {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #d41820;
   margin-right: 5px;
 }
@@ -1932,7 +1949,7 @@ footer .footer-widgets .widgets.info-widget p.first-par {
 }
 footer h2 {
   color: #333333;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0 0 15px;
   text-transform: uppercase;
   color: #ffffff;
@@ -2056,7 +2073,7 @@ footer p {
 }
 @media (max-width: 460px) {
   .top-line {
-    display: none;
+    /*display: none;*/
   }
   #container {
     padding-top: 63px;
@@ -2078,4 +2095,14 @@ footer p {
   .blog-section .blog-box .autor-post .autor-content {
     margin-left: 0;
   }
+}
+
+
+.widget_polylang li {
+  float: left;
+  margin-right: 1em;
+  list-style: none;
+}
+.widget_polylang li img {
+  margin: 8px 0px 8px 0;
 }

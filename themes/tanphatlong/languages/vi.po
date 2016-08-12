@@ -5,21 +5,26 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: vi\n"
 
 #. Text in function
-#: tanphatlong/footer.php:58
-msgid "Coppyright © 2016 tanphatlong. All rights reserved."
-msgstr "Bản quyền © 2016 tanphatlong. Tất cả quyền được bảo lưu."
+#: tanphatlong/header.php:46
+msgid "Call us"
+msgstr ""
 
 #. Text in function
-#: tanphatlong/templates/recruitment.page.php:42
+#: tanphatlong/footer.php:58
+msgid "Coppyright © 2016 tanphatlong. All rights reserved."
+msgstr "© Bản quyền © 2016 tanphatlong. Tất cả quyền được bảo lưu."
+
+#. Text in function
 #: tanphatlong/templates/abilities.page.php:44
+#: tanphatlong/templates/recruitment.page.php:42
 msgid "Download"
 msgstr "Tải về"
 
@@ -29,9 +34,19 @@ msgid "Email"
 msgstr "Email"
 
 #. Text in function
+#: tanphatlong/header.php:51
+msgid "Email us"
+msgstr "Email cùa chúng tôi"
+
+#. Text in function
 #: tanphatlong/footer.php:22
 msgid "Fax"
 msgstr "Fax"
+
+#. Text in function
+#: tanphatlong/content-home.php:119
+msgid "Highlight News"
+msgstr "Tin tức nổi bật"
 
 #. Text in function
 #: tanphatlong/includes/breadcumb.php:9
@@ -39,9 +54,19 @@ msgid "Home"
 msgstr "Trang chủ"
 
 #. Text in function
-#: tanphatlong/content-home.php:121 tanphatlong/templates/news.page.php:50
+#: tanphatlong/footer.php:35
+msgid "Images Company"
+msgstr "Hình ảnh công ty"
+
+#. Text in function
+#: tanphatlong/content-home.php:22
+msgid "Projects Working"
+msgstr "Dự án đang thực hiện"
+
+#. Text in function
+#: tanphatlong/content-home.php:137 tanphatlong/templates/news.page.php:50
 msgid "Read More"
-msgstr "Xem thâm"
+msgstr "Đọc thêm"
 
 #. Text in function
 #: tanphatlong/templates/search.page.php:49
@@ -64,7 +89,12 @@ msgid "Tel"
 msgstr "Số điện thoại"
 
 #. Text in function
-#: tanphatlong/templates/recruitment.page.php:46
 #: tanphatlong/templates/abilities.page.php:48
+#: tanphatlong/templates/recruitment.page.php:46
 msgid "View"
 msgstr "Xem"
+
+#. Text in function
+#: tanphatlong/header.php:56
+msgid "working time"
+msgstr "Giờ làm việc"

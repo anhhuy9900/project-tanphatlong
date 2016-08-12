@@ -34,13 +34,36 @@
     <!-- Header
         ================================================== -->
     <header class="clearfix">
-
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="top-line">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            <?php pll_the_languages( array( 'dropdown' => 1 ) ); ?>
+                        <div class="col-md-8">
+                            <?php $widget_top_info = _get_widget_data_for('Top Information', '');?>
+                            <ul class="info-list">
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <?php print __('Call us','tanphatlong');?>:
+                                    <span><?=(!empty($widget_top_info[0]) ? $widget_top_info[0]->text : '')?></span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    <?php print __('Email us','tanphatlong');?>:
+                                    <span><?=(!empty($widget_top_info[1]) ? $widget_top_info[1]->text : '')?></span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-clock-o"></i>
+                                    <?php print __('working time','tanphatlong');?>:
+                                    <span><?=(!empty($widget_top_info[2]) ? $widget_top_info[2]->text : '')?></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 widget_polylang">
+                            <?php pll_the_languages(
+                                array(
+                                    'show_flags' => 1
+                                )
+                            ); ?>
                         </div>
                     </div>
                 </div>
@@ -61,7 +84,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="active" href="<?=home_url();?>">Home</a></li>
+                        <li><a class="active" href="<?=home_url();?>"><?php print __('Home','tanphatlong');?></a></li>
                         <?php
                         $menu_language = pll_current_language() == 'vi' ? 'site-menu-vi' : 'site-menu-en';
                         $nav_menu_items = wp_get_nav_menu_items( $menu_language );
@@ -111,12 +134,12 @@
             <div class="tp-banner" >
                 <?php $list_banners = _func_get_posts_type(array('post_type' => 'manage-banners'));
                 if(!empty($list_banners)) :
-                    ?>
+                ?>
                     <ul>	<!-- SLIDE  -->
                         <?php foreach($list_banners as $banner) :
                             $attachments = _func_get_value_custom_field('wpcf-banner-image', $banner->ID);
                             $image = aq_resize( $attachments, 1920, 550 , true, true, true);
-                            ?>
+                        ?>
                             <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"  data-title="<?=$banner->post_title;?>">
                                 <!-- MAIN IMAGE -->
                                 <img src="<?=$image;?>" alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
@@ -134,7 +157,7 @@
                                      data-splitout="none"
                                      data-elementdelay="0.1"
                                      data-endelementdelay="0.1"
-                                     style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;"><?//=$banner->post_title;?>
+                                     style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">
                                 </div>
 
                             </li>

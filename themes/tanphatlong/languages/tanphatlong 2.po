@@ -4,13 +4,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Text in function
+#: tanphatlong/header.php:46
+msgid "Call us"
+msgstr ""
+
+#. Text in function
 #: tanphatlong/footer.php:58
 msgid "Coppyright © 2016 tanphatlong. All rights reserved."
 msgstr ""
 
 #. Text in function
-#: tanphatlong/templates/recruitment.page.php:42
 #: tanphatlong/templates/abilities.page.php:44
+#: tanphatlong/templates/recruitment.page.php:42
 msgid "Download"
 msgstr ""
 
@@ -20,8 +25,18 @@ msgid "Email"
 msgstr ""
 
 #. Text in function
+#: tanphatlong/header.php:51
+msgid "Email us"
+msgstr ""
+
+#. Text in function
 #: tanphatlong/footer.php:22
 msgid "Fax"
+msgstr ""
+
+#. Text in function
+#: tanphatlong/content-home.php:119
+msgid "Highlight News"
 msgstr ""
 
 #. Text in function
@@ -30,7 +45,17 @@ msgid "Home"
 msgstr ""
 
 #. Text in function
-#: tanphatlong/content-home.php:121
+#: tanphatlong/footer.php:35
+msgid "Images Company"
+msgstr ""
+
+#. Text in function
+#: tanphatlong/content-home.php:22
+msgid "Projects Working"
+msgstr ""
+
+#. Text in function
+#: tanphatlong/content-home.php:137
 #: tanphatlong/templates/news.page.php:50
 msgid "Read More"
 msgstr ""
@@ -56,7 +81,12 @@ msgid "Tel"
 msgstr ""
 
 #. Text in function
-#: tanphatlong/templates/recruitment.page.php:46
 #: tanphatlong/templates/abilities.page.php:48
+#: tanphatlong/templates/recruitment.page.php:46
 msgid "View"
+msgstr ""
+
+#. Text in function
+#: tanphatlong/header.php:56
+msgid "working time"
 msgstr ""

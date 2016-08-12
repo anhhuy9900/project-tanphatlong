@@ -19,8 +19,8 @@
                         <h2><?=$contact->post_title;?></h2>
                         <p class="first-par"><?=$address;?></p>
                         <p><span><?php print __('Tel','tanphatlong');?>: </span> <?=$phone;?></p>
-                        <p><span><?php print __('Fax','tanphatlong');?>: </span> <?=$fax;?><</p>
-                        <p><span><?php print __('Email','tanphatlong');?>: </span> <?=$email;?></p>\
+                        <p><span><?php print __('Fax','tanphatlong');?>: </span> <?=$fax;?></p>
+                        <p><span><?php print __('Email','tanphatlong');?>: </span> <?=$email;?></p>
                     </div>
                 </div>
                 <?php endforeach;
@@ -32,7 +32,7 @@
                 ?>
                 <div class="col-md-3">
                     <div class="widgets">
-                        <h2>Flickr widget</h2>
+                        <h2><?php print __('Images Company','tanphatlong');?></h2>
                         <ul class="flickr-list">
                             <?php foreach($gallery_images as $image) :
                                 $image_url = aq_resize( $image->image_url, 80, 80 , true, true, true);

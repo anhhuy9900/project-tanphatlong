@@ -4,7 +4,7 @@ if (!function_exists('get_list_records_abilities')) {
     function get_list_records_abilities()
     {
         global $wpdb;
-        $per_page = 3;
+        $per_page = 12;
         $paged = max(1, intval(get_query_var('paged')));
         $offset = get_query_var('paged') ? $per_page * max(0, intval(get_query_var('paged')) - 1) : 0;
         $query_params = array(

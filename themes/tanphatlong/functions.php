@@ -202,6 +202,25 @@ function pnjexport_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
+    register_sidebar( array(
+        'name'          => __( 'Top Information', 'tanphatlong' ),
+        'id'            => 'top-information',
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'tanphatlong' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'About Content Left Home Page', 'tanphatlong' ),
+        'id'            => 'about-content-left-home-page',
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'tanphatlong' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 
 }
 add_action( 'widgets_init', 'pnjexport_widgets_init' );

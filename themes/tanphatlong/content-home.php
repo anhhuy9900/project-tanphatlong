@@ -19,6 +19,7 @@ $projects_highlight = get_list_records_highlight_home(array('post_type'=>'manage
 ?>
 <section class="portfolio-section">
     <div class="container">
+        <h3><?php print __('Projects Working','tanphatlong');?></h3>
         <div class="portfolio-box owl-wrapper">
             <div class="owl-carousel" data-num="4">
                 <?php foreach($projects_highlight as $project) :
@@ -47,6 +48,13 @@ $projects_highlight = get_list_records_highlight_home(array('post_type'=>'manage
 
 <?php
 $widget_about_home = _get_widget_data_for('About Home Page', pll_current_language());
+$widget_about_content_left = _get_widget_data_for('About Content Left Home Page', pll_current_language());
+$widget_img_about_content_left = _get_widget_data_for('About Content Left Home Page', '');
+$img_about_left_url = '';
+if(!empty($widget_img_about_content_left[0])){
+    $img_about_left_url = $widget_img_about_content_left[0]->imageurl;
+}
+
 $pages_highlight = get_list_pages_highlight_home();
         if(!empty($pages_highlight)) :
 ?>
@@ -56,7 +64,7 @@ $pages_highlight = get_list_pages_highlight_home();
     <div class="container">
         <div class="row">
 
-            <div class="col-md-12">
+            <div class="col-md-7">
                 <div class="about-us-box">
                     <h1><?=(!empty($widget_about_home)) ? $widget_about_home->title : '';?></h1>
                     <p><?=(!empty($widget_about_home)) ? $widget_about_home->text : '';?></p>
@@ -67,7 +75,7 @@ $pages_highlight = get_list_pages_highlight_home();
                         $description = types_render_field( "short-description", array( "raw" => "true", "id" => $page->ID ));
                     ?>
                     <?php if($count % 3 == 0) :?>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                     <?php endif;
                         $count++;
                     ?>
@@ -84,7 +92,15 @@ $pages_highlight = get_list_pages_highlight_home();
                     </div>
                 </div>
             </div>
+            <div class="col-md-5">
 
+                <div class="about-box">
+                    <img src="<?=$img_about_left_url;?>" alt="">
+                    <h2><?=$widget_about_content_left->title;?></h2>
+                    <p><?=$widget_about_content_left->text;?></p>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
@@ -100,7 +116,7 @@ $news_highlight = get_list_records_highlight_home(array('post_type'=>'post'));
 ?>
 <section class="news-section">
     <div class="container">
-
+        <h3><?php print __('Highlight News','tanphatlong');?></h3>
         <div class="news-box owl-wrapper">
             <div class="owl-carousel" data-num="4">
                 <?php foreach($news_highlight as $news) :
