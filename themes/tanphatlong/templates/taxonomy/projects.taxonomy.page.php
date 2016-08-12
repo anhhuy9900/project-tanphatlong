@@ -11,14 +11,7 @@ $get_category = get_term_by('slug', $term, 'manage-menu-projects');
 ?>
 <!-- page-banner-section
             ================================================== -->
-<section class="page-banner-section">
-    <div class="container">
-        <h1><?=$get_category->name;?></h1>
-        <ul class="page-depth">
-            <li><a href="#"><?=$get_category->name;?></a></li>
-        </ul>
-    </div>
-</section>
+<?=func_breadcrumb_category($get_category);?>
 <!-- End page-banner section -->
 
 <!-- services section-->

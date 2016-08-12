@@ -6,17 +6,9 @@ Template Name: Projects Page
 get_header(); ?>
 
 <?php global $post; ?>
-<!-- page-banner-section
-            ================================================== -->
-<section class="page-banner-section">
-    <div class="container">
-        <h1><?=$post->post_title;?></h1>
-        <ul class="page-depth">
-            <li><a href="#"><?=$post->post_title;?></a></li>
-        </ul>
-    </div>
-</section>
-<!-- End page-banner section -->
+
+<!--Include file breadcumb-->
+<?php include_once TEMPLATEPATH . '/includes/breadcumb.php';?>
 
 <!-- services section-->
 <?php

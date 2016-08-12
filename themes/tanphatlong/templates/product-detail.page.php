@@ -4,14 +4,6 @@ get_header(); ?>
 <?php
 global $post;
 ?>
-<!-- page-banner-section
-            ================================================== -->
-<section class="page-banner-section">
-    <div class="container">
-        <h1><?=$post->post_title;?></h1>
-    </div>
-</section>
-<!-- End page-banner section -->
 
 <!-- single-page section
     ================================================== -->
@@ -24,6 +16,7 @@ global $post;
             </div>
             <div class="col-md-5">
                 <div class="project-content">
+                    <h2><?=$post->post_title;?></h2>
                     <?=$post->post_content;?>
                     <div class="project-tags">
                         <ul>

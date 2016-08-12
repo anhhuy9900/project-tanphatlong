@@ -4,7 +4,13 @@
 <?php
 $data = get_list_records_news();
 $list_menu = get_list_menu_news();
+$cat = get_category( get_query_var( 'cat' ) );
 ?>
+
+<!-- page-banner-section
+            ================================================== -->
+<?=func_breadcrumb_category($cat);?>
+<!-- End page-banner section -->
 
 <section class="blog-section">
     <div class="container">
