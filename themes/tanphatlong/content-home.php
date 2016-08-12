@@ -118,7 +118,7 @@ $news_highlight = get_list_records_highlight_home(array('post_type'=>'post'));
                     <div class="news-content">
                         <h2><a href="<?php echo esc_url( get_permalink($news->ID) ); ?>" title="<?=$news->post_name;?>"><?=$news->post_title;?></a></h2>
                         <p><?=$description;?></p>
-                        <a href="<?php echo esc_url( get_permalink($news->ID) ); ?>" title="<?=$news->post_name;?>">Read More <i class="fa fa-angle-right"></i></a>
+                        <a href="<?php echo esc_url( get_permalink($news->ID) ); ?>" title="<?=$news->post_name;?>"><?php print __('Read More','tanphatlong');?><i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
                 <?php endforeach;?>

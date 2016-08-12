@@ -25,7 +25,7 @@ $widget_map_contact = _get_widget_data_for('Map Contact', '');
         <div class="col-md-8">
             <form id="contact-form" action="<?php print home_url().'/'.$post->post_name;?>" method="POST">
                 <input type="hidden" name="action" value="submit_contact">
-                <h2>Send us a message</h2>
+                <h2><?php print __('Send us a message','tanphatlong');?></h2>
                 <div class="row">
                     <div class="col-md-4">
                         <input name="name" id="name" type="text" placeholder="Name">
@@ -38,7 +38,7 @@ $widget_map_contact = _get_widget_data_for('Map Contact', '');
                     </div>
                 </div>
                 <textarea name="message" id="comment" placeholder="Message"></textarea>
-                <input type="submit" id="submit_contact" value="Send Message">
+                <input type="submit" id="submit_contact" value="<?php print __('Send Message','tanphatlong');?>">
                 <div id="msg" class="message"></div>
             </form>
         </div>

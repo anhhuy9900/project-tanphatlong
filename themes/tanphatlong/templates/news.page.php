@@ -38,18 +38,16 @@ $list_menu = get_list_menu_news();
                     foreach($data['results'] as $key => $value) :
                         $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
                         $image = aq_resize( $thumbnail_src[0], 600, 500 , true, true, true);
-                        ?>
+                        $description = types_render_field( "short-description", array( "raw" => "true", "id" => $value->ID ));
+                    ?>
 
                         <div class="blog-post">
                             <img src="<?=$image;?>" alt="">
                             <div class="post-content-text">
                                 <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
                                 <span><?=date('d M Y',strtotime($value->post_date))?></span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</p>
-                                <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>">Read More <i class="fa fa-angle-right"></i></a>
+                                <p><?=$description;?></p>
+                                <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?php print __('Read More','tanphatlong');?> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
 

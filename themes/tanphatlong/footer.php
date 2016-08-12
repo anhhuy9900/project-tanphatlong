@@ -18,9 +18,9 @@
                     <div class="widgets info-widget">
                         <h2><?=$contact->post_title;?></h2>
                         <p class="first-par"><?=$address;?></p>
-                        <p><span><?=pll_e('Tel');?>: </span> <?=$phone;?></p>
-                        <p><span><?=pll_e('Fax');?>: </span> <?=$fax;?><</p>
-                        <p><span><?=pll_e('Email');?>: </span> <?=$email;?></p>\
+                        <p><span><?php print __('Tel','tanphatlong');?>: </span> <?=$phone;?></p>
+                        <p><span><?php print __('Fax','tanphatlong');?>: </span> <?=$fax;?><</p>
+                        <p><span><?php print __('Email','tanphatlong');?>: </span> <?=$email;?></p>\
                     </div>
                 </div>
                 <?php endforeach;
@@ -55,11 +55,7 @@
     <div class="last-line">
         <div class="container">
             <p class="copyright">
-            <?php 
-            echo 'cmtl'; 
-            print get_locale();
-            ?>
-                &copy; <?php print __('Copyright 2015. "Construct" by Nunforest. All rights reserved.','tanphatlong');?>
+                &copy; <?php print __('Coppyright © 2016 tanphatlong. All rights reserved.','tanphatlong');?>
             </p>
         </div>
     </div>

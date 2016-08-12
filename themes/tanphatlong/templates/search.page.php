@@ -46,7 +46,7 @@ get_header(); ?>
             </div>
 
         <?php else :?>
-        <p><?=pll_register_string('aaaa', 'AAAA');?></p>
+        <p><?php print __('Result Not Found','tanphatlong');?></p>
     	<?php endif;?>
 
     </div>

@@ -39,11 +39,11 @@ get_header(); ?>
                                     <h2><a href="#"><?=$value->post_title;?></a></h2>
                                 <span class="btn-ability">
                                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-                                    <a href="<?=$file_download;?>" class="btn-click">Download</a>
+                                    <a href="<?=$file_download;?>" class="btn-click"><?php print __('Download','tanphatlong');?></a>
                                 </span>
                                 <span class="btn-ability">
                                     <i class="fa fa-download" aria-hidden="true"></i>
-                                    <a href="<?=$link_view;?>" target="_blank" class="btn-click">View</a>
+                                    <a href="<?=$link_view;?>" target="_blank" class="btn-click"><?php print __('View','tanphatlong');?></a>
                                 </span>
                                 </div>
                             </div>

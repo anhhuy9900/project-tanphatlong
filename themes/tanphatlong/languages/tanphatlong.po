@@ -1,70 +1,62 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"X-Generator: Poedit 1.7.5\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"Language: vi\n"
 
 #. Text in function
 #: tanphatlong/footer.php:58
 msgid "Coppyright © 2016 tanphatlong. All rights reserved."
-msgstr "Bản quyền © 2016 tanphatlong. Tất cả quyền được bảo lưu."
+msgstr ""
 
 #. Text in function
 #: tanphatlong/templates/recruitment.page.php:42
 #: tanphatlong/templates/abilities.page.php:44
 msgid "Download"
-msgstr "Tải về"
+msgstr ""
 
 #. Text in function
 #: tanphatlong/footer.php:23
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #. Text in function
 #: tanphatlong/footer.php:22
 msgid "Fax"
-msgstr "Fax"
+msgstr ""
 
 #. Text in function
 #: tanphatlong/includes/breadcumb.php:9
 msgid "Home"
-msgstr "Trang chủ"
+msgstr ""
 
 #. Text in function
-#: tanphatlong/content-home.php:121 tanphatlong/templates/news.page.php:50
+#: tanphatlong/content-home.php:121
+#: tanphatlong/templates/news.page.php:50
 msgid "Read More"
-msgstr "Xem thâm"
+msgstr ""
 
 #. Text in function
 #: tanphatlong/templates/search.page.php:49
 msgid "Result Not Found"
-msgstr "Kết quả không tìm thấy"
+msgstr ""
 
 #. Text in function
 #: tanphatlong/templates/contact.page.php:41
 msgid "Send Message"
-msgstr "Gửi tin nhắn"
+msgstr ""
 
 #. Text in function
 #: tanphatlong/templates/contact.page.php:28
 msgid "Send us a message"
-msgstr "Gửi tin nhắn cho chúng tôi"
+msgstr ""
 
 #. Text in function
 #: tanphatlong/footer.php:21
 msgid "Tel"
-msgstr "Số điện thoại"
+msgstr ""
 
 #. Text in function
 #: tanphatlong/templates/recruitment.page.php:46
 #: tanphatlong/templates/abilities.page.php:48
 msgid "View"
-msgstr "Xem"
+msgstr ""

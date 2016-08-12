@@ -1,8 +1,8 @@
 <?php
-define('__MESSAGE_EMPTY_FILDS__', "Please fill out  all fields");
+define('__MESSAGE_EMPTY_FILDS__', __('Please fill out  all fields','tanphatlong'));
 
 #Success message
-define('__SUCCESS_MESSAGE__', "Your message has been sent. Thank you!");
+define('__SUCCESS_MESSAGE__', __('Your message has been sent. Thank you!','tanphatlong'));
 
 function func_submit_contact(){
 
@@ -25,13 +25,13 @@ function func_ajax_submit_contact() {
         $message = $_POST['message'];
 
         if ($name == '') {
-            $msg = 'Please enter your name.';
+            $msg = __('Please enter your name.','tanphatlong');
         } else if ($mail == '' or check_email($mail) == false) {
-            $msg = 'Please enter valid e-mail.';
+            $msg = __('Please enter valid e-mail.','tanphatlong');
         } else if ($phone == '') {
-            $msg = 'Please enter your phone.';
+            $msg = __('Please enter your phone.','tanphatlong');
         } else if ($message == '') {
-            $msg = 'Please enter your message.';
+            $msg = __('Please enter your message.','tanphatlong');
         } else {
             $data = array(
                 'name'          => _security_string($name),
