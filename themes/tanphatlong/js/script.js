@@ -312,6 +312,26 @@ $(document).ready(function($) {
 		
 	})();
 
+	/* ---------------------------------------------------------------------- */
+	/*	Slider Gallery for detail page
+	/* ---------------------------------------------------------------------- */
+	$('.gallery-image-bxslider').bxSlider({
+      minSlides: 1,
+      maxSlides: 4,
+      slideWidth: 150,
+      slideMargin: 10,
+      pager : false,
+      infiniteLoop : false
+
+    });
+
+    $(".image-thumb-detail > a").on('click', function(event) {
+        var image_url = $(this).data('url');
+        $(".show-first-image").hide();
+        $(".show-first-image").attr('src', image_url);
+        $(".show-first-image").fadeIn(300);
+        
+    });
 });
 
 function Resize() {
