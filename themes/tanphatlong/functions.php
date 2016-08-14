@@ -134,14 +134,15 @@ remove_action('template_redirect', 'redirect_canonical');
 
 
 //add rule rewrite url
-add_action('init', 'custom_rewrite_rule', 10, 0);
+add_action('init', 'custom_rewrite_rule');
 function custom_rewrite_rule() {
+
 
     flush_rewrite_rules();
 }
 
 function add_my_var($public_query_vars) {
-    //$public_query_vars[] = 'category-product';
+   // $public_query_vars[] = 'keyword';
     return $public_query_vars;
 }
 add_filter('query_vars', 'add_my_var');

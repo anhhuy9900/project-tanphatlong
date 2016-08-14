@@ -5,8 +5,20 @@ Template Name: Search Page
 
 get_header(); ?>
 
+<!-- page-banner-section
+            ================================================== -->
+<section class="page-banner-section">
+    <div class="container">
+        <ul class="page-depth">
+            <li><a href="<?=home_url();?>"><?php print __('Home','tanphatlong');?></a></li>
+            <li><a href="#"><?=pll_current_language()=='vi' ? 'Tìm Kiếm Từ Khóa' : 'Search Keyword'?></a></li>
+        </ul>
+    </div>
+</section>
+<!-- End page-banner section -->
+
 <!-- portfolio-section  ================================================== -->
-<?php $data = func_search_results(); pr($data);?>
+<?php $data = func_search_results();?>
 
 <section class="portfolio-section">
     <div class="container">

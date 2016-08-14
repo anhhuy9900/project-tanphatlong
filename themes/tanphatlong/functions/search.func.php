@@ -7,9 +7,9 @@ if(!function_exists('func_search_results')){
         $pagination = '';
         if(!empty($_GET['keyword'])){
             $key = $wpdb->esc_like($_GET['keyword']);
-            $keyword = '%' . $key . '%';
+            //$keyword = '%' . $key . '%';
 
-            $lang = pll_current_language();
+            $lang = _security_string($_GET['lang']);
             $per_page = 12;
             $paged = max(1,intval(get_query_var('page')));
             $offset = get_query_var('page') ? $per_page * max(0, intval(get_query_var('page')) - 1) : 0;
@@ -17,6 +17,7 @@ if(!function_exists('func_search_results')){
             $query_params = array(
                 'lang'              => $lang,
                 's'                 => $key,
+                'post_type'         => array('post', 'manage-projects', 'product-services'),
                 'post_status'       => 'publish',
                 'orderby'           => "post_date",
                 'order'             => "DESC",
@@ -29,7 +30,7 @@ if(!function_exists('func_search_results')){
             $query_params = array(
                 'lang'              => $lang,
                 's'                 => $key,
-                'post_type'         => 'manage-projects',
+                'post_type'         => array('post', 'manage-projects', 'product-services'),
                 'post_status'       => 'publish'
             );
             $wp_query = new WP_Query( $query_params );

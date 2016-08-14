@@ -107,7 +107,8 @@
                         ?>
 
                         <li class="search"><a href="#" class="open-search"><i class="fa fa-search"></i></a>
-                            <form action="<?php echo home_url().'/'.(pll_current_language() == 'vi'?'tim-kiem':'search'); ?>" method="get" id="searchform" class="form-search">
+                            <form action="<?php echo home_url(); ?>" method="get" id="searchform" class="form-search" role="search">
+                                <input type="hidden" name="lang" value="<?=pll_current_language();?>">
                                 <input type="search" name="keyword" placeholder="Search:"/>
                                 <button type="submit">
                                     <i class="fa fa-search"></i>
