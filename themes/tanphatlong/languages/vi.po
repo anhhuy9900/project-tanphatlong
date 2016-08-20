@@ -15,7 +15,7 @@ msgstr ""
 #. Text in function
 #: tanphatlong/header.php:46
 msgid "Call us"
-msgstr ""
+msgstr "Điện thoại"
 
 #. Text in function
 #: tanphatlong/footer.php:58
@@ -36,7 +36,7 @@ msgstr "Email"
 #. Text in function
 #: tanphatlong/header.php:51
 msgid "Email us"
-msgstr "Email cùa chúng tôi"
+msgstr "Email"
 
 #. Text in function
 #: tanphatlong/footer.php:22
@@ -98,3 +98,18 @@ msgstr "Xem"
 #: tanphatlong/header.php:56
 msgid "working time"
 msgstr "Giờ làm việc"
+
+#. Text in function
+#: tanphatlong/footer.php:56
+msgid "You can contact or visit us during working time."
+msgstr "Bạn có thể liên lạc hoặc gặp chúng tôi trong giờ làm việc"
+
+#. Text in function
+#: tanphatlong/footer.php:55
+msgid "Working Hours"
+msgstr "Thời Gian Làm Việc"
+
+#. Text in function
+#: tanphatlong/includes/left_menu_news.php:8
+msgid "Categories"
+msgstr "Danh mục"

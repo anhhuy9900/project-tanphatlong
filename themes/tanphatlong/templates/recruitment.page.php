@@ -45,6 +45,10 @@ get_header(); ?>
                                     <i class="fa fa-download" aria-hidden="true"></i>
                                     <a href="<?=$link_view;?>" target="_blank" class="btn-click"><?php print __('View','tanphatlong');?></a>
                                 </span>
+                                <span class="btn-ability">
+                                    <i class="fa fa-download" aria-hidden="true"></i>
+                                    <a href="<?=home_url().'/'.(pll_current_language()=='vi'?'nop-ho-so':'submit-cv').'/?rec='.$value->ID;?>" target="_blank" class="btn-click"><?php print __('Apply CV','tanphatlong');?></a>
+                                </span>
                                 </div>
                             </div>
                         </div>

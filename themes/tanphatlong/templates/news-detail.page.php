@@ -3,27 +3,16 @@ get_header(); ?>
 
 <?php
 global $post;
-$list_menu = get_list_menu_news();
 
 $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) , "size");
 $image = aq_resize( $thumbnail_src[0], 900, 500 , true, true, true);
 ?>
 
+<!--Include file breadcumb-->
+<?php include_once TEMPLATEPATH . '/includes/breadcumb_detail_page.php';?>
+
 <section class="blog-section">
     <div class="container">
-        <?php if(!empty($list_menu)) :?>
-            <div class="col-md-4">
-                <div class="services-tabs">
-                    <ul>
-                        <?php foreach($list_menu as $menu) :?>
-                            <li>
-                                <a href="<?=get_term_link($menu->term_id);?>" ><?=$menu->name;?></a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </div>
-        <?php endif;?>
 
         <div class="col-md-8">
             <div class="blog-box">
@@ -37,6 +26,11 @@ $image = aq_resize( $thumbnail_src[0], 900, 500 , true, true, true);
 
             </div>
 
+        </div>
+
+        <div class="col-md-4">
+            <!--Include file menu-->
+            <?php include_once TEMPLATEPATH . '/includes/left_menu_news.php';?>
         </div>
 
     </div>

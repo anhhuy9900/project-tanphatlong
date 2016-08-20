@@ -15,7 +15,7 @@ msgstr ""
 #. Text in function
 #: tanphatlong/header.php:46
 msgid "Call us"
-msgstr ""
+msgstr "Call us"
 
 #. Text in function
 #: tanphatlong/footer.php:58
@@ -98,3 +98,18 @@ msgstr "View"
 #: tanphatlong/header.php:56
 msgid "working time"
 msgstr "working time"
+
+#. Text in function
+#: tanphatlong/footer.php:56
+msgid "You can contact or visit us during working time."
+msgstr "You can contact or visit us during working time."
+
+#. Text in function
+#: tanphatlong/footer.php:55
+msgid "Working Hours"
+msgstr "Working Hours"
+
+#. Text in function
+#: tanphatlong/includes/left_menu_news.php:8
+msgid "Categories"
+msgstr "Categories"

@@ -49,6 +49,17 @@
                 </div>
                 <?php endif;?>
 
+                <div class="col-md-3">
+                    <?php $widget_top_info = _get_widget_data_for('Top Information', '');?>
+                    <div class="widgets info-widget">
+                        <h2><?php print __('Working Hours','tanphatlong');?></h2>
+                        <p class="first-par"><?php print __('You can contact or visit us during working time.','tanphatlong');?></p>
+                        <p><span><?php print __('Call us','tanphatlong');?>: </span> <?=(!empty($widget_top_info[0]) ? $widget_top_info[0]->text : '')?></p>
+                        <p><span><?php print __('Email us','tanphatlong');?>: </span> <?=(!empty($widget_top_info[1]) ? $widget_top_info[1]->text : '')?></p>
+                        <p><span><?php print __('working time','tanphatlong');?>: </span> <?=(!empty($widget_top_info[2]) ? $widget_top_info[2]->text : '')?></p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

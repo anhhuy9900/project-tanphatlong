@@ -413,6 +413,7 @@ if (!function_exists('func_breadcrumb_category')) {
     {
         $html = '<section class="page-banner-section">';
             $html .= '<div class="container">';
+                $html .= '<h1>'. $category->name .'</h1>';
                 $html .= '<ul class="page-depth">';
                     $html .= '<li><a href="'.home_url().'">' .__('Home','tanphatlong'). '</a></li>';
                     $html .= '<li><a href="'.esc_url( get_category_link( $category->term_id ) ) .'">'.$category->name.'</a></li>';

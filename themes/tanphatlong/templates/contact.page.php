@@ -23,7 +23,7 @@ $widget_map_contact = _get_widget_data_for('Map Contact', '');
 <section class="contact-section">
     <div class="container">
         <div class="col-md-8">
-            <form id="contact-form" action="<?php print home_url().'/'.$post->post_name;?>" method="POST">
+            <form id="contact-form" action="<?php print home_url().'/'.$post->post_name;?>" method="POST" class="submit-form">
                 <input type="hidden" name="action" value="submit_contact">
                 <h2><?php print __('Send us a message','tanphatlong');?></h2>
                 <div class="row">

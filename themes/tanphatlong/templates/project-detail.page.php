@@ -5,6 +5,9 @@ get_header(); ?>
 global $post;
 ?>
 
+<!--Include file breadcumb-->
+<?php include_once TEMPLATEPATH . '/includes/breadcumb_detail_page.php';?>
+
 <!-- single-page section
     ================================================== -->
 <section class="single-page-section">

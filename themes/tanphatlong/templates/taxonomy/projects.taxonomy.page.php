@@ -17,38 +17,24 @@ $get_category = get_term_by('slug', $term, 'manage-menu-projects');
 <!-- services section-->
 <?php
 $data = get_list_records_projects($term);
-$list_menu = get_list_menu_projects();
 ?>
 
 <section class="portfolio-section">
     <div class="container">
-        <?php if(!empty($list_menu)) :?>
-        <div class="col-md-3">
-            <div class="services-tabs">
-                <ul>
-                    <?php foreach($list_menu as $menu) :?>
-                    <li<?=$menu->slug == $term ? ' class="active"' : ''?>>
-                        <a href="<?=get_term_link($menu->term_id);?>" ><?=$menu->name;?></a>
-                    </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        </div>
-        <?php endif;?>
 
         <?php if(!empty($data['results'])) : ?>
             <div class="portfolio-box col-md-9">
                 <?php $count = 0;
                 foreach($data['results'] as $key => $value) :
                     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
-                    $image = aq_resize( $thumbnail_src[0], 500, 300 , true, true, true);
+                    $image = aq_resize( $thumbnail_src[0], 398, 239 , true, true, true);
                 ?>
-                <?php if($count % 3 == 0) :?>
+                <?php if($count % 2 == 0) :?>
                 <div class="row">
                 <?php endif;
                     $count++;
                     ?>
-                    <div class="project-post col-md-4">
+                    <div class="project-post col-md-6">
                         <div class="project-gallery">
                             <img src="<?=$image;?>" alt="">
                             <div class="hover-box">
@@ -58,7 +44,7 @@ $list_menu = get_list_menu_projects();
                             </div>
                         </div>
                     </div>
-                <?php if($count % 3 == 0 || $count == count($data['results'])) :?>
+                <?php if($count % 2 == 0 || $count == count($data['results'])) :?>
                 </div>
                 <?php endif;?>
 
@@ -68,6 +54,12 @@ $list_menu = get_list_menu_projects();
 
             </div>
         <?php endif;?>
+
+        <div class="col-md-3">
+            <!--Include file menu-->
+            <?php include_once TEMPLATEPATH . '/includes/left_menu_project.php';?>
+        </div>
+
     </div>
 </section>
 

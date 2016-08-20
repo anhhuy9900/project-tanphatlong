@@ -87,6 +87,7 @@ require_once("functions/news.func.php");
 require_once("functions/products.func.php");
 require_once("functions/search.func.php");
 require_once("functions/contact.func.php");
+require_once("functions/submit_cv.func.php");
 
 
 
@@ -122,7 +123,7 @@ function project_scripts(){
     wp_enqueue_script( 'retina-1.1.0.min', get_template_directory_uri() . '/js/retina-1.1.0.min.js', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'jquery.themepunch.tools.min', get_template_directory_uri() . '/js/jquery.themepunch.tools.min.js', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'jquery.themepunch.revolution.min', get_template_directory_uri() . '/js/jquery.themepunch.revolution.min.js', array( 'jquery' ), '20131205', true);
-    wp_enqueue_script( 'maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'maps', 'https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAY_4YI9C-h66Yhyi3Gtrej6Nm4jxQY4e8', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'gmap3', get_template_directory_uri() . '/js/gmap3.min.js', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '20131205', true);
 
@@ -223,6 +224,16 @@ function pnjexport_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
+    register_sidebar( array(
+        'name'          => __( 'Social Webiste', 'tanphatlong' ),
+        'id'            => 'social-website',
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'tanphatlong' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
 }
 add_action( 'widgets_init', 'pnjexport_widgets_init' );
 
@@ -284,9 +295,12 @@ if (!function_exists('_get_widget_data_for')) {
             $widget_object = (object) $widget_data[$key];
 
             if($language){
-                if($widget_object->pll_lang == $language){
-                    $output[] = $widget_object;
+                if(!empty($widget_object->pll_lang)){
+                    if($widget_object->pll_lang == $language){
+                        $output[] = $widget_object;
+                    }
                 }
+
             } else{
                 $output[] = $widget_object;
             }

@@ -9,7 +9,6 @@ get_header(); ?>
 global $taxonomy,$term;
 $get_category = get_term_by('slug', $term, 'manage-menu-projects');
 $data = get_list_records_news();
-$list_menu = get_list_menu_news();
 ?>
 
 <!--Include file breadcumb-->
@@ -17,19 +16,6 @@ $list_menu = get_list_menu_news();
 
 <section class="blog-section">
     <div class="container">
-        <?php if(!empty($list_menu)) :?>
-            <div class="col-md-4">
-                <div class="services-tabs">
-                    <ul>
-                        <?php foreach($list_menu as $menu) :?>
-                            <li>
-                                <a href="<?=get_term_link($menu->term_id);?>" ><?=$menu->name;?></a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </div>
-        <?php endif;?>
 
         <div class="col-md-8">
             <?php if(!empty($data['results'])) : ?>
@@ -59,6 +45,12 @@ $list_menu = get_list_menu_news();
             <?php endif;?>
 
         </div>
+
+        <div class="col-md-4">
+            <!--Include file menu-->
+            <?php include_once TEMPLATEPATH . '/includes/left_menu_news.php';?>
+        </div>
+
 
     </div>
 </section>
