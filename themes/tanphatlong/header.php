@@ -69,13 +69,23 @@
                                 ); ?>
                             </ul>
                             <ul class="social-icons">
-                                <?php $widget_social_icons = _get_widget_data_for('Social Webiste', '');?>
-                                <li><a class="facebook" href="<?=(!empty($widget_social_icons[0]) ? $widget_social_icons[0]->text : '')?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="google" href="<?=(!empty($widget_social_icons[1]) ? $widget_social_icons[1]->text : '')?>" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                <?php $widget_social_icons = _get_widget_data_for('Social Webiste', '');
+                                        $arr_social_class = array(
+                                            'facebook'=> 'fa-facebook',
+                                            'google'=> 'fa-google-plus',
+                                            'twitter'=> 'fa-twitter',
+                                            'linkedin'=> 'fa-linkedin',
+                                            'pinterest'=> 'fa-pinterest',
+                                        );
+                                        if(!empty($widget_social_icons)) :
+                                            foreach($widget_social_icons as $social) :
+                                                $key_val = strtolower($social->title);
+                                ?>
+                                    <li><a class="<?=$key_val;?>" href="<?=$social->text;?>" target="_blank"><i class="fa <?=$arr_social_class[$key_val];?>"></i></a></li>
+                                <?php endforeach;
+                                    endif;
+                                ?>
                                 <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
                             </ul>
                         </div>
                     </div>

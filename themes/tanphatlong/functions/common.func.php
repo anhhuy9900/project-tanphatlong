@@ -48,10 +48,35 @@ if ( ! function_exists('_CutText')){
     }
 }
 
-function _security_string($value){
-    $data = htmlspecialchars(strip_tags($value));
+if ( ! function_exists('generateRandomString')) {
+    function generateRandomString($length = 10)
+    {
+        $characters = '0123456789@#$!abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+}
 
-    return $data;
+if ( ! function_exists('create_token_form')) {
+    function create_token_form()
+    {
+        $token = generateRandomString(20);
+        $_SESSION['access_token'] = $token;
+        return $token;
+    }
+}
+
+if ( ! function_exists('_security_string')) {
+    function _security_string($value)
+    {
+        $data = htmlspecialchars(strip_tags($value));
+
+        return $data;
+    }
 }
 
 

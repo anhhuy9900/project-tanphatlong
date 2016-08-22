@@ -24,6 +24,8 @@ $widget_map_contact = _get_widget_data_for('Map Contact', '');
     <div class="container">
         <div class="col-md-8">
             <form id="contact-form" action="<?php print home_url().'/'.$post->post_name;?>" method="POST" class="submit-form">
+                <?php wp_nonce_field('contact_form_action','contact_form_field'); ?>
+                <input type="hidden" name="access_token" value="<?=create_token_form();?>">
                 <input type="hidden" name="action" value="submit_contact">
                 <h2><?php print __('Send us a message','tanphatlong');?></h2>
                 <div class="row">

@@ -19,7 +19,10 @@ $result = _func_submit_cv();
     <div class="container">
         <div class="col-md-8">
             <form id="submit-cd-form" action="<?php print home_url().'/'.$post->post_name.'/?rec='.$rec;?>" method="POST" class="submit-form" enctype="multipart/form-data">
+                <?php wp_nonce_field('submit_cv_action','submit_cv_field'); ?>
+                <input type="hidden" name="rec_id" value="<?=$rec;?>">
                 <input type="hidden" name="action" value="submit_cv">
+                <input type="hidden" name="access_token" value="<?=create_token_form();?>">
                 <h2><?php print __('CÔNG TY CỔ PHẦN KỸ THUẬT TÂN PHÁT LONG','tanphatlong');?></h2>
                 <div class="row">
                     <h6>LƯU Ý</h6>
@@ -45,7 +48,7 @@ $result = _func_submit_cv();
                     </div>
                     <div class="col-md-8">
                         <label>File CV</label>
-                        <input name="file_cv" id="tfile_cv" type="file" placeholder="File CV">
+                        <input name="file_cv" id="file_cv" type="file" placeholder="File CV">
                     </div>
                 </div>
                 <div class="mr-t20 clearfix"></div>

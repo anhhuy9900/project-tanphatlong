@@ -242,6 +242,9 @@ $(document).ready(function($) {
 				if(data.status == 1){
 					$this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
 					message.hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
+					setTimeout(function(){
+						location.reload();
+					},2000);
 				} else {
 					message.hide().removeClass('success').removeClass('error').addClass('error').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
 				}
