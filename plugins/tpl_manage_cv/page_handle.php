@@ -4,33 +4,35 @@
  * List page handler
  *
  * This function renders our custom table
- * Notice how we display message about successfull deletion
+ * Notice how we display address about successfull deletion
  * Actualy this is very easy, and you can add as many features
  * as you want.
  *
  * Look into /wp-admin/includes/class-wp-*-list-table.php for examples
  */
-function page_handler()
+function manage_cv_page_handler()
 {
     global $wpdb;
 
-    $table = new Page_List_Table();
+    $table = new Manage_CV_Page_List_Table();
     $table->prepare_items();
 
-    $message = '';
+    $notice = '';
+    $message_handler = '';
+
     if ('delete' === $table->current_action()) {
-        $message = '<div class="updated below-h2" id="message"><p>' . sprintf(__('Items deleted: %d', 'tpl_contact'), count($_REQUEST['id'])) . '</p></div>';
+        $message_handler = '<div class="updated below-h2" id="address"><p>' . sprintf(__('Items deleted: %d', 'tpl_manage_cv'), count($_REQUEST['id'])) . '</p></div>';
     }
     ?>
 <div class="wrap">
 
     <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
-    <h2><?php _e('Manage Contacts', 'tpl_contact')?>
-        <!--<a class="add-new-h2" href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=tpl_contact_form');?>"><?php _e('Add new', 'tpl_contact')?></a>-->
+    <h2><?php _e('Manage Manage CV', 'tpl_manage_cv')?>
+        <!--<a class="add-new-h2" href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=tpl_manage_cv_form');?>"><?php _e('Add new', 'tpl_manage_cv')?></a>-->
     </h2>
-    <?php echo $message; ?>
+    <?php echo $message_handler; ?>
 
-    <form id="tpl_contacts-table" method="GET">
+    <form id="tpl_manage_cvs-table" method="GET">
         <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>"/>
         <?php $table->display() ?>
     </form>
@@ -49,20 +51,20 @@ function page_handler()
  * as many meta boxes as you want
  *
  * http://codex.wordpress.org/Data_Validation
- * http://codex.wordpress.org/Function_Reference/seletpl_contactd
+ * http://codex.wordpress.org/Function_Reference/seletpl_manage_cvd
  */
 
 /**
  * Form page handler checks is there some data posted and tries to save it
  * Also it renders basic wrapper in which we are callin meta box render
  */
-function form_page_handler()
+function manage_cv_form_page_hanlder()
 {
     global $wpdb;
-    $table_name = 'tpl_contact'; // do not forget about tables prefix
+    $table_name = 'tpl_manage_cv'; // do not forget about tables prefix
 
-    $message = '';
     $notice = '';
+    $message_handler = '';
 
     // this is default $item which will be used for new records
     $default = array(
@@ -70,7 +72,7 @@ function form_page_handler()
         'name' => '',
         'email' => '',
         'phone' => '',
-        'message' => '',
+        'address' => '',
         'status' => ''
     );
 
@@ -81,7 +83,7 @@ function form_page_handler()
 
         // validate data, and if all ok save item to database
         // if id is zero insert otherwise update
-        $item_valid = page_hanlder_validate($item);
+        $item_valid = manage_cv_page_hanlder_validate($item);
         if ($item_valid === true) {
 
             if ($item['id'] == 0) {
@@ -89,30 +91,28 @@ function form_page_handler()
                 $result = $wpdb->insert($table_name, $item);
                 $item['id'] = $wpdb->insert_id;
                 if ($result) {
-                    $message = __('Item was successfully saved', 'tpl_contact');
+                    $message_handler = __('Item was successfully saved', 'tpl_manage_cv');
                 } else {
-                    $notice = __('There was an error while saving item', 'tpl_contact');
+                    //$notice = __('There was an error while saving item', 'tpl_manage_cv');
                 }
             } else {
 
                 $data_update = array(
-//                    'name' => $item['name'],
-//                    'email' => $item['email'],
-//                    'phone' => $item['phone'],
-//                    'message' => $item['message'],
-//                    'status' => $item['status'],
-                    'updated_date' => time()
+                    'status' => $item['status'],
                 );
 
                 $result = $wpdb->update($table_name, $data_update, array('id' => $item['id']));
+                //pr($data_update,1);
                 if ($result) {
-                    $message = __('Item was successfully updated', 'tpl_contact');
+
                 } else {
-                    $notice = __('There was an error while updating item', 'tpl_contact');
+                    //$notice = __('There was an error while updating item', 'tpl_manage_cv');
                 }
+
+                $message_handler = __('Item was successfully updated', 'tpl_manage_cv');
             }
         } else {
-            // if $item_valid not true it contains error message(s)
+            // if $item_valid not true it contains error address(s)
             $notice = $item_valid;
         }
     }
@@ -124,27 +124,27 @@ function form_page_handler()
             $item = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE id = %d", $_REQUEST['id']), ARRAY_A);
             if (!$item) {
                 $item = $default;
-                $notice = __('Item not found', 'tpl_contact');
+                $notice = __('Item not found', 'tpl_manage_cv');
             }
         }
     }
 
     // here we adding our custom meta box
-    add_meta_box('tpl_contacts_form_meta_box', 'Contact data', 'form_meta_box_handler', 'tpl_contact', 'normal', 'default');
+    add_meta_box('tpl_manage_cvs_form_meta_box', 'Manage CV data', 'manage_cv_form_meta_box_handler', 'tpl_manage_cv', 'normal', 'default');
 
     ?>
 <div class="wrap">
     <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
-    <h2><?php _e('Contact', 'tpl_contact')?> 
-    <a class="add-new-h2" href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=tpl_contact');?>"><?php _e('back to list', 'tpl_contact')?></a>
-    <!--<a class="add-new-h2" href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=tpl_contact_form');?>"><?php _e('Add new', 'tpl_contact')?></a>-->
+    <h2><?php _e('Manage CV', 'tpl_manage_cv')?>
+    <a class="add-new-h2" href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=tpl_manage_cv');?>"><?php _e('back to list', 'tpl_manage_cv')?></a>
+    <!--<a class="add-new-h2" href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=tpl_manage_cv_form');?>"><?php _e('Add new', 'tpl_manage_cv')?></a>-->
     </h2>
 
     <?php if (!empty($notice)): ?>
     <div id="notice" class="error"><p><?php echo $notice ?></p></div>
     <?php endif;?>
-    <?php if (!empty($message)): ?>
-    <div id="message" class="updated"><p><?php echo $message ?></p></div>
+    <?php if (!empty($message_handler)): ?>
+    <div id="address" class="updated"><p><?php echo $message_handler; ?></p></div>
     <?php endif;?>
 
     <form id="form" method="POST" enctype="multipart/form-data">
@@ -156,8 +156,8 @@ function form_page_handler()
             <div id="post-body">
                 <div id="post-body-content">
                     <?php /* And here we call our custom meta box */ ?>
-                    <?php do_meta_boxes('tpl_contact', 'normal', $item); ?>
-                    <input type="submit" value="<?php _e('Save', 'tpl_contact')?>" id="submit" class="button-primary" name="submit">
+                    <?php do_meta_boxes('tpl_manage_cv', 'normal', $item); ?>
+                    <input type="submit" value="<?php _e('Save', 'tpl_manage_cv')?>" id="submit" class="button-primary" name="submit">
                 </div>
             </div>
         </div>
@@ -172,7 +172,7 @@ function form_page_handler()
  *
  * @param $item
  */
-function form_meta_box_handler($item)
+function manage_cv_form_meta_box_handler($item)
 {
     ?>
 
@@ -180,48 +180,58 @@ function form_meta_box_handler($item)
     <tbody>
     <tr class="form-field">
         <th valign="top" scope="row">
-            <label for="name"><?php _e('Contact Title', 'tpl_contact')?></label>
+            <label for="name"><?php _e('Name', 'tpl_manage_cv')?></label>
         </th>
         <td>
             <input id="name" name="name" type="text" style="width: 95%" value="<?php echo esc_attr($item['name'])?>"
-                   size="50" class="code" placeholder="<?php _e('Contact Title', 'tpl_contact')?>" disabled>
+                   size="50" class="code" placeholder="<?php _e('Name', 'tpl_manage_cv')?>" disabled>
         </td>
     </tr>
     <tr class="form-field">
         <th valign="top" scope="row">
-            <label for="email"><?php _e('Email', 'tpl_contact')?></label>
+            <label for="email"><?php _e('Email', 'tpl_manage_cv')?></label>
         </th>
         <td>
             <input id="email" name="email" type="text" style="width: 95%" value="<?php echo esc_attr($item['email'])?>"
-                   size="50" class="code" placeholder="<?php _e('Email', 'tpl_contact')?>" disabled>
+                   size="50" class="code" placeholder="<?php _e('Email', 'tpl_manage_cv')?>" disabled>
         </td>
     </tr>
     <tr class="form-field">
         <th valign="top" scope="row">
-            <label for="message"><?php _e('Phone', 'tpl_contact')?></label>
+            <label for="address"><?php _e('Phone', 'tpl_manage_cv')?></label>
         </th>
         <td>
             <input id="phone" name="phone" type="text" style="width: 95%" value="<?php echo esc_attr($item['phone'])?>"
-                   size="50" class="code" placeholder="<?php _e('Phone', 'tpl_contact')?>" disabled>
+                   size="50" class="code" placeholder="<?php _e('Phone', 'tpl_manage_cv')?>" disabled>
         </td>
     </tr>
 
     <tr class="form-field">
         <th valign="top" scope="row">
-            <label for="message"><?php _e('Message', 'tpl_contact')?></label>
+            <label for="address"><?php _e('Address', 'tpl_manage_cv')?></label>
         </th>
         <td>
-            <textarea id="message" name="message" placeholder="<?php _e('Message', 'tpl_contact')?>" rows="5" disabled><?php echo esc_attr($item['message'])?></textarea>
+            <textarea id="address" name="address" placeholder="<?php _e('address', 'tpl_manage_cv')?>" rows="5" disabled><?php echo esc_attr($item['address'])?></textarea>
         </td>
     </tr>
+
     <tr class="form-field">
         <th valign="top" scope="row">
-            <label for="status"><?php _e('Status', 'tpl_contact')?></label>
+            <label for="address"><?php _e('File CV', 'tpl_manage_cv')?></label>
+        </th>
+        <td>
+            <a href="<?php echo wp_get_attachment_url(intval($item['file_id']));?>">Xem File</a>
+        </td>
+    </tr>
+
+    <tr class="form-field">
+        <th valign="top" scope="row">
+            <label for="status"><?php _e('Status', 'tpl_manage_cv')?></label>
         </th>
         <td>
             <select id="status" name="status" required>
-                <option value="0" <?php print $item['status'] == 0 ? 'selected' : '';?>>UnPublish</option>
-            	<option value="1" <?php print $item['status'] == 1 ? 'selected' : '';?>>Publish</option>
+                <option value="0" <?php print $item['status'] == 0 ? 'selected' : '';?>>Chưa duyệt</option>
+            	<option value="1" <?php print $item['status'] == 1 ? 'selected' : '';?>>Đã duyệt</option>
             </select>
         </td>
     </tr>
@@ -232,29 +242,29 @@ function form_meta_box_handler($item)
 
 /**
  * Simple function that validates data and retrieve bool on success
- * and error message(s) on error
+ * and error address(s) on error
  *
  * @param $item
  * @return bool|string
  */
-function page_hanlder_validate($item)
+function manage_cv_page_hanlder_validate($item)
 {
-    /*$messages = array();
+    /*$addresss = array();
 
     if (empty($item['name'])){
-    	$messages[] = __('Contact title is required', 'tpl_contact');
+    	$addresss[] = __('Name is required', 'tpl_manage_cv');
     } 
 
     if (empty($item['email'])){
-    	$messages[] = __('Contact Description is required', 'tpl_contact');
+    	$addresss[] = __('Contact Description is required', 'tpl_manage_cv');
     }
 
     if (empty($item['phone'])){
-    	$messages[] = __('Contact Image is required', 'tpl_contact');
+    	$addresss[] = __('Contact Image is required', 'tpl_manage_cv');
     }
 
-    if (empty($messages)) return true;
-    return implode('<br />', $messages);*/
+    if (empty($addresss)) return true;
+    return implode('<br />', $addresss);*/
 
     return true;
 }
