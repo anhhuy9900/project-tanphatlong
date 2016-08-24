@@ -30,16 +30,16 @@ $widget_map_contact = _get_widget_data_for('Map Contact', '');
                 <h2><?php print __('Send us a message','tanphatlong');?></h2>
                 <div class="row">
                     <div class="col-md-4">
-                        <input name="name" id="name" type="text" placeholder="Name">
+                        <input name="name" id="name" type="text" placeholder="<?php print __('Name','tanphatlong');?>">
                     </div>
                     <div class="col-md-4">
                         <input name="mail" id="mail" type="text" placeholder="Email">
                     </div>
                     <div class="col-md-4">
-                        <input name="phone" id="tel-number" type="text" placeholder="Phone">
+                        <input name="phone" id="tel-number" type="text" placeholder="<?php print __('Phone','tanphatlong');?>">
                     </div>
                 </div>
-                <textarea name="message" id="comment" placeholder="Message"></textarea>
+                <textarea name="message" id="comment" placeholder="<?php print __('Message','tanphatlong');?>"></textarea>
                 <input type="submit" id="submit_contact" value="<?php print __('Send Message','tanphatlong');?>">
                 <div id="msg" class="message"></div>
             </form>

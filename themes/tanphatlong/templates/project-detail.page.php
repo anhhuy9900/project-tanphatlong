@@ -25,7 +25,7 @@ global $post;
                                 $image_url = aq_resize( $image, 150, 150 , true, true, true);
                                 $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
                         ?>
-                        <li class="image-thumb-detail"><a href="javascript:;" data-url="<?=$large_image_url;?>"><img src="<?=$image_url?>" /></a></li>
+                        <li class="image-thumb-detail"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#myModal"><img src="<?=$image_url?>" /></a></li>
                         <?php endforeach;?>
                     </ul>
                 <?php endif;?>        
@@ -35,8 +35,19 @@ global $post;
                     <h2><?=$post->post_title;?></h2>
                     <?=$post->post_content;?>
                     <div class="project-tags">
+                        <?php
+                        $project_location = types_render_field( "project-location", array( "raw" => "true", "id" => $post->ID ));
+                        $project_investor = types_render_field( "project-investor", array( "raw" => "true", "id" => $post->ID ));
+                        $project_scale = types_render_field( "project-scale", array( "raw" => "true", "id" => $post->ID ));
+                        $project_scope_of_work = types_render_field( "project-scope-of-work", array( "raw" => "true", "id" => $post->ID ));
+                        $project_completion_time = types_render_field( "project-completion-time", array( "raw" => "true", "id" => $post->ID ));
+                        ?>
                         <ul>
-                            <li><i class="fa fa-calendar"></i> <span>Date:</span> <?=date('Y.m.D',strtotime($post->post_date))?></li>
+                            <li><i class="fa fa-map-marker"></i> <span><?php print __('Location','tanphatlong');?>:</span> <?=$project_location;?></li>
+                            <li><i class="fa fa-user"></i> <span><?php print __('Investor','tanphatlong');?>:</span> <?=$project_investor;?></li>
+                            <li><i class="fa fa-usd"></i> <span><?php print __('Project Scale','tanphatlong');?>:</span> <?=$project_scale;?></li>
+                            <li><i class="fa fa-tag"></i> <span><?php print __('Scope of work','tanphatlong');?>:</span> <?=$project_scope_of_work;?></li>
+                            <li><i class="fa fa-calendar"></i> <span><?php print __('Completion time','tanphatlong');?>:</span> <?=$project_completion_time;?></li>
                         </ul>
                     </div>
                 </div>
@@ -45,6 +56,28 @@ global $post;
     </div>
 </section>
 <!-- End single-page section -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 <?php $projects_other = get_records_projects_other($post->ID);

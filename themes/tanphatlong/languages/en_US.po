@@ -113,3 +113,78 @@ msgstr "Working Hours"
 #: tanphatlong/includes/left_menu_news.php:8
 msgid "Categories"
 msgstr "Categories"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:46
+msgid "Location"
+msgstr "Location"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:47
+msgid "Investor"
+msgstr "Investor"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:48
+msgid "Project Scale"
+msgstr "Project Scale"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:49
+msgid "Scope of work"
+msgstr "Scope of work"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:50
+msgid "Completion time"
+msgstr "Completion time"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:38
+msgid "Name"
+msgstr "Name"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:41
+msgid "Address"
+msgstr "Address"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:47
+msgid "Phone"
+msgstr "Phone"
+
+#. Text in function
+#: tanphatlong/templates/contact.page.php:42
+msgid "Message"
+msgstr "Message"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:55
+msgid "Submit"
+msgstr "Submit"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:28
+msgid "NOTE"
+msgstr "NOTE"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:30
+msgid "Please fill in the information below"
+msgstr "Please fill in the information below"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:32
+msgid "All information will be kept confidential and only absolute is used as a basis for screening candidates company"
+msgstr "All information will be kept confidential and only absolute is used as a basis for screening candidates company"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:34
+msgid "Documents are stored within 3 weeks"
+msgstr "Documents are stored within 3 weeks"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:26
+msgid "TAN PHAT LONG ENGINEERING CORPORATION"
+msgstr "TAN PHAT LONG ENGINEERING CORPORATION"

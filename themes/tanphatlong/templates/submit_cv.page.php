@@ -23,28 +23,28 @@ $result = _func_submit_cv();
                 <input type="hidden" name="rec_id" value="<?=$rec;?>">
                 <input type="hidden" name="action" value="submit_cv">
                 <input type="hidden" name="access_token" value="<?=create_token_form();?>">
-                <h2><?php print __('CÔNG TY CỔ PHẦN KỸ THUẬT TÂN PHÁT LONG','tanphatlong');?></h2>
+                <h2><?php print __('TAN PHAT LONG ENGINEERING CORPORATION','tanphatlong');?></h2>
                 <div class="row">
-                    <h6>LƯU Ý</h6>
+                    <h6><?php print __('NOTE','tanphatlong');?></h6>
                     <p>
-                        - Vui lòng điền đầy đủ thông tin bên dưới</p>
+                        - <?php print __('Documents are stored within 3 weeks','tanphatlong');?></p>
                     <p>
-                        - Tất cả các thông tin trên sẽ được giữ bí mật tuyệt đối và chỉ được sử dụng làm cơ sở để công ty sàn lọc ứng viên</p>
+                        - <?php print __('All information will be kept confidential and only absolute is used as a basis for screening candidates company','tanphatlong');?></p>
                     <p>
-                        - Hồ sơ sẽ được lưu trong vòng 3 tuần</p>
+                        - <?php print __('Please fill in the information below','tanphatlong');?></p>
                 </div>
                 <div class="row">
                     <div class="col-md-8">
-                        <input name="your_name" id="your_name" type="text" placeholder="Name">
+                        <input name="your_name" id="your_name" type="text" placeholder="<?php print __('Name','tanphatlong');?>">
                     </div>
                     <div class="col-md-8">
-                        <input name="address" id="address" type="text" placeholder="Address">
+                        <input name="address" id="address" type="text" placeholder="<?php print __('Address','tanphatlong');?>">
                     </div>
                     <div class="col-md-8">
                         <input name="email" id="email" type="text" placeholder="Email">
                     </div>
                     <div class="col-md-8">
-                        <input name="phone" id="tel-number" type="text" placeholder="Phone">
+                        <input name="phone" id="tel-number" type="text" placeholder="<?php print __('Phone','tanphatlong');?>">
                     </div>
                     <div class="col-md-8">
                         <label>File CV</label>

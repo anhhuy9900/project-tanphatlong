@@ -113,3 +113,78 @@ msgstr "Thời Gian Làm Việc"
 #: tanphatlong/includes/left_menu_news.php:8
 msgid "Categories"
 msgstr "Danh mục"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:46
+msgid "Location"
+msgstr "Địa chỉ"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:47
+msgid "Investor"
+msgstr "Chủ đầu tư"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:48
+msgid "Project Scale"
+msgstr "Quy mô"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:49
+msgid "Scope of work"
+msgstr "Gói thầu"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:50
+msgid "Completion time"
+msgstr "Thời gian hoàn thành"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:38
+msgid "Name"
+msgstr "Tên"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:41
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:47
+msgid "Phone"
+msgstr "Số điện thoại"
+
+#. Text in function
+#: tanphatlong/templates/contact.page.php:42
+msgid "Message"
+msgstr "Tin nhắn"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:55
+msgid "Submit"
+msgstr "Gửi"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:28
+msgid "NOTE"
+msgstr "Lưu ý"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:30
+msgid "Please fill in the information below"
+msgstr "Vui lòng điền đầy đủ thông tin bên dưới"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:32
+msgid "All information will be kept confidential and only absolute is used as a basis for screening candidates company"
+msgstr "Tất cả các thông tin trên sẽ được giữ bí mật tuyệt đối và chỉ được sử dụng làm cơ sở để công ty sàn lọc ứng viên"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:34
+msgid "Documents are stored within 3 weeks"
+msgstr "Hồ sơ sẽ được lưu trong vòng 3 tuần"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:26
+msgid "TAN PHAT LONG ENGINEERING CORPORATION"
+msgstr "CÔNG TY CỔ PHẦN KỸ THUẬT TÂN PHÁT LONG"
