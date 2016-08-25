@@ -3,6 +3,8 @@ get_header(); ?>
 
 <?php
 global $post;
+global $current_taxonomy;
+$current_taxonomy = 'list-menu-product-services';
 ?>
 
 <!--Include file breadcumb-->

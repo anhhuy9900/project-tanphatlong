@@ -60,9 +60,10 @@ if (!function_exists('get_list_menu_projects')) {
     function get_list_menu_projects(){
         $list_menu_projects = get_terms( array(
             'taxonomy' => 'manage-menu-projects',
+            'orderby' => "project-order",
+            'order' => "DESC",
             'hide_empty' => false,
         ) );
-
         return $list_menu_projects;
     }
 }

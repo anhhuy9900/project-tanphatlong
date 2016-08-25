@@ -3,6 +3,8 @@ get_header(); ?>
 
 <?php
 global $post;
+global $current_taxonomy;
+$current_taxonomy = 'manage-menu-projects';
 ?>
 
 <!--Include file breadcumb-->
@@ -19,13 +21,13 @@ global $post;
                 if(!empty($project_galleries)) :
                     $show_first_image = aq_resize( $project_galleries[0], 600, 500 , true, true, true);
                 ?>
-                    <image src="<?=$show_first_image;?>" class="show-first-image" />
+                    <image src="<?=$show_first_image;?>" alt="" class="show-first-image" />
                     <ul class="gallery-image-bxslider">
                         <?php foreach($project_galleries as $image) :
                                 $image_url = aq_resize( $image, 150, 150 , true, true, true);
                                 $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
                         ?>
-                        <li class="image-thumb-detail"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#myModal"><img src="<?=$image_url?>" /></a></li>
+                        <li class="image-thumb-detail"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#popup_project_gallary"><img src="<?=$image_url?>" /></a></li>
                         <?php endforeach;?>
                     </ul>
                 <?php endif;?>        
@@ -56,28 +58,6 @@ global $post;
     </div>
 </section>
 <!-- End single-page section -->
-
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
 
 
 <?php $projects_other = get_records_projects_other($post->ID);

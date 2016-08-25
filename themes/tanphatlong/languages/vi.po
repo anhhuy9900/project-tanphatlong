@@ -60,8 +60,8 @@ msgstr "Hình ảnh công ty"
 
 #. Text in function
 #: tanphatlong/content-home.php:22
-msgid "Projects Working"
-msgstr "Dự án đang thực hiện"
+msgid "Projects Highlight"
+msgstr "Dự án tiêu biểu"
 
 #. Text in function
 #: tanphatlong/content-home.php:137 tanphatlong/templates/news.page.php:50

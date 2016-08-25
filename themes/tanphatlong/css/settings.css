@@ -1614,7 +1614,8 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 .tp-simpleresponsive >ul >li{
 	list-style:none;
 	position:absolute;
-	visibility:hidden
+	visibility:hidden;
+	cursor: pointer;
 }
 
 /*  CAPTION SLIDELINK   **/

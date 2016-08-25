@@ -3,6 +3,8 @@ get_header(); ?>
 
 <?php
 global $post;
+global $current_taxonomy;
+$current_taxonomy = 'category';
 
 $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) , "size");
 $image = aq_resize( $thumbnail_src[0], 900, 500 , true, true, true);

@@ -449,3 +449,19 @@ if (!function_exists('func_breadcrumb_category')) {
         return $html;
     }
 }
+
+
+if (!function_exists('func_recursive_breadcrumb_post_detail')) {
+    function func_recursive_breadcrumb_post_detail($term_id, $taxonomy_type)
+    {
+
+        $arr_category = array();
+        $category = get_term_by( 'id', $term_id, $taxonomy_type );
+        if(!empty($category)){
+            $arr_category[$category->term_id] = $category->name;
+            func_recursive_breadcrumb_post_detail($category->parent, $category->taxonomy);
+        }
+        ksort($arr_category);
+        return $arr_category;
+    }
+}

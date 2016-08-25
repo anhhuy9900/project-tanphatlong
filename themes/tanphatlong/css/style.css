@@ -1388,6 +1388,9 @@ section.services-section .services-box .services-post .services-content a:hover 
   font-family: 'FontAwesome';
   color: #ffffff;
 }
+#popup_project_gallary .modal-dialog{
+  width: 90%;
+}
 /*-------------------------------------------------*/
 /* =  blog page
 /*-------------------------------------------------*/

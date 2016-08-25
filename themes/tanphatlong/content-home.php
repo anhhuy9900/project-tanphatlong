@@ -15,26 +15,28 @@
                     <?php foreach($list_banners as $banner) :
                         $attachments = _func_get_value_custom_field('wpcf-banner-image', $banner->ID);
                         $image = aq_resize( $attachments, 1920, 550 , true, true, true);
+                        $link_banner = types_render_field( "link-banner", array( "raw" => "true", "id" => $banner->ID ));
                         ?>
-                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"  data-title="<?=$banner->post_title;?>">
-                            <!-- MAIN IMAGE -->
-                            <img src="<?=$image;?>" alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-                            <!-- LAYERS -->
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"  data-title="<?=$banner->post_title;?>" onclick="redirect_link('<?=$link_banner ? $link_banner : '#';?>');">
 
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption lft tp-resizeme rs-parallaxlevel-0"
-                                 data-x="200"
-                                 data-y="190"
-                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                 data-speed="1000"
-                                 data-start="1000"
-                                 data-easing="Power3.easeInOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.1"
-                                 data-endelementdelay="0.1"
-                                 style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">
-                            </div>
+                                <!-- MAIN IMAGE -->
+                                <img src="<?=$image;?>" alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                <!-- LAYERS -->
+
+                                <!-- LAYER NR. 1 -->
+                                <div class="tp-caption lft tp-resizeme rs-parallaxlevel-0"
+                                     data-x="200"
+                                     data-y="190"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-speed="1000"
+                                     data-start="1000"
+                                     data-easing="Power3.easeInOut"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">
+                                </div>
 
                         </li>
                     <?php endforeach;?>
@@ -65,7 +67,7 @@ $projects_highlight = get_list_records_highlight_home(array('post_type'=>'manage
 ?>
 <section class="portfolio-section">
     <div class="container">
-        <h3><?php print __('Projects Working','tanphatlong');?></h3>
+        <h3><?php print __('Projects Highlight','tanphatlong');?></h3>
         <div class="portfolio-box owl-wrapper">
             <div class="owl-carousel" data-num="4">
                 <?php foreach($projects_highlight as $project) :
