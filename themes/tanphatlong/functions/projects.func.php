@@ -64,6 +64,11 @@ if (!function_exists('get_list_menu_projects')) {
             'order' => "DESC",
             'hide_empty' => false,
         ) );
+        foreach($list_menu_projects as $cat){
+            $field_order = get_term_meta( $cat->term_id, 'wpcf-field-order' , true);
+            $cat->order = $field_order;
+        }
+        usort($list_menu_projects, "cmp");
         return $list_menu_projects;
     }
 }

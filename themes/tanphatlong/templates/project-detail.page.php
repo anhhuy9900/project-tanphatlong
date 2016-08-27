@@ -21,13 +21,20 @@ $current_taxonomy = 'manage-menu-projects';
                 if(!empty($project_galleries)) :
                     $show_first_image = aq_resize( $project_galleries[0], 600, 500 , true, true, true);
                 ?>
-                    <image src="<?=$show_first_image;?>" alt="" class="show-first-image" />
-                    <ul class="gallery-image-bxslider">
+                    <div class="show-first-image">
                         <?php foreach($project_galleries as $image) :
+                            $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
+                            ?>
+                            <a href="javascript:;" /><image src="<?=$large_image_url;?>" alt=""/></a>
+                        <?php endforeach;?>
+
+                    </div>
+                    <ul class="gallery-image-bxslider">
+                        <?php foreach($project_galleries as $index => $image) :
                                 $image_url = aq_resize( $image, 150, 150 , true, true, true);
                                 $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
                         ?>
-                        <li class="image-thumb-detail"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#popup_project_gallary"><img src="<?=$image_url?>" /></a></li>
+                        <li class="image-thumb-detail" data-index="<?=$index;?>"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#popup_project_gallary"><img src="<?=$image_url?>" /></a></li>
                         <?php endforeach;?>
                     </ul>
                 <?php endif;?>        

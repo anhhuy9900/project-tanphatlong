@@ -465,3 +465,10 @@ if (!function_exists('func_recursive_breadcrumb_post_detail')) {
         return $arr_category;
     }
 }
+
+if (!function_exists('cmp')) {
+    function cmp($a, $b)
+    {
+        return strcmp($a->order, $b->order);
+    }
+}

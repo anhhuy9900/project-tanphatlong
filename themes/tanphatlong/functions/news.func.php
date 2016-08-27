@@ -60,6 +60,13 @@ if (!function_exists('get_list_menu_news')) {
             'orderby' => 'post_date',
             'parent'  => 0
         ) );
+
+        foreach($list_menu_news as $cat){
+            $field_order = get_term_meta( $cat->term_id, 'wpcf-field-order' , true);
+            $cat->order = $field_order;
+        }
+        usort($list_menu_news, "cmp");
+
         return $list_menu_news;
     }
 }

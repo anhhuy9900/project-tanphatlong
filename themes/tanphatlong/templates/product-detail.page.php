@@ -16,22 +16,28 @@ $current_taxonomy = 'list-menu-product-services';
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <?php 
+                <?php
                 $product_galleries = get_post_meta( $post->ID, "wpcf-product-galleries");
                 if(!empty($product_galleries)) :
                     $show_first_image = aq_resize( $product_galleries[0], 600, 500 , true, true, true);
-                ?>
-                    <image src="<?=$show_first_image;?>" class="show-first-image" />
-                    <ul class="gallery-image-bxslider">
+                    ?>
+                    <div class="show-first-image">
                         <?php foreach($product_galleries as $image) :
-                                $image_url = aq_resize( $image, 150, 150 , true, true, true);
-                                $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
-                        ?>
-                        <li class="image-thumb-detail"><a href="javascript:;" data-url="<?=$large_image_url;?>"><img src="<?=$image_url?>" /></a></li>
+                            $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
+                            ?>
+                            <a href="javascript:;" /><image src="<?=$large_image_url;?>" alt=""/></a>
+                        <?php endforeach;?>
+
+                    </div>
+                    <ul class="gallery-image-bxslider">
+                        <?php foreach($product_galleries as $index => $image) :
+                            $image_url = aq_resize( $image, 150, 150 , true, true, true);
+                            $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
+                            ?>
+                            <li class="image-thumb-detail" data-index="<?=$index;?>"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#popup_project_gallary"><img src="<?=$image_url?>" /></a></li>
                         <?php endforeach;?>
                     </ul>
-                <?php endif;?> 
-
+                <?php endif;?>
             </div>
             <div class="col-md-5">
                 <div class="project-content">

@@ -199,6 +199,16 @@ website:    http://www.themepunch.com
 .top-line ul.social-icons li a:hover {
   color: #a0ce4e;
 }
+@media (max-width: 768px) {
+  .top-line ul.social-icons{
+    margin-left: 13%;
+  }
+}
+@media (max-width: 460px) {
+  .top-line ul.social-icons{
+    margin-left: 0;
+  }
+}
 header.active .top-line {
   height: 0;
   padding: 0;
@@ -305,6 +315,16 @@ ul.drop-down li a:hover {
   -ms-transform: rotateX(0deg);
   -o-transform: rotateX(0deg);
   transform: rotateX(0deg);
+}
+@media (max-width: 768px) {
+  header .navbar-fixed-top{
+    position: relative!important;
+  }
+}
+@media (max-width: 460px) {
+  header .navbar-fixed-top{
+    position: relative!important;
+  }
 }
 /*-------------------------------------------------*/
 /* =  General
@@ -490,6 +510,7 @@ section.services-section {
 }
 section.services-section .services-box .services-post {
   margin-bottom: 40px;
+  padding: 0 20px;
 }
 section.services-section .services-box .services-post img {
   width: 100%;
@@ -725,6 +746,9 @@ section.services-section .services-box .services-post .services-content a:hover 
   padding: 60px 0 60px;
   background: #222222;
   position: relative;
+}
+.tabs-section .about-us-box{
+  margin-bottom: 5px;
 }
 .tabs-section .about-us-box h1 {
   font-size: 18px;
@@ -1121,7 +1145,7 @@ section.services-section .services-box .services-post .services-content a:hover 
   font-size: 19px;
   font-family: 'Arial', sans-serif;
   font-weight: 700;
-  margin: 0 0 30px;
+  margin:0 0 30px;
   text-transform: uppercase;
   float: left;
   color: #ffffff;
@@ -1134,7 +1158,6 @@ section.services-section .services-box .services-post .services-content a:hover 
   margin: 0;
   padding: 0;
   text-align: right;
-  margin-top: 10px;
 }
 .page-banner-section ul.page-depth li {
   display: inline-block;
@@ -1322,9 +1345,26 @@ section.services-section .services-box .services-post .services-content a:hover 
 .single-page-section .project-content .project-tags ul li:last-child {
   margin-bottom: 0;
 }
+.single-page-section .tpl-gallery-detail{
+  margin-bottom: 10px;
+}
 .single-page-section .tpl-gallery-detail .show-first-image{
   width: 100%;
   height: 500px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.single-page-section .tpl-gallery-detail .show-first-image > a{
+  display: none;
+
+}
+.single-page-section .tpl-gallery-detail .show-first-image > a:first-child{
+  display: block;
+
+}
+.single-page-section .tpl-gallery-detail .show-first-image > a > img{
+  width: 100%;
+  float: left;
 }
 .single-page-section .tpl-gallery-detail .gallery-image-bxslider{
   width: 100%;
@@ -1390,6 +1430,13 @@ section.services-section .services-box .services-post .services-content a:hover 
 }
 #popup_project_gallary .modal-dialog{
   width: 90%;
+}
+
+@media (max-width: 460px) {
+  .single-page-section .tpl-gallery-detail .show-first-image{
+    width: 100%;
+    height: auto!important;
+  }
 }
 /*-------------------------------------------------*/
 /* =  blog page
@@ -2077,8 +2124,9 @@ footer p {
     margin-bottom: 0px;
   }
   .page-banner-section ul.page-depth {
-    float: none;
+    float: right;
     text-align: center;
+    margin-top: 20px;
   }
   .portfolio-section .portfolio-box.iso-call .project-post {
     width: 100%;
@@ -2105,7 +2153,8 @@ footer p {
     float: left;
   }
   #container {
-    padding-top: 63px;
+    /*padding-top: 63px;*/
+    padding-top: 0!important;
   }
   .clients-section ul.clients-list li {
     width: 50%;
