@@ -1,5 +1,6 @@
 <?php
 global $post;
+pr($post->post_type);
 switch($post->post_type){
     case 'manage-projects':
         include_once TEMPLATEPATH . '/templates/project-detail.page.php';
@@ -9,6 +10,9 @@ switch($post->post_type){
         break;
     case 'product-services':
         include_once TEMPLATEPATH . '/templates/product-detail.page.php';
+        break;
+    case 'abilities':
+        include_once TEMPLATEPATH . '/templates/abilities-detail.page.php';
         break;
     default:
         print 'Single';

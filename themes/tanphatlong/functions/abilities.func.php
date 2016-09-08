@@ -35,3 +35,20 @@ if (!function_exists('get_list_records_abilities')) {
         return $data;
     }
 }
+
+if (!function_exists('get_list_menu_abilities')) {
+    function get_list_menu_abilities()
+    {
+        global $wpdb;
+        $query_params = array(
+            'post_type' => 'abilities',
+            'post_status' => 'publish',
+            'orderby' => "post_date",
+            'order' => "DESC",
+        );
+        $wp_query = new WP_Query($query_params);
+        $results = $wp_query->have_posts() ? $wp_query->get_posts() : '';
+
+        return $results;
+    }
+}

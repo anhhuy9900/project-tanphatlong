@@ -1,6 +1,7 @@
 <?php
 /**
-Template Name: Recruitment Page
+ * @package WordPress
+ * @subpackage tanphatlong
  */
 
 get_header(); ?>
@@ -12,15 +13,14 @@ global $post;
 <!--Include file breadcumb-->
 <?php include_once TEMPLATEPATH . '/includes/breadcumb.php';?>
 
-<!-- portfolio-section
-    ================================================== -->
-
+<!-- services section ================================================== -->
 <section class="services-section">
     <div class="container">
+
         <div class="row">
             <div class="col-md-3">
                 <!--Include file menu-->
-                <?php include_once TEMPLATEPATH . '/includes/left_menu_recruitment.php';?>
+                <?php include_once TEMPLATEPATH . '/includes/left_menu_abilities.php';?>
             </div>
             <div class="col-md-9">
                 <div class="row">
@@ -38,7 +38,6 @@ global $post;
         </div>
     </div>
 </section>
-<!-- End portfolio section -->
-
+<!-- End services section -->
 
 <?php get_footer(); ?>

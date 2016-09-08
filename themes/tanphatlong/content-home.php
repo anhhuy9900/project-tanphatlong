@@ -128,7 +128,7 @@ $pages_highlight = get_list_pages_highlight_home();
                         $count++;
                     ?>
                         <div class="about-us-post">
-                            <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>"><i class="fa fa-users"></i></a>
+                            <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>"><i class="fa <?=$page->post_name =='nhan-su-chu-chot' || $page->post_name =='key-personnel' ? 'fa-users' : 'fa-building-o';?>"></i></a>
                             <h2><?=$page->post_title;?></h2>
                             <span><?=$description;?></span>
                         </div>

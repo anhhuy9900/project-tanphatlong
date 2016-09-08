@@ -347,7 +347,28 @@ if (!function_exists('func_get_list_menu_pages')) {
             'post_parent' => $parent_ID,
             'post_type'   => 'page',
             'numberposts' => -1,
-            'post_status' => 'publish'
+            'post_status' => 'publish',
+            'orderby'     => 'menu_order',
+            'order'       => "ASC",
+        );
+
+        $list_pages = get_children( $args );
+        return $list_pages;
+    }
+}
+
+if (!function_exists('func_get_list_menu_recruitment')) {
+    function func_get_list_menu_recruitment() {
+
+        $parent_slug = 'tuyen-dung';
+        $parent_ID = func_get_id_by_slug($parent_slug);
+        $args = array(
+            'post_parent' => $parent_ID,
+            'post_type'   => 'page',
+            'numberposts' => -1,
+            'post_status' => 'publish',
+            'orderby'     => 'menu_order',
+            'order'       => "ASC",
         );
 
         $list_pages = get_children( $args );

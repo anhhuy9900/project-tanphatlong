@@ -14,7 +14,7 @@ $widget_map_contact = _get_widget_data_for('Map Contact', '');
 ?>
 
 <!-- map================================================== -->
-<div class="info_map" data-lat="<?=$widget_map_contact->latitude;?>" data-long="<?=$widget_map_contact->longtitude;?>"></div>
+<div class="info_map" data-lat="<?=$widget_map_contact->latitude;?>" data-long="<?=$widget_map_contact->longtitude;?>" data-img="<?php echo esc_url( get_template_directory_uri() ); ?>/images/marker.png"></div>
 <div id="map"></div>
 <!-- map -->
 

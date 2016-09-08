@@ -17,7 +17,12 @@ $result = _func_submit_cv();
     ================================================== -->
 <section class="contact-section">
     <div class="container">
-        <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-3">
+            <!--Include file menu-->
+            <?php include_once TEMPLATEPATH . '/includes/left_menu_recruitment.php';?>
+        </div>
+            <div class="col-md-8">
             <form id="submit-cd-form" action="<?php print home_url().'/'.$post->post_name.'/?rec='.$rec;?>" method="POST" class="submit-form" enctype="multipart/form-data">
                 <?php wp_nonce_field('submit_cv_action','submit_cv_field'); ?>
                 <input type="hidden" name="rec_id" value="<?=$rec;?>">
@@ -60,6 +65,7 @@ $result = _func_submit_cv();
                     ?>
                 </div>
             </form>
+        </div>
         </div>
     </div>
 </section>

@@ -124,7 +124,8 @@ function project_scripts(){
     wp_enqueue_script( 'jquery.themepunch.tools.min', get_template_directory_uri() . '/js/jquery.themepunch.tools.min.js', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'jquery.themepunch.revolution.min', get_template_directory_uri() . '/js/jquery.themepunch.revolution.min.js', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'maps', 'https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAY_4YI9C-h66Yhyi3Gtrej6Nm4jxQY4e8', array( 'jquery' ), '20131205', true);
-    wp_enqueue_script( 'gmap3', get_template_directory_uri() . '/js/gmap3.min.js', array( 'jquery' ), '20131205', true);
+   // wp_enqueue_script( 'gmap3', get_template_directory_uri() . '/js/gmap3.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'gmap3', 'https://cdn.jsdelivr.net/gmap3/7.1.0/gmap3.min.js', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '20131205', true);
 
 }

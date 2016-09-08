@@ -512,9 +512,32 @@ section.services-section .services-box .services-post {
   margin-bottom: 40px;
   padding: 0 20px;
 }
+section.services-section .services-box .services-post h2{
+  position: relative;
+}
+section.services-section .services-box .services-post h2:after{
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 25px;
+  height: 1px;
+  background: #d51820;
+}
 section.services-section .services-box .services-post img {
-  width: 100%;
   margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  section.services-section .services-box .services-post img {
+    width: 100% !important;
+  }
+
+}
+@media (max-width: 460px) {
+  section.services-section .services-box .services-post img {
+    width: 100% !important;
+  }
+
 }
 section.services-section .services-box .services-post .services-content {
   padding-right: 10px;

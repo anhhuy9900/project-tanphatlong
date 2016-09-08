@@ -8,7 +8,10 @@ get_header(); ?>
 
 <?php
 global $post;
-$list_pages_menu = func_get_list_menu_pages($post->post_parent);
+$list_pages_menu = func_get_list_menu_pages();
+
+$parent_slug = pll_current_language() == 'vi' ? 'gioi-thieu' : 'about-us';
+$page_about = get_page_by_path( $parent_slug );
 ?>
 
 <!--Include file breadcumb-->
@@ -24,6 +27,9 @@ $list_pages_menu = func_get_list_menu_pages($post->post_parent);
                     <?php if(!empty($list_pages_menu)) :?>
                     <div class="services-tabs">
                         <ul>
+                            <li<?=$post->post_name == 'gioi-thieu' || $post->post_name == 'about-us' ? ' class="active"' : '';?>>
+                                <a href="<?php echo esc_url( get_permalink($page_about->ID) ); ?>" title="<?=$page_about->post_title;?>"><?=$page_about->post_title;?></a>
+                            </li>
                             <?php foreach($list_pages_menu as $menu) :?>
                             <li<?=$menu->ID == $post->ID ? ' class="active"' : '';?>>
                                 <a href="<?php echo esc_url( get_permalink($menu->ID) ); ?>" title="<?=$menu->post_title;?>"><?=$menu->post_title;?></a>

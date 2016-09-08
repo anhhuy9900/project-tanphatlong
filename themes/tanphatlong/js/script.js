@@ -185,25 +185,51 @@ $(document).ready(function($) {
 	/* ---------------------------------------------------------------------- */
 	var map_lat = $(".info_map").data('lat');
 	var map_long = $(".info_map").data('long');
+	var img_map = $(".info_map").data('img');
 	var contact = {"lat" : map_lat, "lon" : map_long}; //Change a map coordinate here!
 
 	try {
-		var mapContainer = $('#map');
-		mapContainer.gmap3({
+		var uluru = {lat: contact.lat, lng: contact.lon};
+		$('#map')
+			.gmap3({
+				zoom: 18,
+				center: uluru,
+				marker:{
+					options:{
+						icon: new google.maps.MarkerImage("http://maps.gstatic.com/mapfiles/icon_red.png")
+					}
+				},
+				action: 'addMarker',
+				args:[{scrollwheel:false}]
+			})
+			.infowindow({
+				position: uluru,
+				content: "634 Đường 34, Khu phố 5, P. An Phú, Quận 2, TP. Hồ Chí Minh"
+			})
+			.then(function (infowindow) {
+				infowindow.open(this.get(0)); // this.get(0) return the map (see "get" feature)
+			});
+
+		/*var mapContainer = $('#map');
+		$('#map').gmap3({
 			action: 'addMarker',
 			marker:{
 				options:{
-					icon : new google.maps.MarkerImage('images/marker.png')
+					icon: new google.maps.MarkerImage("http://maps.gstatic.com/mapfiles/icon_green.png")
 				}
 			},
 			latLng: [contact.lat, contact.lon],
 			map:{
 				center: [contact.lat, contact.lon],
-				zoom: 15
+				zoom: 18
 				},
 			},
 			{action: 'setOptions', args:[{scrollwheel:false}]}
-		);
+		).infowindow({
+			position: uluru,
+			content: "Hello from Uluru"
+		});*/
+
 	} catch(err) {
 
 	}
@@ -332,17 +358,17 @@ $(document).ready(function($) {
 			$(".image-thumb-detail > a").on('click', function(event) {
 				//var image_url = $(this).data('url');
 				var current_index = $(this).parent().data('index');
-				$(".show-first-image > a").fadeOut(1000);
+				$(".show-first-image > a").fadeOut(500);
 				$(".show-first-image > a").eq(current_index).fadeIn(500);
-				var slider = $('.gallery-image-bxslider').bxSlider();
-				slider.goToSlide(current_index);
+				//var slider = $('.gallery-image-bxslider').bxSlider();
+				//slider.goToSlide(current_index);
 
 			});
 
 		},
 		onSlideBefore : function($slideElement, newIndexoldIndex, newIndex){
 			var current_index = $slideElement.data('index');
-			$(".show-first-image > a").fadeOut(1000);
+			$(".show-first-image > a").fadeOut(500);
 
 		},
 		onSlideAfter : function($slideElement, oldIndex, newIndex){
