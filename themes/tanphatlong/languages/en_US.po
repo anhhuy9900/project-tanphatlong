@@ -188,3 +188,58 @@ msgstr "Documents are stored within 3 weeks"
 #: tanphatlong/templates/submit_cv.page.php:26
 msgid "TAN PHAT LONG ENGINEERING CORPORATION"
 msgstr "TAN PHAT LONG ENGINEERING CORPORATION"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:43
+msgid "Curriculum Vitae"
+msgstr "Curriculum Vitae"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:44
+msgid "Registration card practice"
+msgstr "Registration card practice"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:70
+msgid "Position Apply"
+msgstr "Position Apply"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:58
+msgid "Birthday"
+msgstr "Birthday"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:62
+msgid "Gender"
+msgstr "Gender"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:63
+msgid "Male"
+msgstr "Male"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:64
+msgid "Female"
+msgstr "Female"
+
+#. Text in function
+#: tanphatlong/templates/recruitment-detail.page.php:31
+msgid "Date"
+msgstr "Date"
+
+#. Text in function
+#: tanphatlong/functions.php:402
+msgid "Occupational Skills"
+msgstr "Occupational Skills"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:78
+msgid "Projects Relevant"
+msgstr "Projects Relevant"
+
+#. Text in function
+#: tanphatlong/templates/product-detail.page.php:67
+msgid "Products Relevant"
+msgstr "Products Relevant"

@@ -15,7 +15,7 @@ $current_taxonomy = 'list-menu-product-services';
 <section class="single-page-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-7 tpl-gallery-detail">
                 <?php
                 $product_galleries = get_post_meta( $post->ID, "wpcf-product-galleries");
                 if(!empty($product_galleries)) :
@@ -45,7 +45,7 @@ $current_taxonomy = 'list-menu-product-services';
                     <?=$post->post_content;?>
                     <div class="project-tags">
                         <ul>
-                            <li><i class="fa fa-calendar"></i> <span>Date:</span> <?=date('Y.m.D',strtotime($post->post_date))?></li>
+                            <li><i class="fa fa-calendar"></i> <span><?php print __('Date','tanphatlong');?>:</span> <?=date('Y.m.D',strtotime($post->post_date))?></li>
                         </ul>
                     </div>
                 </div>
@@ -63,10 +63,9 @@ $current_taxonomy = 'list-menu-product-services';
     ================================================== -->
 <section class="portfolio-section">
     <div class="container">
-
         <div class="portfolio-box owl-wrapper">
+            <h2><?php print __('Products Relevant','tanphatlong');?></h2>
             <div class="owl-carousel" data-num="3">
-
                 <?php foreach($products_other as $value) :
                     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
                     $image = aq_resize( $thumbnail_src[0], 600, 500 , true, true, true);
@@ -82,10 +81,8 @@ $current_taxonomy = 'list-menu-product-services';
                         </div>
                     </div>
                 <?php endforeach;?>
-
             </div>
         </div>
-
     </div>
 </section>
 <!-- End portfolio section -->

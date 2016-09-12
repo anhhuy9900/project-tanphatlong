@@ -379,6 +379,11 @@ $(document).ready(function($) {
 
     });
 
+	$( "#birthday" ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+		yearRange: "1970:2016"
+	});
 
 });
 

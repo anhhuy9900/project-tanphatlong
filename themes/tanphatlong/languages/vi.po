@@ -188,3 +188,58 @@ msgstr "Hồ sơ sẽ được lưu trong vòng 3 tuần"
 #: tanphatlong/templates/submit_cv.page.php:26
 msgid "TAN PHAT LONG ENGINEERING CORPORATION"
 msgstr "CÔNG TY CỔ PHẦN KỸ THUẬT TÂN PHÁT LONG"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:43
+msgid "Curriculum Vitae"
+msgstr "Hồ sơ ứng tuyển"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:44
+msgid "Registration card practice"
+msgstr "Phiếu đăng ký thực tập"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:70
+msgid "Position Apply"
+msgstr "Vị trí ứng tuyển"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:58
+msgid "Birthday"
+msgstr "Ngày sinh"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:62
+msgid "Gender"
+msgstr "Giới tính"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:63
+msgid "Male"
+msgstr "Nam"
+
+#. Text in function
+#: tanphatlong/templates/submit_cv.page.php:64
+msgid "Female"
+msgstr "Nữ"
+
+#. Text in function
+#: tanphatlong/templates/recruitment-detail.page.php:31
+msgid "Date"
+msgstr "Ngày đăng"
+
+#. Text in function
+#: tanphatlong/functions.php:402
+msgid "Occupational Skills"
+msgstr "Trình độ chuyên môn"
+
+#. Text in function
+#: tanphatlong/templates/project-detail.page.php:78
+msgid "Projects Relevant"
+msgstr "Dự án liên quan"
+
+#. Text in function
+#: tanphatlong/templates/product-detail.page.php:67
+msgid "Products Relevant"
+msgstr "Sản phẩm liên quan"

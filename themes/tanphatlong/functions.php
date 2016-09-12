@@ -111,6 +111,7 @@ function project_scripts(){
     wp_enqueue_style( 'owl.theme', get_template_directory_uri() . '/css/owl.theme.css', array());
     wp_enqueue_style( 'ont-awesome', get_template_directory_uri() . '/css/ont-awesome.css', array());
     wp_enqueue_style( 'settings', get_template_directory_uri() . '/css/settings.css', array());
+    wp_enqueue_style( 'jquery-ui', 'https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css', array());
     wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', array());
 
 
@@ -126,6 +127,7 @@ function project_scripts(){
     wp_enqueue_script( 'maps', 'https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAY_4YI9C-h66Yhyi3Gtrej6Nm4jxQY4e8', array( 'jquery' ), '20131205', true);
    // wp_enqueue_script( 'gmap3', get_template_directory_uri() . '/js/gmap3.min.js', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'gmap3', 'https://cdn.jsdelivr.net/gmap3/7.1.0/gmap3.min.js', array( 'jquery' ), '20131205', true);
+    wp_enqueue_script( 'datetimepicker', 'https://code.jquery.com/ui/1.12.0/jquery-ui.js', array( 'jquery' ), '20131205', true);
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '20131205', true);
 
 }
@@ -234,6 +236,7 @@ function pnjexport_widgets_init() {
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
+
 
 }
 add_action( 'widgets_init', 'pnjexport_widgets_init' );
@@ -389,6 +392,21 @@ if(!function_exists('_func_get_value_custom_field')){
 
         }
         return NULL;
+    }
+}
+
+if (!function_exists('occupational_skills')) {
+    function occupational_skills()
+    {
+        $skills = array(
+            0 => __('Occupational Skills','tanphatlong'),
+            1 => 'Đại học/Trên ĐH',
+            2 => 'Cao Đẳng',
+            3 => 'Trung cấp',
+            4 => 'Khác',
+        );
+
+        return $skills;
     }
 }
 

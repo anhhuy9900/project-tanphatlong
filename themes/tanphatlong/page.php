@@ -20,7 +20,6 @@ $page_about = get_page_by_path( $parent_slug );
 <!-- services section ================================================== -->
 <section class="services-section">
     <div class="container">
-
         <div class="services-box">
             <div class="row">
                 <div class="col-md-3">
@@ -56,8 +55,6 @@ $page_about = get_page_by_path( $parent_slug );
 
             </div>
         </div>
-
-
     </div>
 </section>
 <!-- End services section -->

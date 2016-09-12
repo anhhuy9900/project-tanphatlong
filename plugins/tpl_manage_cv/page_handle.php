@@ -205,7 +205,45 @@ function manage_cv_form_meta_box_handler($item)
                    size="50" class="code" placeholder="<?php _e('Phone', 'tpl_manage_cv')?>" disabled>
         </td>
     </tr>
-
+    <tr class="form-field">
+        <th valign="top" scope="row">
+            <label for="birthday"><?php _e('Birthday', 'tpl_manage_cv')?></label>
+        </th>
+        <td>
+            <input id="birthday" name="birthday" type="text" style="width: 95%" value="<?php echo esc_attr($item['birthday'])?>"
+                   size="50" class="code" placeholder="<?php _e('Birthday', 'tpl_manage_cv')?>" disabled>
+        </td>
+    </tr>
+    <tr class="form-field">
+        <th valign="top" scope="row">
+            <label for="birthday"><?php _e('Gender', 'tpl_manage_cv')?></label>
+        </th>
+        <td>
+            <input id="gender" name="gender" type="text" style="width: 95%" value="<?php echo $item['gender'] == 1 ? 'Nam' : 'Nữ'?>"
+                   size="50" class="code" placeholder="<?php _e('Gender', 'tpl_manage_cv')?>" disabled>
+        </td>
+    </tr>
+    <tr class="form-field">
+        <th valign="top" scope="row">
+            <label for="position_apply"><?php _e('Position Apply', 'tpl_manage_cv')?></label>
+        </th>
+        <td>
+            <input id="position_apply" name="position_apply" type="text" style="width: 95%" value="<?php echo esc_attr($item['position_apply']);?>"
+                   size="50" class="code" placeholder="<?php _e('Position Apply', 'tpl_manage_cv')?>" disabled>
+        </td>
+    </tr>
+    <tr class="form-field">
+        <th valign="top" scope="row">
+            <label for="occupational_skills"><?php _e('Occupational skills', 'tpl_manage_cv')?></label>
+        </th>
+        <td>
+            <?php $skills = occupational_skills();
+            $skill_var = $skills[$item['occupational_skills']];
+            ?>
+            <input id="occupational_skills" name="occupational_skills" type="text" style="width: 95%" value="<?php echo $skill_var;?>"
+                   size="50" class="code" placeholder="<?php _e('Occupational skills', 'tpl_manage_cv')?>" disabled>
+        </td>
+    </tr>
     <tr class="form-field">
         <th valign="top" scope="row">
             <label for="address"><?php _e('Address', 'tpl_manage_cv')?></label>

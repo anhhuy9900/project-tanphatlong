@@ -74,10 +74,9 @@ $current_taxonomy = 'manage-menu-projects';
     ================================================== -->
 <section class="portfolio-section">
     <div class="container">
-
         <div class="portfolio-box owl-wrapper">
+            <h2><?php print __('Projects Relevant','tanphatlong');?></h2>
             <div class="owl-carousel" data-num="3">
-
                 <?php foreach($projects_other as $value) :
                     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
                     $image = aq_resize( $thumbnail_src[0], 600, 500 , true, true, true);
@@ -93,10 +92,8 @@ $current_taxonomy = 'manage-menu-projects';
                         </div>
                     </div>
                 <?php endforeach;?>
-
             </div>
         </div>
-
     </div>
 </section>
 <!-- End portfolio section -->

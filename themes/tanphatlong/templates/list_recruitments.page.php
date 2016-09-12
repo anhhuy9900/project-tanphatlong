@@ -25,42 +25,24 @@ get_header(); ?>
             <div class="portfolio-box">
                 <?php $count = 0;
                 foreach($data['results'] as $key => $value) :
+                    $description = types_render_field( "description-recruitment", array( "raw" => "true", "id" => $value->ID ));
                     $link_view = types_render_field( "link-view-recruitment", array( "raw" => "true", "id" => $value->ID ));
                     $file_download = types_render_field( "file-download-recruitment", array( "raw" => "true", "id" => $value->ID ));
                     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
-                    $image = aq_resize( $thumbnail_src[0], 360, 300 , true, true, true);
-                ?>
-                <?php if($count % 3 == 0) :?>
-                <div class="row">
-                <?php endif;
-                $count++;
+                    $image = aq_resize( $thumbnail_src[0], 227, 128 , true, true, true);
                 ?>
 
-                    <div class="project-post col-md-4">
-                        <div class="project-gallery">
-                            <img src="<?=$image;?>" alt="">
-                            <div class="hover-box">
-                                <div class="inner-hover">
-                                    <h2><a href="#"><?=$value->post_title;?></a></h2>
-                                <span class="btn-ability">
-                                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-                                    <a href="<?=$file_download;?>" class="btn-click"><?php print __('Download','tanphatlong');?></a>
-                                </span>
-                                <span class="btn-ability">
-                                    <i class="fa fa-download" aria-hidden="true"></i>
-                                    <a href="<?=$link_view;?>" target="_blank" class="btn-click"><?php print __('View','tanphatlong');?></a>
-                                </span>
-                                <span class="btn-ability">
-                                    <i class="fa fa-download" aria-hidden="true"></i>
-                                    <a href="<?=home_url().'/'.(pll_current_language()=='vi'?'nop-ho-so':'submit-cv').'/?rec='.$value->ID;?>" target="_blank" class="btn-click"><?php print __('Apply CV','tanphatlong');?></a>
-                                </span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="list-recruitments clearfix">
+                    <div class="col-md-4">
+                        <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>" title="<?=$value->post_title;?>"><img src="<?=$image;?>" alt=""></a>
                     </div>
-                <?php if($count % 3 == 0 || $count == count($data['results'])) :?>
+                    <div class="col-md-8">
+                        <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
+                        <span><?=date('d M Y',strtotime($value->post_date))?></span>
+                        <p><?=$description;?></p>
+                        <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?php print __('Read More','tanphatlong');?> <i class="fa fa-angle-right"></i></a>
+                    </div>
                 </div>
-                <?php endif;?>
 
                 <?php endforeach; ?>
             </div>

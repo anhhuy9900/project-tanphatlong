@@ -21,9 +21,8 @@ $data = get_list_records_projects($term);
 
 <section class="portfolio-section">
     <div class="container">
-
-        <?php if(!empty($data['results'])) : ?>
-            <div class="portfolio-box col-md-9">
+        <div class="portfolio-box col-md-9">
+            <?php if(!empty($data['results'])) : ?>
                 <?php $count = 0;
                 foreach($data['results'] as $key => $value) :
                     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
@@ -51,9 +50,8 @@ $data = get_list_records_projects($term);
                 <?php endforeach; ?>
 
                 <?=$data['pagination'];?>
-
-            </div>
-        <?php endif;?>
+            <?php endif;?>
+        </div>
 
         <div class="col-md-3">
             <!--Include file menu-->

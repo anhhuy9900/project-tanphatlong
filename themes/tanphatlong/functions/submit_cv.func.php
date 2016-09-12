@@ -14,20 +14,28 @@ function _func_submit_cv(){
             $name = $_POST['your_name'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
+            $birthday = date('dmY',strtotime($_POST['birthday']));
+            $gender = $_POST['gender'];
+            $position_apply = $_POST['position_apply'];
+            $occupational_skills = $_POST['occupational_skills'];
             $address = $_POST['address'];
 
             //upload file
             $file_id = fileupload_process();
 
             $data = array(
-                'rec_id'        => intval($rec_id),
-                'name'          => _security_string($name),
-                'email'         => _security_string($email),
-                'phone'         => _security_string($phone),
-                'address'       => _security_string($address),
-                'file_id'        => $file_id,
-                'status'        => 0,
-                'created_date'  => time()
+                'rec_id'                => intval($rec_id),
+                'name'                  => _security_string($name),
+                'email'                 => _security_string($email),
+                'phone'                 => _security_string($phone),
+                'birthday'              => _security_string($birthday),
+                'gender'                => intval($gender),
+                'position_apply'        => _security_string($position_apply),
+                'occupational_skills'   => intval($occupational_skills),
+                'address'               => _security_string($address),
+                'file_id'               => $file_id,
+                'status'                => 0,
+                'created_date'          => time()
             );
 
             $wpdb->insert("tpl_manage_cv" , $data);
@@ -63,7 +71,15 @@ function validate_form_submit_cv(){
         $msg = __('Please enter valid e-mail.','tanphatlong');
     } else if ($_POST['phone'] == '') {
         $msg = __('Please enter your phone.','tanphatlong');
-    } else if ($_POST['address'] == '') {
+    } else if ($_POST['birthday'] == '') {
+        $msg = __('Please enter your birhday.','tanphatlong');
+    }else if ($_POST['gender'] == 0) {
+        $msg = __('Please enter your address.','tanphatlong');
+    }else if ($_POST['position_apply'] == '') {
+        $msg = __('Please enter your position apply.','tanphatlong');
+    }else if ($_POST['occupational_skills'] == '') {
+        $msg = __('Please enter your occupational skills.','tanphatlong');
+    }else if ($_POST['address'] == '') {
         $msg = __('Please enter your address.','tanphatlong');
     } else if (empty($_FILES)) {
         $msg = __('Please choose file to apply.','tanphatlong');
