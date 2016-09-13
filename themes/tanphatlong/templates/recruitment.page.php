@@ -7,7 +7,7 @@ get_header(); ?>
 
 <?php
 /*if($post->post_name == 'tuyen-dung' || $post->post_name == 'recruitment'){
-    $url = pll_current_language() == 'vi' ? 'vi-tri-tuyen-dung' : 'career-opportunities/';
+    $url = pll_current_language() == 'vi' ? 'vi-tri-tuyen-dung' : 'career-opportunities';
     wp_redirect($url);
     die();
 }*/
