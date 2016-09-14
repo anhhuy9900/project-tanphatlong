@@ -30,7 +30,7 @@ $file_register_intership = wp_get_attachment_url(360);
                 <?php endwhile;
                 endif;
                 ?>
-                <ul>
+                <ul class="form_example">
                     <li><b><?php print __('Curriculum Vitae','tanphatlong');?></b>: <a href="<?=$file_cv;?>"><?php print __('Download','tanphatlong');?></a></li>
                     <li><strong><?php print __('Registration card practice','tanphatlong');?>: </strong><a href="<?=$file_register_intership;?>"><?php print __('Download','tanphatlong');?></a></li>
                 </ul>

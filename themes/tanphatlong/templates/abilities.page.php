@@ -6,6 +6,18 @@ Template Name: Abilities Page
 get_header(); ?>
 <?php
 global $post;
+if($post->post_name == 'nang-luc' || $post->post_name == 'abilities-page'){
+    $slug = pll_current_language() == 'vi' ? 'giay-chung-nhan' : 'certificate';
+    $page_redirect = get_posts( array(
+        'name' => $slug,
+        'post_type' => 'abilities',
+        'post_status' => 'publish',
+        'posts_per_page' => 1
+    ));
+    $url = get_site_url().'/'.pll_current_language().'/abilities/'.$slug;
+    wp_redirect($url);
+    die();
+}
 ?>
 
 <!--Include file breadcumb-->
