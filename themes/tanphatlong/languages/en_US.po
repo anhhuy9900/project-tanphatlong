@@ -243,3 +243,8 @@ msgstr "Projects Relevant"
 #: tanphatlong/templates/product-detail.page.php:67
 msgid "Products Relevant"
 msgstr "Products Relevant"
+
+#. Text in function
+#: tanphatlong/templates/news-detail.page.php:49
+msgid "News Relevant"
+msgstr "News Relevant"

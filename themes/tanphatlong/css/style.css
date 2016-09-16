@@ -521,7 +521,7 @@ section.services-section .services-box .services-post h2:after{
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 25px;
+  width: 30px;
   height: 1px;
   background: #d51820;
 }
@@ -616,7 +616,7 @@ section.services-section .services-box .services-post a.download{
   position: absolute;
   bottom: -3px;
   left: 0;
-  width: 25px;
+  width: 30px;
   height: 1px;
   background: #d51820;
 }
@@ -681,6 +681,7 @@ section.services-section .services-box .services-post a.download{
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   opacity: 0;
+  cursor: pointer;
 }
 .portfolio-section .project-post .project-gallery .hover-box .inner-hover {
   position: absolute;
@@ -724,7 +725,7 @@ section.services-section .services-box .services-post a.download{
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 22px;
+  width: 30px;
   height: 1px;
   background: #d51820;
 }
@@ -1525,7 +1526,7 @@ section.services-section .services-box .services-post a.download{
 .blog-section .blog-box .blog-post {
   margin-bottom: 50px;
 }
-.blog-section .blog-box .blog-post img,
+.blog-section .blog-box .blog-post .images,
 .blog-section .blog-box .blog-post iframe {
   width: 100%;
   margin-bottom: 30px;
@@ -1537,7 +1538,7 @@ section.services-section .services-box .services-post a.download{
   color: #333333;
   font-size: 15px;
   font-family: 'Arial', sans-serif;
-  font-weight: 400;
+  font-weight: bold;
   margin: 0 0 15px;
   margin-bottom: 0px;
 }
@@ -1551,16 +1552,13 @@ section.services-section .services-box .services-post a.download{
   color: #333333;
 }
 .blog-section .blog-box .blog-post h2 a:hover {
-  color: #a0ce4e;
+  color: #d41820;
 }
 .blog-section .blog-box .blog-post span {
   display: inline-block;
   color: #777777;
   font-size: 12px;
-  font-weight: 700;
   font-family: 'Arial', sans-serif;
-  text-transform: uppercase;
-  margin: 0 0 25px;
 }
 .blog-section .blog-box .blog-post .post-content-text > a {
   display: inline-block;
@@ -1583,6 +1581,11 @@ section.services-section .services-box .services-post a.download{
 }
 .blog-section .blog-box .blog-post .post-content-text > a:hover {
   color: #a0ce4e;
+}
+.blog-section .blog-box .single-post .aligncenter{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 }
 ul.pagination-list {
   margin: 0;
@@ -1753,7 +1756,7 @@ ul.pagination-list li a.active {
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 25px;
+  width: 30px;
   height: 1px;
   background: #d51820;
 }

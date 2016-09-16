@@ -50,7 +50,7 @@ $(document).ready(function($) {
 			var selector = $filter.find('a.active').attr('data-filter');
 
 			try {
-				$container.isotope({ 
+				$container.isotope({
 					filter	: selector,
 					animationOptions: {
 						duration: 750,
@@ -62,13 +62,13 @@ $(document).ready(function($) {
 			}
 			return false;
 		});
-		
-		// Isotope Filter 
+
+		// Isotope Filter
 		$filter.find('a').on('click', function(){
 			var selector = $(this).attr('data-filter');
 
 			try {
-				$container.isotope({ 
+				$container.isotope({
 					filter	: selector,
 					animationOptions: {
 						duration: 750,
@@ -96,7 +96,7 @@ $(document).ready(function($) {
 	/*-------------------------------------------------*/
 	/* =  Search animation
 	/*-------------------------------------------------*/
-	
+
 	var searchToggle = $('.open-search'),
 		inputAnime = $(".form-search"),
 		body = $('body');
@@ -107,7 +107,7 @@ $(document).ready(function($) {
 		if ( !inputAnime.hasClass('active') ) {
 			inputAnime.addClass('active');
 		} else {
-			inputAnime.removeClass('active');			
+			inputAnime.removeClass('active');
 		}
 	});
 
@@ -179,67 +179,77 @@ $(document).ready(function($) {
 
 	}
 
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Map
 	/* ---------------------------------------------------------------------- */
 	var map_lat = $(".info_map").data('lat');
 	var map_long = $(".info_map").data('long');
 	var img_map = $(".info_map").data('img');
-	var contact = {"lat" : map_lat, "lon" : map_long}; //Change a map coordinate here!
+	var contact_address = $(".info_map").data('address');
+	var contact = {lat : map_lat, lng : map_long}; //Change a map coordinate here!
 
-	try {
-		var uluru = {lat: contact.lat, lng: contact.lon};
-		$('#map')
-			.gmap3({
-				zoom: 18,
-				center: uluru,
-				marker:{
-					options:{
-						icon: new google.maps.MarkerImage("http://maps.gstatic.com/mapfiles/icon_red.png")
-					}
-				},
-				action: 'addMarker',
-				args:[{scrollwheel:false}]
-			})
-			.infowindow({
-				position: uluru,
-				content: "634 Đường 34, Khu phố 5, P. An Phú, Quận 2, TP. Hồ Chí Minh"
-			})
-			.then(function (infowindow) {
-				infowindow.open(this.get(0)); // this.get(0) return the map (see "get" feature)
-			});
-
-		/*var mapContainer = $('#map');
+	/*try {
 		$('#map').gmap3({
-			action: 'addMarker',
+			zoom: 18,
+			center: contact,
 			marker:{
 				options:{
-					icon: new google.maps.MarkerImage("http://maps.gstatic.com/mapfiles/icon_green.png")
+					icon: new google.maps.MarkerImage(
+						img_map,
+						new google.maps.Size(20, 20),
+						new google.maps.Point(0, 0)
+					)
 				}
 			},
-			latLng: [contact.lat, contact.lon],
-			map:{
-				center: [contact.lat, contact.lon],
-				zoom: 18
-				},
-			},
-			{action: 'setOptions', args:[{scrollwheel:false}]}
-		).infowindow({
-			position: uluru,
-			content: "Hello from Uluru"
-		});*/
+			action: 'addMarker',
+			icon: img_map
 
+		})
+		.infowindow({
+			position: contact,
+			content: contact_address,
+		})
+		.then(function (infowindow) {
+			infowindow.open(this.get(0)); // this.get(0) return the map (see "get" feature)
+		});
 	} catch(err) {
 
+	}*/
+
+	if($('#map').length > 0){
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 18,
+			center: new google.maps.LatLng(map_lat, map_long),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		});
+
+		var infowindow = new google.maps.InfoWindow();
+
+		var marker, i;
+
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(map_lat, map_long),
+			map: map,
+			//options:{
+			//	icon: new google.maps.MarkerImage(
+			//		img_map
+			//	)
+			//}
+		});
+
+		infowindow.setContent(contact_address);
+		infowindow.open(map, marker);
 	}
-	
+
+
+
 	/*-------------------------------------------------*/
 	/* = slider Testimonial
 	/*-------------------------------------------------*/
 
 	var slidertestimonial = $('.bxslider');
-	try{		
+	try{
 		slidertestimonial.bxSlider({
 			mode: 'vertical'
 		});
@@ -321,7 +331,7 @@ $(document).ready(function($) {
 				}
 			}, false );
 		}
-		
+
 		function scrollPage() {
 			var sy = scrollY();
 			if ( sy >= changeHeaderOn ) {
@@ -332,13 +342,13 @@ $(document).ready(function($) {
 			}
 			didScroll = false;
 		}
-		
+
 		function scrollY() {
 			return window.pageYOffset || docElem.scrollTop;
 		}
-		
+
 		init();
-		
+
 	})();
 
 	/* ---------------------------------------------------------------------- */

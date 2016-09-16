@@ -11,10 +11,11 @@ $result = func_submit_contact();
 
 //get widget lat vs long for map contact
 $widget_map_contact = _get_widget_data_for('Map Contact', '');
+$widget_address = _get_widget_data_for('Map Contact', pll_current_language());
 ?>
 
 <!-- map================================================== -->
-<div class="info_map" data-lat="<?=$widget_map_contact->latitude;?>" data-long="<?=$widget_map_contact->longtitude;?>" data-img="<?php echo esc_url( get_template_directory_uri() ); ?>/images/marker.png"></div>
+<div class="info_map" data-lat="<?=$widget_map_contact->latitude;?>" data-long="<?=$widget_map_contact->longtitude;?>" data-img="<?php echo esc_url( get_template_directory_uri() ); ?>/images/marker.png" data-address="<?=(!empty($widget_address)) ? $widget_address->text :'';?>"></div>
 <div id="map"></div>
 <!-- map -->
 
@@ -47,4 +48,7 @@ $widget_map_contact = _get_widget_data_for('Map Contact', '');
     </div>
 </section>
 
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAY_4YI9C-h66Yhyi3Gtrej6Nm4jxQY4e8">
+</script>
 <?php get_footer(); ?>

@@ -86,7 +86,7 @@ msgstr "Gửi tin nhắn cho chúng tôi"
 #. Text in function
 #: tanphatlong/footer.php:21
 msgid "Tel"
-msgstr "Số điện thoại"
+msgstr "Tel"
 
 #. Text in function
 #: tanphatlong/templates/abilities.page.php:48
@@ -243,3 +243,8 @@ msgstr "Dự án liên quan"
 #: tanphatlong/templates/product-detail.page.php:67
 msgid "Products Relevant"
 msgstr "Sản phẩm liên quan"
+
+#. Text in function
+#: tanphatlong/templates/news-detail.page.php:49
+msgid "News Relevant"
+msgstr "Tin tức liên quan"

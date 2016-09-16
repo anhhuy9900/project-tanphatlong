@@ -77,7 +77,7 @@ $projects_highlight = get_list_records_highlight_home(array('post_type'=>'manage
                 <div class="item project-post">
                     <div class="project-gallery">
                         <img src="<?=$image;?>" alt="">
-                        <div class="hover-box">
+                        <div class="hover-box" onclick="location.href='<?php echo esc_url( get_permalink($project->ID) ); ?>';">
                             <div class="inner-hover">
                                 <h2><a href="<?php echo esc_url( get_permalink($project->ID) ); ?>"><?=$project->post_title;?></a></h2>
                             </div>
@@ -99,8 +99,8 @@ $widget_about_home = _get_widget_data_for('About Home Page', pll_current_languag
 $widget_about_content_left = _get_widget_data_for('About Content Left Home Page', pll_current_language());
 $widget_img_about_content_left = _get_widget_data_for('About Content Left Home Page', '');
 $img_about_left_url = '';
-if(!empty($widget_img_about_content_left[0])){
-    $img_about_left_url = $widget_img_about_content_left[0]->imageurl;
+if(!empty($widget_img_about_content_left)){
+    $img_about_left_url = $widget_img_about_content_left->imageurl;
 }
 
 $pages_highlight = get_list_pages_highlight_home();

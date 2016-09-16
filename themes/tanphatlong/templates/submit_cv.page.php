@@ -8,8 +8,8 @@ get_header(); ?>
 <?php global $post;
 $rec = (!empty($_REQUEST['rec'])) ? $_REQUEST['rec'] : 0;
 $result = _func_submit_cv();
-$file_cv = wp_get_attachment_url(360);
-$file_register_intership = wp_get_attachment_url(360);
+$file_cv = wp_get_attachment_url(1257);
+$file_register_intership = wp_get_attachment_url(0);
 ?>
 
 <!--Include file breadcumb-->

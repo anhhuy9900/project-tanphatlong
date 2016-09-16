@@ -45,10 +45,9 @@ $image = aq_resize( $thumbnail_src[0], 900, 500 , true, true, true);
     ================================================== -->
 <section class="portfolio-section">
     <div class="container">
-
         <div class="portfolio-box owl-wrapper">
+            <h2><?php print __('News Relevant','tanphatlong');?></h2>
             <div class="owl-carousel" data-num="3">
-
                 <?php foreach($news_other as $value) :
                     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
                     $image = aq_resize( $thumbnail_src[0], 600, 500 , true, true, true);
@@ -56,7 +55,7 @@ $image = aq_resize( $thumbnail_src[0], 900, 500 , true, true, true);
                     <div class="item project-post">
                         <div class="project-gallery">
                             <img src="<?=$image;?>" alt="">
-                            <div class="hover-box">
+                            <div class="hover-box" onclick="location.href='<?php echo esc_url( get_permalink($value->ID) ); ?>';">
                                 <div class="inner-hover">
                                     <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
                                 </div>
@@ -64,10 +63,8 @@ $image = aq_resize( $thumbnail_src[0], 900, 500 , true, true, true);
                         </div>
                     </div>
                 <?php endforeach;?>
-
             </div>
         </div>
-
     </div>
 </section>
 <!-- End portfolio section -->
