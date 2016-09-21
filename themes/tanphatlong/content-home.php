@@ -14,30 +14,25 @@
                 <ul>	<!-- SLIDE  -->
                     <?php foreach($list_banners as $banner) :
                         $attachments = _func_get_value_custom_field('wpcf-banner-image', $banner->ID);
-                        $image = aq_resize( $attachments, 1920, 550 , true, true, true);
+                        $image = aq_resize( $attachments, 1440, 480 , true, true, true);
                         $link_banner = types_render_field( "link-banner", array( "raw" => "true", "id" => $banner->ID ));
+                        $banner_summary = types_render_field( "banner-summary", array( "raw" => "true", "id" => $banner->ID ));
                         ?>
                         <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"  data-title="<?=$banner->post_title;?>" onclick="redirect_link('<?=$link_banner ? $link_banner : '#';?>');">
 
                                 <!-- MAIN IMAGE -->
-                                <img src="<?=$image;?>" alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                <img src="<?=$image;?>" alt="<?=$banner->post_title;?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                                 <!-- LAYERS -->
 
                                 <!-- LAYER NR. 1 -->
-                                <div class="tp-caption lft tp-resizeme rs-parallaxlevel-0"
-                                     data-x="200"
-                                     data-y="190"
-                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                     data-speed="1000"
-                                     data-start="1000"
-                                     data-easing="Power3.easeInOut"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-elementdelay="0.1"
-                                     data-endelementdelay="0.1"
-                                     style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">
-                                </div>
+                            <div class="slide-text-box">
+                                <a href="http://sigma.net.vn/en/maintenance-services/" target="_parent" class="title-box"><?=$banner->post_title;?></a>
+                                <div class="summary">
+                                    <p><?=$banner_summary;?></p>
+                                    <a href="<?=$link_banner;?>" target="_parent" class="slidde-view-more"><?php print __('Read More','tanphatlong');?>...</a>
 
+                                </div>
+                            </div>
                         </li>
                     <?php endforeach;?>
                 </ul>
@@ -58,40 +53,37 @@
 </section>
 <!-- End banner section -->
 
-
-<!-- portfolio-section
-    ================================================== -->
 <?php
-$projects_highlight = get_list_records_highlight_home(array('post_type'=>'manage-projects'));
-    if(!empty($projects_highlight)) :
+$list_products = get_list_products_home_page();
+    if(!empty($list_products)) :
 ?>
-<section class="portfolio-section">
+<!-- services-products ================================================== -->
+<section class="services-section">
     <div class="container">
-        <h3><?php print __('Projects Highlight','tanphatlong');?></h3>
-        <div class="portfolio-box owl-wrapper">
-            <div class="owl-carousel" data-num="4">
-                <?php foreach($projects_highlight as $project) :
-                    $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $project->ID ) , "size");
-                    $image = aq_resize( $thumbnail_src[0], 600, 500 , true, true, true);
-                ?>
-                <div class="item project-post">
-                    <div class="project-gallery">
-                        <img src="<?=$image;?>" alt="">
-                        <div class="hover-box" onclick="location.href='<?php echo esc_url( get_permalink($project->ID) ); ?>';">
-                            <div class="inner-hover">
-                                <h2><a href="<?php echo esc_url( get_permalink($project->ID) ); ?>"><?=$project->post_title;?></a></h2>
-                            </div>
+        <div class="services-box">
+            <div class="row">
+                <?php foreach($list_products as $value) :
+                    $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $value->ID ) , "size");
+                    $image = aq_resize( $thumbnail_src[0], 263, 158 , true, true, true);
+                    $product_description = types_render_field( "product-description", array( "raw" => "true", "id" => $value->ID ));
+                    ?>
+                <div class="col-md-3">
+                    <div class="services-post">
+                        <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><img src="<?=$image;?>" alt=""></a>
+                        <div class="services-content">
+                            <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
+                            <p><?=$product_description;?></p>
+                            <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?php print __('Read More','tanphatlong');?> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <?php endforeach;?>
             </div>
         </div>
-
     </div>
 </section>
-<?php endif; ?>
-<!-- End portfolio section -->
+<!-- End services section -->
+<?php endif;?>
 
 
 <?php
@@ -128,8 +120,8 @@ $pages_highlight = get_list_pages_highlight_home();
                         $count++;
                     ?>
                         <div class="about-us-post">
-                            <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>"><i class="fa <?=$page->post_name =='nhan-su-chu-chot' || $page->post_name =='key-personnel' ? 'fa-users' : 'fa-building-o';?>"></i></a>
-                            <h2><?=$page->post_title;?></h2>
+                            <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>" class="icon-link"><i class="fa <?=$page->post_name =='nhan-su-chu-chot' || $page->post_name =='key-personnel' ? 'fa-users' : 'fa-building-o';?>"></i></a>
+                            <h2><a href="<?php echo esc_url( get_permalink($page->ID) ); ?>"><?=$page->post_title;?></a></h2>
                             <span><?=$description;?></span>
                         </div>
                     <?php if($count % 3 == 0 || $count == count($pages_highlight)) :?>
@@ -156,6 +148,38 @@ $pages_highlight = get_list_pages_highlight_home();
 <?php endif; ?>
 
 
+<!-- projects-highlight
+    ================================================== -->
+<?php
+$projects_highlight = get_list_records_highlight_home(array('post_type'=>'manage-projects'));
+if(!empty($projects_highlight)) :
+?>
+    <section class="portfolio-section">
+        <div class="container">
+            <h3><?php print __('Projects Highlight','tanphatlong');?></h3>
+            <div class="portfolio-box owl-wrapper">
+                <div class="owl-carousel" data-num="4">
+                    <?php foreach($projects_highlight as $project) :
+                        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $project->ID ) , "size");
+                        $image = aq_resize( $thumbnail_src[0], 600, 500 , true, true, true);
+                        ?>
+                        <div class="item project-post">
+                            <div class="projects-highlight">
+                                <a href="<?php echo esc_url( get_permalink($project->ID) ); ?>"><img src="<?=$image;?>" alt=""></a>
+                                <div class="inner-hover">
+                                    <h2><a href="<?php echo esc_url( get_permalink($project->ID) ); ?>"><?=$project->post_title;?></a></h2>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach;?>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<?php endif; ?>
+<!-- End projects-highlight -->
+
 <!-- news-section
     ================================================== -->
 <?php
@@ -169,12 +193,12 @@ $news_highlight = get_list_records_highlight_home(array('post_type'=>'post'));
             <div class="owl-carousel" data-num="4">
                 <?php foreach($news_highlight as $news) :
                     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $news->ID ) , "size");
-                    $image = aq_resize( $thumbnail_src[0], 400, 280 , true, true, true);
+                    $image = aq_resize( $thumbnail_src[0], 600, 500 , true, true, true);
                     $description = types_render_field( "short-description", array( "raw" => "true", "id" => $news->ID ));
                 ?>
                 <div class="item news-post">
                     <div class="news-gallery">
-                        <img src="<?=$image;?>" alt="">
+                        <a href="<?php echo esc_url( get_permalink($news->ID) ); ?>"><img src="<?=$image;?>" alt=""></a>
                         <div class="date-post">
                             <p><?=date('m',strtotime($news->post_date))?> <span><?=date('d',strtotime($news->post_date))?></span></p>
                         </div>
@@ -230,7 +254,7 @@ $personnel_highlight = get_list_records_highlight_home(array('post_type'=>'quan-
 $clients_highlight = get_list_records_highlight_home(array('post_type'=>'manage-clients'), 0);
     if(!empty($clients_highlight)) :
 ?>
-<section class="portfolio-section">
+<section class="portfolio-section color-w">
     <div class="container">
         <div class="portfolio-box owl-wrapper">
             <div class="owl-carousel" data-num="5">

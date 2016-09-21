@@ -34,12 +34,10 @@ $data = get_list_records_projects($term);
                     $count++;
                     ?>
                     <div class="project-post col-md-6">
-                        <div class="project-gallery">
-                            <img src="<?=$image;?>" alt="">
-                            <div class="hover-box" onclick="location.href='<?php echo esc_url( get_permalink($value->ID) ); ?>';">
-                                <div class="inner-hover">
-                                    <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
-                                </div>
+                        <div class="projects-highlight">
+                            <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><img src="<?=$image;?>" alt=""></a>
+                            <div class="inner-hover">
+                                <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
                             </div>
                         </div>
                     </div>

@@ -106,3 +106,23 @@ if (!function_exists('get_records_products_other')) {
         return $results;
     }
 }
+
+
+if (!function_exists('get_list_products_home_page')) {
+function get_list_products_home_page(){
+    global $wpdb;
+    $per_page = 4;
+    $query_params = array(
+        'post_type'		    => 'product-services',
+        'post_status'       => 'publish',
+        'orderby'           => "post_date",
+        'order'             => "DESC",
+        'posts_per_page'    => $per_page,
+    );
+
+    $wp_query = new WP_Query( $query_params );
+    $results = $wp_query->have_posts() ?  $wp_query->get_posts() : '';
+
+    return $results;
+}
+}

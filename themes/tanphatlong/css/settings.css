@@ -1618,6 +1618,72 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 	cursor: pointer;
 }
 
+.tp-simpleresponsive >ul >li .slotholder{
+	z-index:1;
+}
+
+.tp-simpleresponsive >ul >li .slide-text-box{
+	position: absolute;
+	bottom: 0;
+	width: 40%;
+	margin-left: 8%;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 40px 40px 15px;
+	z-index: 200;
+}
+.tp-simpleresponsive >ul >li .slide-text-box .title-box{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 16px;
+}
+.tp-simpleresponsive >ul >li .slide-text-box a{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.tp-simpleresponsive >ul >li .slide-text-box .summary {
+	color: #FFF;
+	padding-top: 10px;
+}
+
+.tp-simpleresponsive >ul >li .slide-text-box .summary p{
+	color: #FFF;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.tp-simpleresponsive >ul >li .slide-text-box .summary .slidde-view-more {
+	background: #d51820;
+	border-radius: 5px;
+	padding: 8px 18px;
+	float: right;
+}
+
+@media (max-width: 768px) {
+	.tp-simpleresponsive >ul >li .slide-text-box{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		margin: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+		padding: 10px;
+	}
+}
+
+@media (max-width: 460px) {
+	.tp-simpleresponsive >ul >li .slide-text-box{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		margin: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+		padding: 10px;
+	}
+	.tp-simpleresponsive >ul >li .slide-text-box .summary {
+		display: none;
+	}
+}
+
 /*  CAPTION SLIDELINK   **/
 .caption.slidelink a div,
 .tp-caption.slidelink a div {	width:3000px; height:1500px;  background:url(../assets/coloredbg.png) repeat}
