@@ -45,8 +45,8 @@ msgstr "Fax"
 
 #. Text in function
 #: tanphatlong/content-home.php:119
-msgid "Highlight News"
-msgstr "Highlight News"
+msgid "News"
+msgstr "News"
 
 #. Text in function
 #: tanphatlong/includes/breadcumb.php:9
@@ -60,8 +60,8 @@ msgstr "Images Company"
 
 #. Text in function
 #: tanphatlong/content-home.php:22
-msgid "Projects Highlight"
-msgstr "Projects Highlight"
+msgid "Typical Projects"
+msgstr "Typical Projects"
 
 #. Text in function
 #: tanphatlong/content-home.php:137 tanphatlong/templates/news.page.php:50

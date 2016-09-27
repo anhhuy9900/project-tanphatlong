@@ -69,7 +69,7 @@ website:    http://www.themepunch.com
 .tp-banner {
   width: 100%;
   position: relative;
-  height: 480px!important;
+
 }
 .tp-banner-fullscreen-container {
   width: 100%;
@@ -511,7 +511,7 @@ section.services-section {
 }
 section.services-section .services-box .services-post {
   margin-bottom: 40px;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 section.services-section .services-box .services-post h2{
   position: relative;
@@ -526,8 +526,15 @@ section.services-section .services-box .services-post h2:after{
   height: 1px;
   background: #d51820;
 }
+
+.fix-bg:after{
+  background: none!important;
+}
 section.services-section .services-box .services-post img {
   margin-bottom: 30px;
+}
+section.services-section .services-box .services-post .aligncenter{
+  text-align: center!important;
 }
 @media (max-width: 767px) {
   section.services-section .services-box .services-post img {
@@ -544,7 +551,7 @@ section.services-section .services-box .services-post img {
 
 }
 section.services-section .services-box .services-post .services-content {
-  padding-right: 10px;
+  /*padding-right: 10px;*/
 }
 section.services-section .services-box .services-post .services-content h2 {
   color: #333333;
@@ -581,6 +588,7 @@ section.services-section .services-box .services-post .services-content a:hover 
 }
 section.services-section .services-box .services-post a{
   display: inline-block;
+  width: 100%;
 }
 section.services-section .services-box .services-post a.download{
   padding: 12px 30px;
@@ -597,6 +605,7 @@ section.services-section .services-box .services-post a.download{
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   margin-bottom: 10px;
+  width: auto;
 }
 .portfolio-section {
   padding: 30px 0;
@@ -983,6 +992,12 @@ section.services-section .services-box .services-post a.download{
 }
 .tabs-section .about-box p {
   color: #ffffff;
+}
+@media (max-width: 767px) {
+  .tabs-section .about-box{
+    margin-top: 15px;
+    padding: 0;
+  }
 }
 .news-section {
   padding: 30px 0 30px;
@@ -1848,8 +1863,8 @@ ul.pagination-list li a.active {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   color: #333333;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: bold;
   font-family: 'Arial', sans-serif;
   padding-bottom: 10px;
 }
@@ -1949,7 +1964,7 @@ ul.pagination-list li a.active {
   color: #333333;
   font-size: 15px;
   font-family: 'Arial', sans-serif;
-  font-weight: 400;
+  font-weight: bold;
   margin: 0 0 15px;
   font-size: 16px;
   text-transform: uppercase;
@@ -2019,6 +2034,7 @@ ul.pagination-list li a.active {
   color: #777777;
   font-size: 13px;
   font-family: 'Arial', sans-serif;
+  font-weight: bold;
 }
 .submit-form input[type="text"]:focus,
 .comment-form input[type="text"]:focus,
@@ -2269,16 +2285,15 @@ footer p {
     margin-bottom: 20px;
   }
   .page-banner-section h1 {
-    color: #333333;
-    font-size: 19px;
+    color: #fff;
     font-weight: 700;
     margin: 0 0 30px;
     text-transform: uppercase;
-    color: #ffffff;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 2px;
     margin-bottom: 0px;
     width: 100%;
+    max-width: 100%;
     float: none;
   }
   .page-banner-section ul.page-depth {
@@ -2360,4 +2375,31 @@ footer p {
 }
 .color-w{
   background: #fff;
+}
+.contact-logo{
+  margin: 10px 0 10px 35%;
+}
+.text-cf{
+  text-align: justify!important;
+}
+section.services-section .services-box .services-post .abilitiy-download {
+  padding: 12px 30px;
+  outline: none;
+  border: none;
+  background: #d51820;
+  color: #ffffff;
+  font-size: 13px;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
+  float: left;
+  width: auto;
+}
+.pd-0{
+  padding: 0!important;
 }

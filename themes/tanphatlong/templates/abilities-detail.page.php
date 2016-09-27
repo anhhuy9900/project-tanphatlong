@@ -8,6 +8,7 @@ get_header(); ?>
 
 <?php
 global $post;
+$file_download_abilities = types_render_field( "file-download-abilities", array( "raw" => "true", "id" => $post->ID ));
 ?>
 
 <!--Include file breadcumb-->
@@ -28,6 +29,8 @@ global $post;
                             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                                 <h2><?php the_title();?></h2>
                                 <?php the_content(); ?>
+
+                                <a href="<?=$file_download_abilities;?>" class="abilitiy-download"><?php print __('Download','tanphatlong');?></a>
                             <?php endwhile; else: ?>
                                 <p><?=pll_e('Sorry, no posts matched your criteria.');?></p>
                             <?php endif; ?>

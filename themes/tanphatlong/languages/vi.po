@@ -45,7 +45,7 @@ msgstr "Fax"
 
 #. Text in function
 #: tanphatlong/content-home.php:119
-msgid "Highlight News"
+msgid "News"
 msgstr "Tin tức nổi bật"
 
 #. Text in function
@@ -60,7 +60,7 @@ msgstr "Hình ảnh công ty"
 
 #. Text in function
 #: tanphatlong/content-home.php:22
-msgid "Projects Highlight"
+msgid "Typical Projects"
 msgstr "Dự án tiêu biểu"
 
 #. Text in function

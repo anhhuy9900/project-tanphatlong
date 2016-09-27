@@ -186,7 +186,8 @@ $(document).ready(function($) {
 	var map_lat = $(".info_map").data('lat');
 	var map_long = $(".info_map").data('long');
 	var img_map = $(".info_map").data('img');
-	var contact_address = $(".info_map").data('address');
+	var img_logo = $(".info_map").data('logo');
+	var contact_address = '<img src="' +img_logo+ '" class="contact-logo" />' + '<br>' + $(".info_map").data('address');
 	var contact = {lat : map_lat, lng : map_long}; //Change a map coordinate here!
 
 	/*try {

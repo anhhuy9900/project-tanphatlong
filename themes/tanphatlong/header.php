@@ -115,9 +115,11 @@
                         $nav_menu_items = wp_get_nav_menu_items( $menu_language );
                         $menu_items = func_nav_menu_object_tree( $nav_menu_items );
                         if(!empty($menu_items)) :
+                            global $post;
+                            $thePostID = $post->ID;
                             foreach($menu_items as $item_parent) :
                         ?>
-                        <li><a href="<?=$item_parent->url; ?>"><?=$item_parent->title;?></a>
+                        <li><a href="<?=$item_parent->url; ?>"<?php //print $item_parent->ID == $thePostID ? ' class="active"' : '';?>><?=$item_parent->title;?></a>
                             <?php if(!empty($item_parent->children)) :?>
                             <ul class="drop-down">
                                 <?php foreach($item_parent->children as $item_child) :?>

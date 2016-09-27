@@ -68,11 +68,11 @@ $list_products = get_list_products_home_page();
                     $product_description = types_render_field( "product-description", array( "raw" => "true", "id" => $value->ID ));
                     ?>
                 <div class="col-md-3">
-                    <div class="services-post">
+                    <div class="services-post pd-0">
                         <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><img src="<?=$image;?>" alt=""></a>
                         <div class="services-content">
-                            <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
-                            <p><?=$product_description;?></p>
+                            <h2 class="fix-bg"><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
+                            <p class="text-cf"><?=$product_description;?></p>
                             <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?php print __('Read More','tanphatlong');?> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -107,7 +107,7 @@ $pages_highlight = get_list_pages_highlight_home();
             <div class="col-md-7">
                 <div class="about-us-box">
                     <h1><?=(!empty($widget_about_home)) ? $widget_about_home->title : '';?></h1>
-                    <p><?=(!empty($widget_about_home)) ? $widget_about_home->text : '';?></p>
+                    <p class="text-cf"><?=(!empty($widget_about_home)) ? $widget_about_home->text : '';?></p>
                     <div class="row">
                     <?php
                     $count = 0;
@@ -122,7 +122,7 @@ $pages_highlight = get_list_pages_highlight_home();
                         <div class="about-us-post">
                             <a href="<?php echo esc_url( get_permalink($page->ID) ); ?>" class="icon-link"><i class="fa <?=$page->post_name =='nhan-su-chu-chot' || $page->post_name =='key-personnel' ? 'fa-users' : 'fa-building-o';?>"></i></a>
                             <h2><a href="<?php echo esc_url( get_permalink($page->ID) ); ?>"><?=$page->post_title;?></a></h2>
-                            <span><?=$description;?></span>
+                            <span class="text-cf"><?=$description;?></span>
                         </div>
                     <?php if($count % 3 == 0 || $count == count($pages_highlight)) :?>
                     </div>
@@ -137,7 +137,7 @@ $pages_highlight = get_list_pages_highlight_home();
                 <div class="about-box">
                     <img src="<?=$img_about_left_url;?>" alt="">
                     <h2><?=$widget_about_content_left->title;?></h2>
-                    <p><?=$widget_about_content_left->text;?></p>
+                    <p class="text-cf"><?=$widget_about_content_left->text;?></p>
                 </div>
 
             </div>
@@ -156,7 +156,7 @@ if(!empty($projects_highlight)) :
 ?>
     <section class="portfolio-section">
         <div class="container">
-            <h3><?php print __('Projects Highlight','tanphatlong');?></h3>
+            <h3><?php print __('Typical Projects','tanphatlong');?></h3>
             <div class="portfolio-box owl-wrapper">
                 <div class="owl-carousel" data-num="4">
                     <?php foreach($projects_highlight as $project) :
@@ -188,7 +188,7 @@ $news_highlight = get_list_records_highlight_home(array('post_type'=>'post'));
 ?>
 <section class="news-section">
     <div class="container">
-        <h3><?php print __('Highlight News','tanphatlong');?></h3>
+        <h3><?php print __('News','tanphatlong');?></h3>
         <div class="news-box owl-wrapper">
             <div class="owl-carousel" data-num="4">
                 <?php foreach($news_highlight as $news) :
@@ -205,7 +205,7 @@ $news_highlight = get_list_records_highlight_home(array('post_type'=>'post'));
                     </div>
                     <div class="news-content">
                         <h2><a href="<?php echo esc_url( get_permalink($news->ID) ); ?>" title="<?=$news->post_name;?>"><?=$news->post_title;?></a></h2>
-                        <p><?=$description;?></p>
+                        <p class="text-cf"><?=$description;?></p>
                         <a href="<?php echo esc_url( get_permalink($news->ID) ); ?>" title="<?=$news->post_name;?>"><?php print __('Read More','tanphatlong');?><i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>

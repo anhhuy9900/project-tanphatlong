@@ -88,8 +88,8 @@
             {
                 dottedOverlay:"none",
                 delay:10000,
-                startwidth:1140,
-                startheight:570,
+               // startwidth:1440,
+               // startheight:480,
                 hideThumbs:200,
 
                 thumbWidth:100,

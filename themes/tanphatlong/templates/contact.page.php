@@ -15,7 +15,7 @@ $widget_address = _get_widget_data_for('Map Contact', pll_current_language());
 ?>
 
 <!-- map================================================== -->
-<div class="info_map" data-lat="<?=$widget_map_contact->latitude;?>" data-long="<?=$widget_map_contact->longtitude;?>" data-img="<?php echo esc_url( get_template_directory_uri() ); ?>/images/marker.png" data-address="<?=(!empty($widget_address)) ? $widget_address->text :'';?>"></div>
+<div class="info_map" data-lat="<?=$widget_map_contact->latitude;?>" data-long="<?=$widget_map_contact->longtitude;?>" data-img="<?php echo esc_url( get_template_directory_uri() ); ?>/images/marker.png" data-address="<?=(!empty($widget_address)) ? $widget_address->text :'';?>" data-logo="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png"></div>
 <div id="map"></div>
 <!-- map -->
 
