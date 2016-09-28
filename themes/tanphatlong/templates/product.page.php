@@ -32,7 +32,7 @@ $data = get_list_records_products();
                 ?>
                     <div class="project-post col-md-6">
                         <div class="projects-highlight">
-                            <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><img src="<?=$image;?>" alt=""></a>
+                            <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>" class="ahref"><img src="<?=$image;?>" alt=""></a>
                             <div class="inner-hover">
                                 <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
                             </div>

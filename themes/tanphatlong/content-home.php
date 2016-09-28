@@ -69,7 +69,7 @@ $list_products = get_list_products_home_page();
                     ?>
                 <div class="col-md-3">
                     <div class="services-post pd-0">
-                        <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><img src="<?=$image;?>" alt=""></a>
+                        <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>" class="ahref"><img src="<?=$image;?>" alt=""></a>
                         <div class="services-content">
                             <h2 class="fix-bg"><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
                             <p class="text-cf"><?=$product_description;?></p>

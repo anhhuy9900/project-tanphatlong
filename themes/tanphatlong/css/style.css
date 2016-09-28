@@ -586,7 +586,7 @@ section.services-section .services-box .services-post .services-content a i {
 section.services-section .services-box .services-post .services-content a:hover {
   color: #d51820;
 }
-section.services-section .services-box .services-post a{
+section.services-section .services-box .services-post a.ahref{
   display: inline-block;
   width: 100%;
 }

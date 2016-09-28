@@ -25,7 +25,7 @@ $cat = get_category( get_query_var( 'cat' ) );
                     ?>
 
                         <div class="blog-post">
-                            <img src="<?=$image;?>" alt="" class="images">
+                            <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>" class="ahref"><img src="<?=$image;?>" alt="" class="images"></a>
                             <div class="post-content-text">
                                 <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
                                 <span><?=date('d M Y',strtotime($value->post_date))?></span>
