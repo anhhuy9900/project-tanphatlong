@@ -1523,11 +1523,16 @@ section.services-section .services-box .services-post a.download{
   position: absolute;
   z-index: 1;
 }
+.single-page-section .tpl-gallery-detail .gallery-image-bxslider li{
+  width: 158px!important;
+  margin-right: 10px!important;
+}
 .single-page-section .tpl-gallery-detail .gallery-image-bxslider .image-thumb-detail > a{
-  width: 150px;
-  height: 150px;
-  float: left;
   display: inline-block;
+}
+.single-page-section .tpl-gallery-detail .gallery-image-bxslider .image-thumb-detail > a > img{
+  width: 158px;
+  height: 150px;
 }
 .single-page-section .tpl-gallery-detail .bx-controls-direction{
   top: 55px !important;
@@ -1582,12 +1587,51 @@ section.services-section .services-box .services-post a.download{
   width: 90%;
 }
 
+@media (max-width: 768px) {
+  .single-page-section .tpl-gallery-detail .show-first-image{
+    width: 100%;
+    height: auto!important;
+  }
+
+  .single-page-section .tpl-gallery-detail .gallery-image-bxslider li{
+    width: 170px!important;
+    margin-right: 13px!important;
+  }
+  .single-page-section .tpl-gallery-detail .gallery-image-bxslider .image-thumb-detail > a > img{
+    width: 170px;
+  }
+}
+
+@media (max-width: 767px) {
+  .single-page-section .tpl-gallery-detail .show-first-image{
+    width: 100%;
+    height: auto!important;
+  }
+
+  .single-page-section .tpl-gallery-detail .gallery-image-bxslider li{
+    width: 150px!important;
+    margin-right: 13px!important;
+  }
+  .single-page-section .tpl-gallery-detail .gallery-image-bxslider .image-thumb-detail > a > img{
+    width: 150px;
+  }
+}
+
 @media (max-width: 460px) {
   .single-page-section .tpl-gallery-detail .show-first-image{
     width: 100%;
     height: auto!important;
   }
+
+  .single-page-section .tpl-gallery-detail .gallery-image-bxslider li{
+    width: 165px!important;
+    margin-right: 20px!important;
+  }
+  .single-page-section .tpl-gallery-detail .gallery-image-bxslider .image-thumb-detail > a > img{
+    width: 165px;
+  }
 }
+
 /*-------------------------------------------------*/
 /* =  blog page
 /*-------------------------------------------------*/

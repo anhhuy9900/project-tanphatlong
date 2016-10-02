@@ -357,34 +357,40 @@ $(document).ready(function($) {
 	/* ---------------------------------------------------------------------- */
 	$('.gallery-image-bxslider').bxSlider({
 		auto : true,
-		pause : 4000,
+		pause : 5000,
       	minSlides: 1,
       	maxSlides: 4,
 		moveSlides : 1,
-      	slideWidth: 150,
-      	slideMargin: 10,
+      	//slideWidth: 150,
+      	//slideMargin: 10,
       	pager : false,
       	infiniteLoop : true,
 		onSliderLoad : function($slideElement, newIndexoldIndex, newIndex){
-			$(".image-thumb-detail > a").on('click', function(event) {
-				//var image_url = $(this).data('url');
-				var current_index = $(this).parent().data('index');
-				$(".show-first-image > a").fadeOut(500);
-				$(".show-first-image > a").eq(current_index).fadeIn(500);
-				//var slider = $('.gallery-image-bxslider').bxSlider();
-				//slider.goToSlide(current_index);
-
-			});
+			//$(".image-thumb-detail > a").on('click', function(event) {
+			//	//var image_url = $(this).data('url');
+			//	var current_index = $(this).parent().data('index');
+			//	$(".show-first-image > a").fadeOut(500);
+			//	$(".show-first-image > a").eq(current_index).fadeIn(500);
+			//	//var slider = $('.gallery-image-bxslider').bxSlider();
+			//	//slider.goToSlide(current_index);
+            //
+			//});
 
 		},
-		onSlideBefore : function($slideElement, newIndexoldIndex, newIndex){
+		onSlideBefore : function($slideElement, oldIndex, newIndex){
 			var current_index = $slideElement.data('index');
-			$(".show-first-image > a").fadeOut(500);
+			//$(".show-first-image > a").eq(newIndex).fadeOut(800);
+			//$(this).eq(current_index).fadeOut(800);
 
 		},
 		onSlideAfter : function($slideElement, oldIndex, newIndex){
-			//console.log($(".show-first-image > a").eq(newIndex));
-			$(".show-first-image > a").eq(newIndex).fadeIn(500);
+			//console.log(oldIndex);
+			//$(".show-first-image > a").eq(newIndex).fadeIn(800);
+			$(".show-first-image > a").eq(oldIndex).fadeOut(500);
+			setTimeout(function(){
+				$(".show-first-image > a").eq(newIndex).fadeIn(800);
+			},500);
+
 
 		}
 

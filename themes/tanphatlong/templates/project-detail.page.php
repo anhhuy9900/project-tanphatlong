@@ -31,7 +31,7 @@ $current_taxonomy = 'manage-menu-projects';
                     </div>
                     <ul class="gallery-image-bxslider">
                         <?php foreach($project_galleries as $index => $image) :
-                                $image_url = aq_resize( $image, 150, 150 , true, true, true);
+                                $image_url = aq_resize( $image, 180, 150 , true, true, true);
                                 $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
                         ?>
                         <li class="image-thumb-detail" data-index="<?=$index;?>"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#popup_project_gallary"><img src="<?=$image_url?>" /></a></li>
