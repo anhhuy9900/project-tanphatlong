@@ -14,54 +14,51 @@ $current_taxonomy = 'list-menu-product-services';
     ================================================== -->
 <section class="single-page-section">
     <div class="container">
+        <div class="row">
             <div class="col-md-9">
-                <div class="row">
-                    <div class="col-md-11 tpl-gallery-detail">
-                        <?php
-                        $product_galleries = get_post_meta( $post->ID, "wpcf-product-galleries");
-                        if(!empty($product_galleries)) :
-                            $show_first_image = aq_resize( $product_galleries[0], 600, 500 , true, true, true);
+                <div class="col-md-11 tpl-gallery-detail">
+                    <?php
+                    $product_galleries = get_post_meta( $post->ID, "wpcf-product-galleries");
+                    if(!empty($product_galleries)) :
+                        $show_first_image = aq_resize( $product_galleries[0], 600, 500 , true, true, true);
                         ?>
-                            <div class="show-first-image">
-                                <?php foreach($product_galleries as $image) :
-                                    $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
-                                    ?>
-                                    <a href="javascript:;" /><image src="<?=$large_image_url;?>" alt=""/></a>
-                                <?php endforeach;?>
+                        <div class="show-first-image">
+                            <?php foreach($product_galleries as $image) :
+                                $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
+                                ?>
+                                <a href="javascript:;" /><image src="<?=$large_image_url;?>" alt=""/></a>
+                            <?php endforeach;?>
 
-                            </div>
-                            <ul class="gallery-image-bxslider">
-                                <?php foreach($product_galleries as $index => $image) :
-                                    $image_url = aq_resize( $image, 180, 150 , true, true, true);
-                                    $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
-                                    ?>
-                                    <li class="image-thumb-detail" data-index="<?=$index;?>"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#popup_project_gallary"><img src="<?=$image_url?>" /></a></li>
-                                <?php endforeach;?>
-                            </ul>
-                        <?php endif;?>
-                    </div>
+                        </div>
+                        <ul class="gallery-image-bxslider">
+                            <?php foreach($product_galleries as $index => $image) :
+                                $image_url = aq_resize( $image, 200, 150 , true, true, true);
+                                $large_image_url = aq_resize( $image, 600, 500 , true, true, true);
+                                ?>
+                                <li class="image-thumb-detail li-product" data-index="<?=$index;?>"><a href="javascript:;" data-url="<?=$large_image_url;?>" data-toggle="modal" data-target="#popup_project_gallary"><img src="<?=$image_url?>" /></a></li>
+                            <?php endforeach;?>
+                        </ul>
+                    <?php endif;?>
                 </div>
                 <div class="ht-15"></div>
-                <div class="row">
-                    <div class="col-md-11">
-                        <div class="project-content">
-                            <h2><?=$post->post_title;?></h2>
-                            <?=$post->post_content;?>
-                            <div class="project-tags">
-                                <ul>
-                                    <li><i class="fa fa-calendar"></i> <span><?php print __('Date','tanphatlong');?>:</span> <?=date('Y.m.D',strtotime($post->post_date))?></li>
-                                </ul>
-                            </div>
+                <div class="col-md-11">
+                    <div class="project-content">
+                        <h2><?=$post->post_title;?></h2>
+                        <?=$post->post_content;?>
+                        <div class="project-tags">
+                            <ul>
+                                <li><i class="fa fa-calendar"></i> <span><?php print __('Date','tanphatlong');?>:</span> <?=date('Y.m.D',strtotime($post->post_date))?></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-
             <div class="col-md-3">
                 <!--Include file menu-->
                 <?php include_once TEMPLATEPATH . '/includes/left_menu_product.php';?>
             </div>
+        </div>
+
     </div>
 </section>
 <!-- End single-page section -->
