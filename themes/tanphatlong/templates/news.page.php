@@ -6,8 +6,6 @@ Template Name: News Page
 get_header(); ?>
 
 <?php
-global $taxonomy,$term;
-$get_category = get_term_by('slug', $term, 'manage-menu-projects');
 $data = get_list_records_news();
 ?>
 

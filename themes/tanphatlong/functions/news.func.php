@@ -56,7 +56,7 @@ if (!function_exists('get_list_records_news')) {
 
 if (!function_exists('get_list_menu_news')) {
     function get_list_menu_news(){
-        $list_menu_news = $categories = get_categories( array(
+        $list_menu_news = get_categories( array(
             'orderby' => 'post_date',
             'parent'  => 0
         ) );
