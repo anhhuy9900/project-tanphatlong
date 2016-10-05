@@ -33,11 +33,11 @@ get_header(); ?>
                 ?>
 
                 <div class="list-recruitments clearfix">
-                    <div class="col-md-4">
-                        <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>" title="<?=$value->post_title;?>"><img src="<?=$image;?>" alt=""></a>
-                    </div>
-                    <div class="col-md-8">
-                        <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?=$value->post_title;?></a></h2>
+                    <!--<div class="col-md-4">
+                        <a href="<?php //echo esc_url( get_permalink($value->ID) ); ?>" title="<?//=$value->post_title;?>"><img src="<?//=$image;?>" alt=""></a>
+                    </div>-->
+                    <div class="col-md-12">
+                        <h2><a href="<?php echo esc_url( get_permalink($value->ID) ); ?>" class="title"><?=$value->post_title;?></a></h2>
                         <span><?=date('d M Y',strtotime($value->post_date))?></span>
                         <p><?=$description;?></p>
                         <a href="<?php echo esc_url( get_permalink($value->ID) ); ?>"><?php print __('Read More','tanphatlong');?> <i class="fa fa-angle-right"></i></a>

@@ -815,6 +815,10 @@ section.services-section .services-box .services-post a.download{
 .portfolio-section .list-recruitments a{
   display: inline-block;
 }
+.portfolio-section .list-recruitments .title{
+  text-decoration: none;
+  color: #d41820;
+}
 .portfolio-section .list-recruitments  h2{
   color: #333333;
   font-size: 20px;
